@@ -1,0 +1,16 @@
+/*Author     : Louise (Lou) Lai
+ *Created on : September 10th 2014
+ *Description: Program prints an approximation of π (pi)
+ */
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		double pi = 4 * (1.0 - 1.0/3.0);
+				
+		System.out.println(pi);
+
+	}
+
+}

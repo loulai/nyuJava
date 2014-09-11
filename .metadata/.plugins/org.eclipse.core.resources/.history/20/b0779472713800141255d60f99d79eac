@@ -1,0 +1,14 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		try {
+			String[] thinge = {"Joo", "heoeh"};
+			System.out.println(thinge[2]);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+}

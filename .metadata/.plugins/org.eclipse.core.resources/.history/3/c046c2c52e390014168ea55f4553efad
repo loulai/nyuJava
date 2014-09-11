@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+/*Author     : Louise (Lou) Lai
+ *Created on : September 10th 2014
+ *Description: Program computes the distance between points, which are input by the user
+ */
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+//	    System.out.println("Please input the desired x value and press enter: ");
+//	    Scanner scanner = new Scanner(System.in);
+//	    String StringValue = scanner.nextLine();
+//	    System.out.println(StringValue);
+		
+		int x1 = 0;
+		int y1 = 0;
+		
+		int x2 = 1;
+		int y2 = 1;
+		
+	    Double distance = Math.sqrt(25);
+	    
+	    System.out.println(distance);
+	 
+
+	}
+
+}
