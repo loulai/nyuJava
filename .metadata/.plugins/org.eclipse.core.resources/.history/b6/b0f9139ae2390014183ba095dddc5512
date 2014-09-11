@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 /*Author     : Louise (Lou) Lai
  *Created on : September 10th 2014
@@ -26,7 +26,7 @@ public class Main {
 		int distanceBetweenX = x2 - x1;
 		int distanceBetweenY = y2 - y1;
 		
-		//second, summing the squares of the distance with an outside method
+		//second, summing the squares of the distance using an outside method
 		Double squaredDistance = square(distanceBetweenX) + square(distanceBetweenY);
 		
 		//finally, taking the square root of the sum
