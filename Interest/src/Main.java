@@ -8,22 +8,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Double investmentAmount = 1000;
+		Double investmentAmount = 1000.0;
 		Double annualInterestRate = 0.035;
-		Double numberOfYears = 3;
+		Double numberOfYears = 3.0;
 		
-		Double rate = 1 + annualInterestRate;
+		Double rate = 1.0 + annualInterestRate;
 		
-		Double multiplier = raiseToThePower(rate, numberOfYears);
+		Double answer = investmentAmount * rate;
 		
-		Double futureInvestmentValue = investmentAmount * multiplier;
+		System.out.println(answer);
 		
-		System.out.println(futureInvestmentValue);
+		for (int i = 0; i < numberOfYears; i++){
+			answer = rate * rate;
+			System.out.println(answer);
+		}
 	}
 	
-	public static Double raiseToThePower(Double rate, Double numberOfYears) {
-		
-		return answer;
-	}
-
 }
