@@ -14,7 +14,7 @@ public class Main {
 		
 		for (int i = 0; i < numberOfYears; i++){
 			investmentAmount = investmentAmount+investmentAmount*annualInterestRate; 
-			System.out.println("year "+ (i+1) +": "+investmentAmount);
+			System.out.println("year "+(i+1)+": "+investmentAmount);
 		}
 	}
 	
