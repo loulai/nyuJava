@@ -33,7 +33,7 @@ public class Main {
 	    Double finalDistance = Math.sqrt(squaredDistance);
 	    
 	    System.out.println(finalDistance);
-
+	    
 	}
 	
 	public static double square(int value) {

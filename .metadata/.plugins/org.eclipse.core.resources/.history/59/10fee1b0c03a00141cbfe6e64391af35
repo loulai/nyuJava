@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Double myDouble = Math.random();
+		
+		System.out.println(Math.round(myDouble));
+
+	}
+
+}

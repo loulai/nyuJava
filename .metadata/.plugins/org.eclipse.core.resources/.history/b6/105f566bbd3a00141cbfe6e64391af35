@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		for (int i = 0; i < 5; i++){
+			Double randNumber = Math.random();	
+			System.out.printf("The random number is %f \n", randNumber * 5);
+		}
+		
+	}
+
+}
