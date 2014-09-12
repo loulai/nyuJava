@@ -1,0 +1,30 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		long oneCounter = 0;
+		long twoCounter = 0;
+		long threeCounter = 0;
+		
+		for (int i = 0; i < 1000; i++) {
+			Double myDouble = Math.random() * 6 + 1;
+			
+			long myLong = Math.round(myDouble);
+			
+			if (myLong == 1) {
+				oneCounter++;
+				System.out.println("One Counter has: " + oneCounter);
+			} else if (myLong == 2) {
+				twoCounter++;
+				System.out.println("Two Counter has: " + twoCounter);
+			} else {
+				threeCounter++;
+				System.out.println("Three Counter has: " + threeCounter);
+			}
+		}
+		
+		
+	}
+
+}

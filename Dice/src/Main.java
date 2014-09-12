@@ -4,23 +4,39 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int oneCounter = 0;
+		int twoCounter = 0;
+		int threeCounter = 0;
+		int fourCounter = 0;
+		int fiveCounter = 0;
+		int sixCounter = 0;
 		
-		for (int i = 0; i < 6; i++){
-			Double randDouble = Math.random() * 6 + 1;	
-		
-			System.out.printf(i + 1 + ". The random number is %f \n", randDouble);
+		for (int i = 0; i < 10000; i++) {
 			
-			int tempRandNumber = randDouble.intValue();
+			Double myDouble = Math.random() * 6;
 			
-			Double randDoubleTwo = Math.round(randDouble);
+			int myInt = myDouble.intValue();
 			
-			System.out.println(tempRandNumber);
-			
-			if (tempRandNumber == 1) {
+			if (myInt == 0) {
 				oneCounter++;
+			} else if (myInt == 1) {
+				twoCounter++;
+			} else if (myInt == 2) {
+				threeCounter++;
+			} else if (myInt == 3) {
+				fourCounter++;
+			} else if (myInt == 4) {
+				fiveCounter++;
+			} else {
+				sixCounter++;
 			}
-			
 		}
+		
+		System.out.println("One Counter has: " + oneCounter);	
+		System.out.println("Two Counter has: " + twoCounter);
+		System.out.println("Three Counter has: " + threeCounter);
+		System.out.println("One Counter has: " + fourCounter);	
+		System.out.println("Two Counter has: " + fiveCounter);
+		System.out.println("Three Counter has: " + sixCounter);
 		
 	}
 
