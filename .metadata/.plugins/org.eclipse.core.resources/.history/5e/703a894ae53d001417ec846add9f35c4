@@ -1,0 +1,22 @@
+
+public class Letters {
+
+	public static void main(String[] args) {
+		
+		char input = 'a';
+		
+		char value = Character.toLowerCase(input);
+		
+		switch(value) {	
+		
+		case "a": case "e": case "i":
+		case "o": case "u":
+			System.out.print(input + " is a vowel.");
+			break;
+		}
+		
+		if (value != )
+
+	}
+
+}

@@ -1,0 +1,17 @@
+
+public class Letters {
+
+	public static void main(String[] args) {
+		
+		String input = "a";
+		
+		switch(input) {
+		
+		case "a": case "e": case "i":
+		case "o": case "u":
+			System.out.print(input + " is a vowel.");
+		}
+
+	}
+
+}

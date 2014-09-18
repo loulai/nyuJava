@@ -1,0 +1,46 @@
+
+public class Sequence{
+
+	public static void main(String[] args) {
+		
+		double n = 3;
+		
+		if (n % 2 == 0) {
+			System.out.println("even")
+			System.out.print(n + ", ");
+		
+			for (int i = 0; i < 99; i++) {
+				
+				n = n/2.0;
+				
+				if (i == 98) {
+					System.out.print(n);
+				} else {
+					System.out.print(n + ", ");
+				}
+				
+			}
+				
+		}
+		else {
+			System.out.println("odd");
+			System.out.print(n + ", ");
+			
+			for (int i = 0; i < 99; i++) {
+			
+				
+				n = (n * 3.0) + 1;
+				
+				if (i == 98) {
+					System.out.print(n);
+				} else {
+					System.out.print(n + ", ");
+				}
+				
+			}
+			
+		}
+
+	}
+
+}
