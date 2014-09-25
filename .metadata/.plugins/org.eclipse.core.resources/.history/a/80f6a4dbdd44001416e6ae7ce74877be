@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
-/*
- * Created on : September 23rd 2014
- * Description: 
- * @author Lou Lai
+/*Author     : Louise (Lou) Lai
+ *Created on : September 23rd 2014
+ *Description: 
  */
 
 public class Blackjack {
 
-	
 	public static void main(String[] args) {
 		
 		int userCardNumber1 = generateNumber();
@@ -23,9 +21,6 @@ public class Blackjack {
 		System.out.println(userCardName2);
 		System.out.println("Your total score: " + userScore); //delete for finalization
 		
-		if(userScore == 21) {
-			System.out.println("How lucky, you straight up won!");
-		}
 
 		while(userScore < 21) {
 			
@@ -42,23 +37,15 @@ public class Blackjack {
 				
 				System.out.println("Your new score: " + userScore);
 				
-				if (userScore == 21) {
-					System.out.println("User Won!");
-					break;
-				} else if(userScore > 21){
-					System.out.println("User bust! Game over.");
-					break;
-				} 
-				
-			} else {
-				System.out.println("No card for User. Dealers turn.");
-				break; 
-				}
-				
-			}
+		} else {
+			System.out.println("No card for you glen coco");
+			break;
+		}
 			
-	}	
-	
+		}
+		
+		
+	}
 
  	public static int generateNumber(){
  			int cardNumber = (int) (Math.random() * 52);

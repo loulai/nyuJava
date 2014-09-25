@@ -46,7 +46,7 @@ public class Blackjack {
 					System.out.println("User Won!");
 					break;
 				} else if(userScore > 21){
-					System.out.println("User bust! Game over.");
+					System.out.println("User bust!");
 					break;
 				} 
 				

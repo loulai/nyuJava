@@ -23,9 +23,6 @@ public class Blackjack {
 		System.out.println(userCardName2);
 		System.out.println("Your total score: " + userScore); //delete for finalization
 		
-		if(userScore == 21) {
-			System.out.println("How lucky, you straight up won!");
-		}
 
 		while(userScore < 21) {
 			
@@ -33,7 +30,7 @@ public class Blackjack {
 			Scanner response = new Scanner(System.in);
 			String yesNo = response.next();
 
-			if (yesNo.equals("y")){
+			if (yesNo.equals("y") && userScore != 21){
 								
 				int drawnCardNumber = generateNumber();
 				System.out.println("You drew " + numberToName(drawnCardNumber));
@@ -46,16 +43,16 @@ public class Blackjack {
 					System.out.println("User Won!");
 					break;
 				} else if(userScore > 21){
-					System.out.println("User bust! Game over.");
+					System.out.println("User bust!");
 					break;
-				} 
-				
-			} else {
+				} else {
 				System.out.println("No card for User. Dealers turn.");
 				break; 
 				}
 				
 			}
+			
+		}
 			
 	}	
 	
