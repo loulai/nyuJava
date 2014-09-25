@@ -1,0 +1,90 @@
+import java.util.Scanner;
+
+
+public class Blackjack {
+
+	public static void main(String[] args) {
+		
+		int userCardNumber1 = generateNumber();
+		int userCardNumber2 = generateNumber();
+		int userScore = cardValue(userCardNumber1) + cardValue(userCardNumber2);
+		
+		String userCardName1 = numberToCard(userCardNumber1);
+		String userCardName2 = numberToCard(userCardNumber2);
+		
+		System.out.println(userCardName1);
+		System.out.println(userCardName2);
+		
+		System.out.println(userScore); //delete for finalization
+		
+		System.out.println("Would you like to another card? Type 'y' or 'n', then return.");
+		Scanner response = new Scanner(System.in);
+		String yesNo = response.next();
+		
+		if (yesNo.equalsIgnoreCase("y")){
+			System.out.println("another card");
+		} else {
+			System.out.println("No card for you glen coco")
+		}
+	}
+
+ 	public static int generateNumber(){
+ 			int cardNumericalValue = (int) (Math.random() * 52);
+ 			return cardNumericalValue;
+ 	}
+ 	
+ 	public static int cardValue(int cardNumber){
+ 		
+ 		int cardValue;
+ 		
+ 		if (cardNumber % 13 == 1){
+			cardValue = 1;
+			// could change to 11
+		} else if (cardNumber % 13 == 11){
+			cardValue = 10;
+		} else if (cardNumber % 13 == 12) {
+			cardValue = 10;
+		} else if (cardNumber % 13 == 0) {
+			cardValue = 10;
+		} else {
+			cardValue = cardNumber - ((cardNumber - 1)/13) * 13;
+		}
+ 		return cardValue;
+ 	}
+ 	
+ 	public static String numberToCard(int generatedNumber) {
+ 			
+ 			String card;
+ 		
+ 			generatedNumber = generatedNumber + 1;
+			
+			if (generatedNumber % 13 == 1){
+				card = "Ace";
+			} else if (generatedNumber % 13 == 11){
+				card = "King";
+			} else if (generatedNumber % 13 == 12) {
+				card = "Queen";
+			} else if (generatedNumber % 13 == 0) {
+				card = "Jack";
+			} else {
+				int cardNumber = generatedNumber - ((generatedNumber - 1)/13) * 13;
+				card = Integer.toString(cardNumber);
+			}
+			
+			generatedNumber = generatedNumber - 1;
+			
+			if (generatedNumber / 13 == 0) {
+				card = card + " of hearts";
+			} else if (generatedNumber / 13 == 1) {
+				card = card + " of spades";
+			} else if (generatedNumber / 13 == 2) {
+				card = card + " of clubs";
+			} else {
+				card = card + " of diamonds";
+			}
+			
+			return card;
+			
+ 	}
+ 	
+}

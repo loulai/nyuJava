@@ -1,0 +1,60 @@
+
+public class Blackjack {
+
+	public static void main(String[] args) {
+		
+		int userCardNumber1 = generateNumber();
+		int userCardNumber2 = generateNumber();
+		
+		int dealerCardNumber1 = generateNumber();
+		int dealerCardNumber2 = generateNumber();
+		
+		System.out.println(userCardNumber1);
+		System.out.println(userCardNumber2);
+		
+		System.out.println(dealerCardNumber1);
+		System.out.println(dealerCardNumber2);
+		
+	}
+
+ 	public static int generateNumber(){
+ 			int cardNumericalValue = (int) (Math.random() * 52);
+ 			return cardNumericalValue;
+ 	}
+ 	
+ 	public static String numberToCard(int generatedNumber) {
+ 			
+ 			String card;
+ 		
+ 			generatedNumber = generatedNumber + 1;
+			
+			if (generatedNumber % 13 == 1){
+				card = "Ace";
+			} else if (generatedNumber % 13 == 11){
+				card = "King";
+			} else if (generatedNumber % 13 == 12) {
+				card = "Queen";
+			} else if (generatedNumber % 13 == 0) {
+				card = "Jack";
+			} else {
+				int cardNumber = generatedNumber - ((generatedNumber - 1)/13) * 13;
+				card = Integer.toString(cardNumber);
+			}
+			
+			generatedNumber = generatedNumber - 1;
+			
+			if (generatedNumber / 13 == 0) {
+				card = card + " of hearts";
+			} else if (generatedNumber / 13 == 1) {
+				card = card + " of spades";
+			} else if (generatedNumber / 13 == 2) {
+				card = card + " of clubs";
+			} else {
+				card = card + " of diamonds";
+			}
+			
+			return card;
+			
+ 	}
+ 	
+}
