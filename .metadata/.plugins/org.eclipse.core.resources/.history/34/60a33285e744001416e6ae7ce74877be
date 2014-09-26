@@ -1,0 +1,11 @@
+
+public class Solution13 {
+
+	
+		
+		public static void hello (int y) {
+			System.out.println(y);
+	
+	}
+
+}

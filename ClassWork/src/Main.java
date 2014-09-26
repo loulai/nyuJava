@@ -3,33 +3,33 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		String input = "10100101";
+		int[] list1 = new int[10];
+		int[] list2 = new int[10];
+		int[] list3 = new int[10];
 		
-		for(int i = 0; i < input.length(); i++) {
+		for(int i = 0; i < list1.length; i++) {
+			list1[i] = (int) (Math.random() * 1501);
+			list2[i] = (int) (Math.random() * 1501);
 			
-			int value;
-			
-			int reversedIndex;
-			int sum = 0;
-			
-			if (input.charAt(i) == '0' || input.charAt(i) == '1') {
-				
-				value = 0;
-				
-			} else if(input.charAt(i) == '1') {
-			
-				reversedIndex = (input.length()) - (i +1);
-				sum += Math.pow(2,reversedIndex);
-				
-				System.out.println(sum);
-				
-			} else {
-				System.out.println("ERROR");
-				System.exit(1);	
-			}
+			list3[i] = list1[i] - list2[i];
+		}
+		
+		for(int i = 0; i < 3; i++) {
+			System.out.println((i + 1)+ ")" + list1[i]);
+			System.out.println("- " + list2[i]);
+			System.out.println("= " + list3[i]);
+		}
+	
+		
+		
+		
+		
+		
+		
+		
+		
 			
 		}
 
 	}
 
-}
