@@ -5,11 +5,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		String[] names = {"Lou", "Jack", "Kala", "Lou"};
+		String[] names = {"Lou", "Jack", "Kala"};
 		
 		String key = "Lou";
 		
-		System.out.println("Number of times shows up: " + findCount(names, key));
+		findCount(names, key);
 	
 	}
 
