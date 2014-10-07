@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static void populateArray(Scanner input, int [] numArray)&apos; from &apos;IsSorted.main()&apos; to &apos;IsSorted&apos;&#x0A;- Original project: &apos;IsSorted&apos;&#x0A;- Method name: &apos;populateArray&apos;&#x0A;- Destination type: &apos;IsSorted&apos;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;populateArray&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;{IsSorted.java" name="populateArray" replace="false" selection="248 102" stamp="1412711806357" version="1.0" visibility="2"/>
+</session>

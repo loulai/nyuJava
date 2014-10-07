@@ -1,22 +1,37 @@
 import java.util.Scanner;
-
+//use arrays
 public class IsSorted {
 
 	public static void main(String[] args) {
-		
-		System.out.println("Type nums: ");
+
+		System.out.println("Type 10 numbers (It must be 10 numbers): ");
 		Scanner input = new Scanner(System.in);
-		int num = input.nextInt();
 		boolean isSorted = true;
+		int[] numArray = new int[10];
+
+		populateArray(input, numArray);
+
+		for(int i = 0; i < 9; i++){
+			if(numArray[i] > numArray[i+1]){
+				isSorted = false;
+			} 
+		}
 		
-			for(int i = 0; i < 10; i++) {
-				System.out.println("old num " + num);
-				int newNum = input.nextInt();				
-				num = input.nextInt();
-				System.out.println("compare " + newNum);
-				System.out.println("new num " + num);
-			}
-			
+		if(isSorted) {
+			System.out.println("===Hurrah! It's sorted!===");
+		} else {
+			System.out.println("===Poo... it's not sorted===");
+		}
+
 	}
-	
+
+	private static int[] populateArray(Scanner input, int[] numArray) {
+		for(int i = 0; i < 10; i++){
+			numArray[i] = input.nextInt();
+			System.out.println(numArray[i]);
+		}
+		return numArray;
+	}
+
+
 }
