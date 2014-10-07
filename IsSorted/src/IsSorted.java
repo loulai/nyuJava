@@ -10,26 +10,13 @@ public class IsSorted {
 		boolean isSorted = true;
 		
 			for(int i = 0; i < 10; i++) {
-				int newNum = input.nextInt();
-	
-					if(num > newNum) {
-						isSorted = false;
-						System.out.println(isSorted);
-					} else {
-						continue;
-					}
-				
+				System.out.println("old num " + num);
+				int newNum = input.nextInt();				
 				num = input.nextInt();
-
+				System.out.println("compare " + newNum);
+				System.out.println("new num " + num);
 			}
 			
-		
-		if(isSorted) {
-			System.out.println("Your list is sorted");
-		} else {
-			System.out.println("Yout list is NOT sorted");
-		}
-		
 	}
-
+	
 }
