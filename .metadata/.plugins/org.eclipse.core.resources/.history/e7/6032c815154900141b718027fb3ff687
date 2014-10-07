@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+
+public class Main {
+	
+	public static void main(String[] args) {
+	
+		int count = 0;
+		do {
+			System.out.println("hi " + count);
+		} while (count ++ < 1);
+		System.out.println(count);
+	}
+	
+}
+

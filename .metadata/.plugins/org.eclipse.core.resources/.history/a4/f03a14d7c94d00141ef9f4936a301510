@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+
+public class FindingLargest {
+
+	public static void main(String[] args) {
+		System.out.print("Type number: ");
+		Scanner input = new Scanner(System.in);
+		int max = input.nextInt();
+		
+		while(max != 0) {
+			int newNum = input.nextInt();
+			System.out.println("Looking at:      " + max);
+			System.out.println("Then looking at: " + newNum);
+			if(max > newNum) {
+				max = newNum;
+			}
+			System.out.println("Bigger?          " + newNum);
+		}
+	
+	}
+
+}

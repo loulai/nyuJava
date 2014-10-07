@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+
+public class Main {
+	
+	public static void main(String[] args) {
+	
+		String[] tenZeros = new String["be"];
+		
+		for (int i = 0; i<tenZeros.length ; i++) {
+			System.out.print(i + " ");
+			System.out.println(tenZeros[i]);
+		}
+		
+	
+	}
+	
+}
+

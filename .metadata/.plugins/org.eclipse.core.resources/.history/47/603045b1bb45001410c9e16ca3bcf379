@@ -1,0 +1,165 @@
+import java.util.Scanner;
+
+/*
+ * Created on : September 23rd 2014
+ * Description: 
+ * @author Lou Lai
+ */
+
+public class Blackjack2 {
+
+	
+	public static void main(String[] args) {
+		
+		// USER generating random num. Converting to name. Converting to score.
+		int userCardNumber1 = generateNumber();
+		int userCardNumber2 = generateNumber();
+		System.out.println("You drew    : " + numberToName(userCardNumber1));
+		System.out.println("You drew    : " + numberToName(userCardNumber2));
+		
+		int userScore = cardNumberToScore(userCardNumber1) + cardNumberToScore(userCardNumber2);
+		System.out.println("Your score  : " + userScore);
+		
+		// DEALER generating num, totalling score
+		int dealerCardNumber1 = generateNumber();
+		int dealerCardNumber2 = generateNumber();
+		int dealerScore = cardNumberToScore(dealerCardNumber1) + cardNumberToScore(dealerCardNumber1);
+		
+		//rare condition where someone wins straight up
+		if(userScore == 21) {
+			System.out.println("How lucky, you straight up won!");
+		} else if (dealerScore == 21) {
+			System.out.println("Dealer hit 21. Sorry, you lost!");
+		} 
+		
+		boolean userTurn = true;
+		
+		//while true run code
+		while(userTurn == true && userScore < 21 && dealerScore < 21) {
+			
+			System.out.println("\n --- Want another card? Type 'y' or 'n', then hit return. ---");
+			Scanner response = new Scanner(System.in);
+			String yesOrNo = response.next();
+			
+			if (!yesOrNo.equalsIgnoreCase("n") && !yesOrNo.equalsIgnoreCase("y")) {
+				System.out.println("Dude don't mess I asked you yes (y) or no (n). Try again.");
+			} else if(yesOrNo.equalsIgnoreCase("n")) {
+				System.out.println("\n --- Dealer's turn --- ");
+				userTurn = false;
+			} else {
+				
+				//creating random card, and displaying
+				int newCardNumber = generateNumber();
+				System.out.println("You drew    : " + numberToName(newCardNumber));
+				
+				//tallying up score, and displaying
+				userScore = userScore + cardNumberToScore(newCardNumber);
+				System.out.println("New score   : " + userScore);
+				
+				//if user at this point gets 21, the user win
+				// or they get bust. Both display message and break loop.
+				if(userScore > 21){
+					System.out.println("You bust! \n DEALER WINS");
+					break;
+				} else if (userScore == 21) {
+					System.out.println("You hit 21! \n YOU WIN");
+					break;
+				}
+				
+			}
+			
+		}
+		
+		int dealerRound = 1;
+		while(userTurn == false && dealerScore < 21 && userScore < 21 && dealerRound <= 2) {
+			int dealerNewCardNumber1 = generateNumber();
+			dealerScore = dealerScore + cardNumberToScore(dealerNewCardNumber1);
+			
+			// DEALER creating and printing drawn card (and total score but will b deleted)
+			String dealerNewCardName1 = numberToName(dealerNewCardNumber1);
+			System.out.println("Dealer draws: " + dealerNewCardName1);
+			
+			if (dealerScore > 21) {
+				System.out.println("Dealer bust! \nYOU WIN");
+				break;
+			} else if (dealerScore == 21) {
+				System.out.println("Dealer hit 21! \nDEALER WINS");
+				break;
+			} else if (dealerScore < 21) {
+				dealerRound = dealerRound + 1;
+			}
+		}
+		
+		// at this point, User and Dealer both have scores < 21. The score closes to 21 wins.
+		if ( userScore > dealerScore && userScore < 21 && dealerScore < 21) {
+			System.out.printf("Your score is %d and dealer's score is %d. You are closer to 21. \nYOU WIN", userScore, dealerScore);
+		} else if ( userScore < dealerScore && userScore < 21 && dealerScore < 21) {
+			System.out.printf("Your score is %d and dealer's score is %d. Dealer is closer to 21. \nYOU LOSE", userScore, dealerScore);
+		} else if (userScore < 21 && dealerScore < 21) {
+			System.out.println("Ermegawd it's a draw");
+		}
+	}
+	
+ 	public static int generateNumber(){
+ 			int cardNumber = (int) (Math.random() * 52);
+ 			return cardNumber;
+ 	}
+ 	
+ 	public static int cardNumberToScore(int generatedNumber){
+ 		
+ 		generatedNumber = generatedNumber + 1;
+ 		int cardScore;
+ 		
+ 		if (generatedNumber % 13 == 1){
+			cardScore = 1;
+		} else if (generatedNumber % 13 == 11){
+			cardScore = 10;
+		} else if (generatedNumber % 13 == 12) {
+			cardScore = 10;
+		} else if (generatedNumber % 13 == 0) {
+			cardScore = 10;
+		} else {
+			cardScore = generatedNumber - (((generatedNumber - 1)/13) * 13);
+		}
+ 		return cardScore;
+ 	}
+ 	
+ 	public static String numberToName(int generatedNumber) {
+ 			
+ 			String card;
+ 		
+ 			generatedNumber = generatedNumber + 1;
+			
+			if (generatedNumber % 13 == 1){
+				card = "Ace";
+			} else if (generatedNumber % 13 == 11){
+				card = "King";
+			} else if (generatedNumber % 13 == 12) {
+				card = "Queen";
+			} else if (generatedNumber % 13 == 0) {
+				card = "Jack";
+			} else {
+				int cardNumber = generatedNumber - ((generatedNumber - 1)/13) * 13;
+				card = Integer.toString(cardNumber);
+			}
+			
+			generatedNumber = generatedNumber - 1;
+			
+			if (generatedNumber / 13 == 0) {
+				card = card + " of hearts";
+			} else if (generatedNumber / 13 == 1) {
+				card = card + " of spades";
+			} else if (generatedNumber / 13 == 2) {
+				card = card + " of clubs";
+			} else {
+				card = card + " of diamonds";
+			}
+			
+			return card;
+			
+ 	}
+ 	
+}
+//System.out.println("user card num 2: " + userCardNumber2);
+//System.out.println("user card val 1: " + cardValue(userCardNumber1));
+//System.out.println("user card val 2: " + cardValue(userCardNumber2));

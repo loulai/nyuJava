@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class FindingLargest {
+
+	public static void main(String[] args) {
+		System.out.print("Type number: ");
+		Scanner input = new Scanner(System.in);
+		int num = input.nextInt();
+		
+		while(num != 0) {
+			System.out.print(num);
+		}
+	
+	}
+
+}
