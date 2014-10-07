@@ -1,10 +1,10 @@
 import java.util.Scanner;
-
+//use arrays
 public class IsSorted {
 
 	public static void main(String[] args) {
 
-		System.out.println("Type 10 numbers (must be 10 numbers): ");
+		System.out.println("Type 10 numbers (It must be 10 numbers): ");
 		Scanner input = new Scanner(System.in);
 		boolean isSorted = true;
 		int[] numArray = new int[10];

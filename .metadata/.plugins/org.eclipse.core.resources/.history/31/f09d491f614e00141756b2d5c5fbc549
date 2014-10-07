@@ -6,17 +6,14 @@ public class FindingLargest {
 	public static void main(String[] args) {
 		System.out.print("Type number: ");
 		Scanner input = new Scanner(System.in);
-		int max = input.nextInt();
-		int num = 2;
-	
+		int num = input.nextInt();
+		int max = 0;
+		
 		while (num != 0) {
-			num = input.nextInt();
-			if (num > max && num != 0){
+			if (num > input.nextInt()){
 				max = num;
 			}
 		}
-		
-		System.out.println(max);
 		
 	}
 

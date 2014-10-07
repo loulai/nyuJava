@@ -11,7 +11,7 @@ public class FindingLargest {
 	
 		while (num != 0) {
 			num = input.nextInt();
-			if (num > max && num != 0){
+			if (num > max && max != 0){
 				max = num;
 			}
 		}
