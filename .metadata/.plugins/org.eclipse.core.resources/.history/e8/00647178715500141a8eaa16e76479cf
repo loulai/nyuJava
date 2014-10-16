@@ -15,14 +15,13 @@ public class ShiftByOne {
 		char purple = letters[stringLength - 1];
 		char stored = letters[0];
 		
-		for(int i = 0; i < stringLength-1; i++){
+		for(int i = 0; i < stringLength; i++){
 			letters[i] = purple;
 			purple = stored;
-			stored = letters[i + 1];
-			System.out.println("- " + i);
+			stored = letters[0 + 1];
+			System.out.println(i);
 			System.out.println("Purple: " + purple);
 			System.out.println("Stored: " + stored);
-			System.out.println(new String(letters));
 			System.out.println("===============");
 		}
 		

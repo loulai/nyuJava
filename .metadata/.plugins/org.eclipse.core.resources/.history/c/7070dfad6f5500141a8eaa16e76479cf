@@ -12,18 +12,13 @@ public class ShiftByOne {
 		char[] letters = originalString.toCharArray();
 		int stringLength = letters.length;
 		
-		char purple = letters[stringLength - 1];
-		char stored = letters[0];
+		char purple = letters[0];
+		char stored = letters[stringLength - 1];
 		
-		for(int i = 0; i < stringLength-1; i++){
+		for(int i = 0; i < stringLength; i++){
 			letters[i] = purple;
 			purple = stored;
-			stored = letters[i + 1];
-			System.out.println("- " + i);
-			System.out.println("Purple: " + purple);
-			System.out.println("Stored: " + stored);
-			System.out.println(new String(letters));
-			System.out.println("===============");
+			stored = letters[0 + 1];
 		}
 		
 		String shiftedword = new String(letters);
