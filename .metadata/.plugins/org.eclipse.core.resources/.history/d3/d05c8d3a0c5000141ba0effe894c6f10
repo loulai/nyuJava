@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+
+public class ShiftByOne {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Type a string and hit return: ");
+		Scanner input = new Scanner(System.in);
+		String word = input.nextLine();
+	}
+	
+	public static String shift(String word) {
+		char[] charArray = word.toCharArray();
+	}
+
+}
