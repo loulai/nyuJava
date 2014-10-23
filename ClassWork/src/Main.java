@@ -6,9 +6,9 @@ public class Main {
 		int[][] myMatrix = {{2,3,1,5},{7,-10,-1,4},{0,0,10,6},{-9,6,2,3}};
 		printMatrix(myMatrix);
 		
-		int[][] hFlippedMatrix = horizontalFlip(myMatrix);
+		int[][] maxes = rowMax(myMatrix);
 		System.out.println();
-		printMatrix(hFlippedMatrix);
+		rowMax();
 	}
 	
 	public static void printMatrix(int[][] matrix){
@@ -22,15 +22,12 @@ public class Main {
 			}
 		}
 	
-	public static int[][] horizontalFlip(int[][] matrix) {
-		int columnSize = matrix[0].length;
-		for(int i = 0; i < matrix.length; i++) {
-			for(int j = 0; j < columnSize/2; j++){
-				int temp = matrix[i][j]; //temporarily storing of the foremost element of the array
-				matrix[i][j] = matrix[i][columnSize-1-j]; //replacing the foremost element to take the value of the last element
-				matrix[i][columnSize-1-j] = temp; //replacing the last element to take the value of temp (wthich is the foremost element)
+	public static void transpose(int[][] matrix){
+		int[][] transposed = new int[matrix[0].length][matrix.length]; //setting up new 2D array, with rows as columns instead and vice versa
+		for(int i = 0; i< matrix.length; i++){                         
+			for(int j=0; j< matrix[0].length; j++){        
+				matrix[j][i] = matrix[i][j];         //going down by column, making the column values (going down) equal the row values (going across)
 			}
 		}
-		return matrix;
 	}
 }
