@@ -11,9 +11,9 @@ public class Main {
 		int column = input.nextInt();
 		
 		if(row < 1){
-			System.out.println("===You shall not pass===\n===Try again. Input a positive number for the row===");
+			System.out.println("===You shall not pass===\n===Please input a positive number for the row==="); //need to break?
 		} else if(column < 1) {
-			System.out.println("===You trolling?===\n===Try again. Input a positive number for the column===");
+			System.out.println("===You trolling?===\n===Please input a positive number for the column===");
 		}
 		
 		int[][] myMatrix = generateMatrix(row, column); //generateMatrix method called (see below)
@@ -119,10 +119,6 @@ public class Main {
 		return matrix;
 	}
 	
-	/**
-	 * @param matrix a two-dimensional array (the matrix)
-	 * @return       a two-dimensional array that has been transposed
-	 */
 	public static int[][] transpose(int[][] matrix){
 		int[][] transposed = new int[matrix[0].length][matrix.length]; //setting up new 2D array, with rows as columns instead and vice versa
 		for(int i = 0; i< matrix.length; i++){                         
