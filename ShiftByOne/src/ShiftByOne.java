@@ -1,5 +1,5 @@
 /**
- *Created on : September 23rd 2014
+ *Created on : October 16th 2014
  *Description: Program shifts the words of a string by one. e.g. PENS becomes SPEN, CLOUDS becomes SCLOUD.
  *@author Lou Lai
  */
@@ -38,9 +38,9 @@ public class ShiftByOne {
 		letters[stringLength - 1] = stored1;
 		
 		//printing string
-		String shiftedword = new String(letters);
+		String shiftedWord = new String(letters);
 		
-		System.out.println(letters);
+		System.out.println(shiftedWord);
 		
 	}
 		

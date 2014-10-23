@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+/**
+ *Created on : October 16th 2014
+ *Description: Merges two arrays that are already sorted, and returns a new array that is sorted.
+ *@author Lou Lai
+ */
+public class SortedMerge {
+
+	public static void main(String[] args) {
+		
+		System.out.println("How long is your first array? Enter integer: ");
+		Scanner input1 = new Scanner(System.in);
+		int aLength = input1.nextInt();
+		double[] arrayA = new double[aLength];
+		
+		for(int i=0; i < aLength; i++ ){
+			System.out.println("Insert number " + (i + 1) + ": ");
+			Scanner inputx = new Scanner(System.in);
+			int num = inputx.nextInt();
+			arrayA[i] = num;
+		}
+		
+		System.out.println("How long is your second array? Enter integer: ");
+		Scanner input2 = new Scanner(System.in);
+		int bLength = input1.nextInt();
+		double[] arrayB = new double[aLength];
+		
+		for(int i=0; i < aLength; i++ ){
+			System.out.println("Insert number " + (i + 1) + ": ");
+			Scanner input = new Scanner(System.in);
+			int num = inputz.nextInt();
+			arrayA[i] = num;
+		}
+		
+		
+		
+/*
+		int combinedLength = aLength + bLength;
+		double[] mergedArray = new double[combinedLength];
+	
+		int combined = 0;
+		int a = 0;
+		int b = 0;
+
+		while(a < arrayA.length && b < arrayB.length){
+			if(arrayA[a] < arrayB[b]){
+				mergedArray[combined] = arrayA[a];
+				combined++; a++; 
+			} else {
+				mergedArray[combined] = arrayB[b];
+				combined++; b++;
+			}
+		}
+		
+		while (a < arrayA.length) {
+			mergedArray[combined] = arrayA[a];
+			combined++; a++;
+		}
+		
+		while (b < arrayB.length) {
+			mergedArray[combined] = arrayB[b];
+			combined++; b++;
+		}
+		
+		for(int i = 0; i < combinedLength; i++){
+			if(i != combinedLength - 1){
+				System.out.print(mergedArray[i] + ", ");
+			}else {
+				System.out.print(mergedArray[i] + " ");
+			}
+			
+		}
+		
+	} */
+
+} }
