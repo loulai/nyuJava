@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+
+public class Main {
+
+	public static void main(String[] args){
+		int[][] myMatrix = {{0,1,2},{3,4,5},{6,7,8}};
+//		System.out.println(java.util.Arrays.deepToString(myMatrix));
+	
+}
+		
+	
+	public static void printMatrix(int[][] matrix) {
+			int rowSize = 1;
+			int columnSize = 1;
+			for(int i = 0; i < rowSize; i++ ) {
+				for(int j = 0; j< columnSize; j++) {
+					System.out.println(matrix[i][j]);
+				}
+			}
+
+	
+	
+	
+
+
