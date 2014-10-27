@@ -22,12 +22,5 @@ public class Main {
 			}
 		}
 	
-	public static void transpose(int[][] matrix){
-		int[][] transposed = new int[matrix[0].length][matrix.length]; //setting up new 2D array, with rows as columns instead and vice versa
-		for(int i = 0; i< matrix.length; i++){                         
-			for(int j=0; j< matrix[0].length; j++){        
-				matrix[j][i] = matrix[i][j];         //going down by column, making the column values (going down) equal the row values (going across)
-			}
-		}
-	}
+	
 }

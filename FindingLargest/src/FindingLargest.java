@@ -15,7 +15,7 @@ public class FindingLargest {
 		int largest = input.nextInt();
 		int num = 1;     // initial value can't be zero, because while loop will never run. It doesn't matter what this value is because
 						 // it is changed immediately after entering the while loop.
-		int counter = 1; // logically, the largest value must occur at least once, so this can be out initial value.
+		int counter = 1; // logically, the largest value must occur at least once, so this can be our initial value.
 		int secondLargest = Integer.MIN_VALUE; //because nothing can be below this number
 
 		while (num != 0) {
@@ -39,7 +39,6 @@ public class FindingLargest {
 		} else {
 			System.out.println("It occurs " + counter + " times");
 		}
-		
 		
 		if (secondLargest == Integer.MIN_VALUE){ //edge case for when there are not enough values for second largest value to be computed
 			System.out.println("Cannot compute second largest value.");
