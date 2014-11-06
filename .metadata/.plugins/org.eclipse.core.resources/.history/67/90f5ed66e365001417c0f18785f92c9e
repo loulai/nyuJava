@@ -1,0 +1,14 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		String string1 = "hello";
+		String string2 = "hot";
+		String string3 = "coffee";
+		String string4 = "hello";
+		
+		boolean answer = string1.equalsIgnoreCase(string2);
+		
+		System.out.println(answer);
+	}
+}

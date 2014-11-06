@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) {
+		String string1 = "hello";
+		String string2 = "hot";
+		String string3 = "coffee";
+		String string4 = "hello";
+		
+		String s5 = "a";
+		String s6 = "apple";
+		
+		int answer = s5.compareToIgnoreCase(s5);
+		
+		System.out.println(answer);
+	}
+}
