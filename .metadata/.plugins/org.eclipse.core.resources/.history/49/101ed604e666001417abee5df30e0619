@@ -1,0 +1,73 @@
+package hw7;
+
+public class Movie {
+	
+	private String title;
+	private int duration;
+	private int releaseYear;
+	private double rating;
+	
+	public Movie() {
+		this("No Title", 120, 2014, 0.0);
+	}
+	
+	public Movie(String title, int duration, int releaseYear) {
+		this(title, duration, releaseYear, 0.0);
+	}
+	
+	public Movie(String title, int duration, int releaseYear, double rating){
+		this.setTitle(title);
+		this.setDuration(duration);
+		this.setReleaseYear(releaseYear);
+		this.setRating(rating);
+	}
+	
+	public String getTitle(){
+		return title;
+	}
+	
+	public void setTitle(String newTitle) {
+		this.title = newTitle;
+	}
+	
+	public int getDuration(){
+		return duration;
+	}
+	
+	public void setDuration(int newDuration){
+		if(newDuration > 0) {
+			this.duration = newDuration;
+		} else {
+			System.out.println("Invalid duration");
+		}
+	}
+	
+	public int getReleaseYear(){
+		return releaseYear;
+	}
+	
+	public void setReleaseYear(int newReleaseYear) {
+		if(newReleaseYear > 0) {
+			this.releaseYear = newReleaseYear;
+		} else {
+			System.out.println("Invalid year");
+		}
+	}
+	
+	public double getRating(){
+		return rating;
+	}
+	
+	public void setRating(double newRating){
+		if(this.rating < 0.0 || this.rating > 4.0) {
+			System.out.println("Invalid rating input");
+		} else {
+			this.rating = newRating;
+		}
+	}
+	
+	public String toString() {
+		return String.format("%-15s %-4f Released %-4d %-5dminutes", 
+				title, rating, releaseYear, duration);
+	}
+}

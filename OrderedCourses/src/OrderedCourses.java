@@ -19,6 +19,12 @@ public class OrderedCourses {
 		printOut(sortByLastName(courseList));
 	}
 	
+	public static void printOut( Course[] courseList) {
+		for(int i = 0; i < courseList.length; i++){
+			System.out.println(courseList[i].getInstructor());
+		}
+	}
+	
 	public static Course[] sortByLastName(Course[] courseList) {
 		
 		int i;
@@ -39,10 +45,8 @@ public class OrderedCourses {
 		return courseList;
 	}
 	
-	public static void printOut( Course[] courseList) {
-		for(int i = 0; i < courseList.length; i++){
-			System.out.println(courseList[i].getInstructor());
-		}
+	public static Course[] sortByCapacity(Course[] courseList){
+		return courseList;
 	}
 
 }

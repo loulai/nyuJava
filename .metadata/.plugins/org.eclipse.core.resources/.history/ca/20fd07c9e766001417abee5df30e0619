@@ -1,0 +1,27 @@
+package hw7;
+
+public class TestMovie {
+	
+	public static void main(String[] args) {
+		Movie m1 = new Movie();
+		Movie m2 = new Movie("Game of Thrones The Movie", 120, 2015, 5.0);
+//		Movie m3 = new Movie();
+//		Movie m4 = new Movie();
+//		Movie m5 = new Movie();
+//		Movie m6 = new Movie();
+//		Movie m7 = new Movie();
+//		Movie m8 = new Movie();
+//		Movie m9 = new Movie();
+		
+		Movie[] moviesList = {m1,m2};
+		
+		printMovies(moviesList);
+	}
+	
+	public static void printMovies(Movie[] arrayOfMovies){
+		for(int i = 0; i < arrayOfMovies.length; i++){
+			System.out.println(arrayOfMovies[i]);
+		}
+	
+}
+
