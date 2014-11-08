@@ -120,8 +120,7 @@ public class Course {
 	 */
 	@Override
 	public String toString() {
-		return String.format("%-25s %-15s %3d/%3d", 
-				name+"["+courseCode+"]", instructor, numOfStudents, capacity);
-		
+		return String.format("%-25s %-15s %5d/%-5d", 
+				name+" ["+courseCode+"]", instructor, numOfStudents, capacity);
 	}
 }
