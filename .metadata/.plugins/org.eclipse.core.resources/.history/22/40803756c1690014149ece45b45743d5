@@ -10,7 +10,7 @@ public class Main {
 class Car {
 	double value = 2.0;
 	
-	public Car(){
+	public Car(double value){
 		value = value;
 	}
 }

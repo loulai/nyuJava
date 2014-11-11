@@ -1,0 +1,15 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		String digits = "012345";
+		char[] myArray = digits.toCharArray();
+		
+		for (int i = 0; i < myArray.length; i++){
+			if (myArray[i]%2 == 0){
+				System.out.println(myArray[i]);
+			}
+		}
+		
+	}
+}
