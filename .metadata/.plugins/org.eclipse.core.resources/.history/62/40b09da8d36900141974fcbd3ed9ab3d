@@ -1,0 +1,10 @@
+
+public class Another {
+	
+	public static void main(String[] args){
+		Class myClass = new Class();
+		System.out.println(myClass.i);
+		System.out.println(myClass.s);
+	}
+}
+

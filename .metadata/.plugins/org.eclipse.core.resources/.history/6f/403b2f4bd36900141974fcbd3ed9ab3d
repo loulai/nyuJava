@@ -1,0 +1,22 @@
+
+public class Another {
+	
+	public static void main(String[] args){
+		Foo newFoo = new Foo();
+	}
+}
+	
+	public class Foo{
+		int i = 0;
+		public static String s = "hello";
+		
+		public Foo(){
+			this.i = 0;
+		}
+		
+		public Foo(int input) {
+			this.i = input;
+		}
+
+
+}

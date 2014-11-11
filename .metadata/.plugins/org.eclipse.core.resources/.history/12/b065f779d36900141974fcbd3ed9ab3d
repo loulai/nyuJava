@@ -1,0 +1,13 @@
+
+public class Class {
+		int i = 0;
+		public static String s = "hello";
+		
+		public Class(){
+			this.i = 0;
+		}
+		
+		public Class(int input) {
+			this.i = input;
+		}
+}

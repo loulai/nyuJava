@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		int number = 3;
+		int number = 0;
 		int[] numbers = new int[1];
-		numbers[0] = 5;
+		numbers[0] = 0;
 		m(number, numbers);
 		System.out.println("number is " + number + " and numbers[0] is " + numbers[0]);
 		

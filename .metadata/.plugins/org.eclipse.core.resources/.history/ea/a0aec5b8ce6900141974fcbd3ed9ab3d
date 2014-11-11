@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		int number = 3;
+		int number = 0;
 		int[] numbers = new int[1];
 		numbers[0] = 5;
 		m(number, numbers);
