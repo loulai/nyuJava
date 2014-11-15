@@ -1,0 +1,23 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		int[] num = {1,0,3,5,2,1,19,3,1,4,39,-49,4};	
+		bubbleSort(num);
+		for(int i =0; i < num.length; i++)
+		{
+			System.out.printf("%3d", num[i]);
+		}
+	}
+	
+	public static int[] bubbleSort(int[] num) {
+		
+		boolean again = true;
+		int i;
+		
+		
+		return num;
+	}
+	
+
+}
