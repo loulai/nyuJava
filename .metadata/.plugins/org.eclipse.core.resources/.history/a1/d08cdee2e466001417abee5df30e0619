@@ -1,6 +1,0 @@
-package hw7;
-
-public class TestMovie {
-	Movie myMovie = new Movie();
-	System.out.println(myMovie);
-}
