@@ -23,15 +23,11 @@ public class Matrix {
  * - getNumRows, getNumColumns
  * - all matrix methods
  * - toString()
- * - add(matrix) <so this is an instance method> return boolean
+ * - add(matrix) <so this is an instance method>
  * - multiply(3) <another instance method>
  */
 
 /** DRIVER
- * - construct > 1) with valid 2)3) row/col too small 4)5) row/col too large
- * - all of which is proven my getnumrows/columns
- * - perform all matrix transformations
- * - perform invalid addtion <expect return false>
- * - perform correct multiplication <pos,neg,zero>
- * - 
+ * 
+ * 
  */
