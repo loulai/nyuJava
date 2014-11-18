@@ -1,14 +1,29 @@
 package hw8matrix;
 
 public class Matrix {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	private int row;
+	private int column;
+	private int[][] rawMatrix;
+	
+	public Matrix(int row, int column){
+		this.row = row;
+		this.column = column;
+		int[][] matrix = new int[row][column];
+		for(int i = 0; i < row; i++) {
+			for(int j = 0; j< column; j++) {
+				matrix[i][j] = (int) (Math.random() * 21) - 10;
+				}
+			}
+		this.rawMatrix = matrix;
 	}
 	
-	public Matrix(){
-		
+	public int getNumOfRows(){
+		return row;
+	}
+	
+	public int getNumOfColumn(){
+		return column;
 	}
 
 }
