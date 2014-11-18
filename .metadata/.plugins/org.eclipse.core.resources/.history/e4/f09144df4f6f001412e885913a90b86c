@@ -11,6 +11,7 @@ public class Matrix {
 		//testing and printing horizontal flip
 		System.out.println();
 		System.out.print(myMatrix.horizontalFlip());
+		System.out.print(myMatrix);
 	}
 	
 

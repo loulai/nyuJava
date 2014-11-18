@@ -7,10 +7,8 @@ public class Matrix {
 		System.out.println("Rows    : " + myMatrix.getNumOfRows());
 		System.out.println("Columns : " + myMatrix.getNumOfColumns());
 		System.out.print(myMatrix);
-		
-		//testing and printing horizontal flip
-		System.out.println();
 		System.out.print(myMatrix.horizontalFlip());
+		System.out.print(myMatrix);
 	}
 	
 

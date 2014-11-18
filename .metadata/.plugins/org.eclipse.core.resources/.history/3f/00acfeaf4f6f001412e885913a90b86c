@@ -7,10 +7,6 @@ public class Matrix {
 		System.out.println("Rows    : " + myMatrix.getNumOfRows());
 		System.out.println("Columns : " + myMatrix.getNumOfColumns());
 		System.out.print(myMatrix);
-		
-		//testing and printing horizontal flip
-		System.out.println();
-		System.out.print(myMatrix.horizontalFlip());
 	}
 	
 
@@ -43,17 +39,17 @@ public class Matrix {
 	 * @param matrix a two-dimensional array (the matrix)
 	 * @return       the two-dimensional array that has been flipped horizontally
 	 */
-	public Matrix horizontalFlip() {
+	public Matrix horizontalFlip(Matrix m) {
         int[][] newMatrix = new int[numOfRows][numOfColumns]; //generating a two dimensional array filled with zeros that is the same size as original matrix
 		
 		for(int i = 0; i < numOfRows; i++) { //outer runs #row times and inner runs #column times
 			for(int k = 0; k < numOfColumns; k++){ //within a row, it's the last column that gets assigned a value first, because the equation (columnSize - 1 -j) is largest the first time the inner 
-				newMatrix[i][numOfColumns - 1 -k] = rawMatrix[i][k];  //loop runs. e.g. [0][2], [0][1], [0][0] then outerloop runs again then it does the same thing
+				newMatrix[i][numOfColumns - 1 -k] = m.rawMatrix[i][k];  //loop runs. e.g. [0][2], [0][1], [0][0] then outerloop runs again then it does the same thing
 															     //but for the second row this time e.g. [1][2], [1][1], [1][2]
 			}
 		}
 		rawMatrix = newMatrix; //assigning it so that the old matrix is actually changed
-		return this; //returns the Matrix object
+		return m; //returns the Matrix object
 	}
 	
 	
