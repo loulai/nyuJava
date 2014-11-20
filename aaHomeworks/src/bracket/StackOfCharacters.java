@@ -159,6 +159,7 @@ public class StackOfCharacters {
 		if(empty()){
 			return "=== Stack Empty ===";
 		}
+		
 		StringBuilder s = new StringBuilder();
 		s.append("bottom [");
 		//add all elements to the output string

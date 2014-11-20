@@ -1,0 +1,13 @@
+package bracket;
+
+public class BracketValidator {
+
+	public static void main(String[] args) {
+		
+		String input = args.toString();
+	
+		
+
+	}
+
+}
