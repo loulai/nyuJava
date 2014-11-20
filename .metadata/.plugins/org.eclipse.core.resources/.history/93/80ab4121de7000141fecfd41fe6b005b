@@ -1,0 +1,11 @@
+package bracket;
+
+public class BracketValidator {
+
+	public static void main(String[] args) {
+		StackOfCharacters myStack = new StackOfCharacters();
+		System.out.print(myStack);
+
+	}
+
+}

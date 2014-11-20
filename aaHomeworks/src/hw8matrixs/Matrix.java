@@ -10,6 +10,10 @@ public class Matrix {
 		Matrix myMatrix = new Matrix(2,2);
 		System.out.print(myMatrix);
 		
+//		myMatrix.multiplyBy(3);
+//		System.out.println();
+//		System.out.print(myMatrix);
+		
 //		//testing for add, works
 //		Matrix newMatrix = new Matrix(1,2);
 //		System.out.println();
@@ -129,6 +133,20 @@ public class Matrix {
 		this.numOfColumns = temp;
 		return this;
 	}
+	
+	
+	/** modifies the current Matrix to be a multiplication of an integer, taken as an argument.
+	 * @param x  integer taken as the multiplication number
+	 * @return   the modified, multiplied Matrix
+	 */
+	public Matrix multiplyBy(int x){
+		for(int i = 0; i < numOfRows; i++){
+			for(int k = 0; k < numOfColumns; k++){
+				this.rawMatrix[i][k] = this.rawMatrix[i][k] * x; //multiplying each element with the inner array by the integer passed and replacing the old values for new
+			}
+		}
+		return this;	
+	}
 
 	/**changes the current Matrix to the sum of itself and another matrix (if compatible). Returns true/false if 'addable' or not.
 	 * @param otherMatrix Object of the Matrix class that you want to add onto a Matrix
@@ -151,6 +169,7 @@ public class Matrix {
 		}
 		return addable;
 	}
+
 	
 	
 	/**overides default toString() method
@@ -171,16 +190,8 @@ public class Matrix {
 }
 
 /** constructor with 2 params, row column
- * - fill with random generated numbers (1-10)
- * - 1-5 inclusive
- * - if < 0, then default to one
- * - if < 5, default to 5
- * - 
- * 
- * - getNumRows, getNumColumns
+
  * - all matrix methods
- * - toString()
- * - add(matrix) <so this is an instance method> return boolean
  * - multiply(3) <another instance method>
  */
 
