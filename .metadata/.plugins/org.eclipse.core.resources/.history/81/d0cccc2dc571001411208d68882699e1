@@ -41,7 +41,7 @@ public class BracketValidator {
 		 }
 		System.out.println(myStack);
 		if (myStack.empty()) return true; //once again, a valid expression is empty because (in loose terms) all closing 
-		                                  //and opening brackets should cancel each other out through 'pushing' and 'popping' the same amount of times
+		                                  //and opening brackets should cancel each other out through 'pushing' and 'popping' the same amout of times
 		else return false; //if there is anything left, it indicates there wasn't something to pop it out, so the expression is invalid
 	}
 
