@@ -3,15 +3,14 @@ package bracket;
 public class BracketValidator {
 
 	public static void main(String[] args) {
-		 if(validate(args)) System.out.println("==== V A L I D ====");
-		 else System.out.println("==== I N V A L I D :( ====");
+		 System.out.println(validate(args));
 	}
 
 	private static boolean validate(String[] inputStringArray) {
 		StackOfCharacters myStack = new StackOfCharacters();
 		char[] inputChars = inputStringArray[0].toCharArray();
 		for(int i = 0; i < inputChars.length; i++){
-			System.out.println(i + ". " + inputChars[i] +" | Top of loop | looks like:  " + myStack);
+			System.out.println(i + ". " + inputChars[i] +" | Top of loop | looks like:" + myStack);
 			switch (inputChars[i]){
 				case '(': 
 					myStack.push('(');
@@ -20,11 +19,10 @@ public class BracketValidator {
 	
 				case ')': 
 					if(myStack.empty()){
-						myStack.push(')');
-						System.out.println(myStack);
+						System.out.println("invalid! empty stack");
 					} else if (myStack.peek() == '(') {
+						System.out.println("We hit a close! Stack looks like:" + myStack);
 						myStack.pop();
-						System.out.println("We hit a close! Stack looks like: " + myStack);
 					}
 					break;
 			}

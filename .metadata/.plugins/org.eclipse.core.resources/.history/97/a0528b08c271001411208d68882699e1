@@ -3,8 +3,7 @@ package bracket;
 public class BracketValidator {
 
 	public static void main(String[] args) {
-		 if(validate(args)) System.out.println("==== V A L I D ====");
-		 else System.out.println("==== I N V A L I D :( ====");
+		 System.out.println(validate(args));
 	}
 
 	private static boolean validate(String[] inputStringArray) {
@@ -20,8 +19,7 @@ public class BracketValidator {
 	
 				case ')': 
 					if(myStack.empty()){
-						myStack.push(')');
-						System.out.println(myStack);
+						System.out.println("who");
 					} else if (myStack.peek() == '(') {
 						myStack.pop();
 						System.out.println("We hit a close! Stack looks like: " + myStack);
