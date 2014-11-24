@@ -1,0 +1,84 @@
+package hw8matrixs;
+
+public class TestMatrix {
+
+	public static void main(String[] args) {
+		
+		Matrix vanilla = new Matrix(3,3);
+		
+		Matrix tooSmallRow = new Matrix(-100,3);
+		Matrix tooSmallColumn = new Matrix(5, 0);
+		
+		Matrix tooLargeRow = new Matrix(99, 3);
+		Matrix tooLargeColumn = new Matrix(5, 69);
+		
+		Matrix hFlipped = new Matrix(4,5).horizontalFlip();
+		Matrix vFlipped = new Matrix(3,4).verticalFlip();
+		Matrix transposed1 = new Matrix(3,2).transpose();
+		Matrix transposed2 = new Matrix(1,1).transpose();
+		Matrix transposed3 = new Matrix(5,5).transpose();
+		
+		Matrix m1 = new Matrix(3,3);
+		Matrix m2 = new Matrix(3,3);
+		Matrix m3 = new Matrix(4,4);
+		
+		System.out.println("=== valid addition, m1 + m2 ===\nm1 before add():\n" + m1);
+		System.out.println("m2 before add() :\n" + m2);
+		if(m1.add(m2)){
+			System.out.println("m1 and m2 after add():\n" + m1);
+			System.out.println(m2);
+		}
+		
+		System.out.println("=== invalid additon, m2 + m3 ===\nm2 before add():\n" + m2);
+		System.out.println("m3 before add() :\n" + m3);
+		if(m2.add(m3) == false){
+			System.out.println("m2 and m3 after add():\n" + m2);
+			System.out.println(m3);
+		}
+		
+		Matrix m4 = new Matrix(3,3);
+		System.out.println("m4 original\n:" + m4);
+		System.out.println("m4 multiplied by 3 (positive number)\n:" + m4);
+		
+//		Matrix m5 = new Matrix(3,3).multiplyBy(x);
+//		Matrix m6 = new Matrix(3,3).multiplyBy(x);
+		
+		
+		
+//		myMatrix.multiplyBy(3);
+//		System.out.println();
+//		System.out.print(myMatrix);
+		
+//		//testing for add, works
+//		Matrix newMatrix = new Matrix(1,2);
+//		System.out.println();
+//		System.out.print(newMatrix);
+//		System.out.println();
+//		System.out.print(myMatrix.add(newMatrix));
+//		System.out.println();
+//		System.out.print(myMatrix);
+		
+//		System.out.println();
+//		System.out.print(myMatrix.transpose());
+//		
+//		//testing and printing vertical flip
+//		System.out.println();
+//		System.out.print(myMatrix.verticalFlip());
+		
+//		//testing and printing horizontal flip
+//		System.out.println();
+//		System.out.print(myMatrix.horizontalFlip());
+
+	}
+
+}
+
+
+/** DRIVER
+ * - construct > 1) with valid 2)3) row/col too small 4)5) row/col too large
+ * - all of which is proven my getnumrows/columns
+ * - perform all matrix transformations
+ * - perform invalid addtion <expect return false>
+ * - perform correct multiplication <pos,neg,zero>
+ * - 
+ */

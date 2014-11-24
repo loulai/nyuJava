@@ -1,0 +1,87 @@
+package hw8matrixs;
+
+public class TestMatrix {
+
+	public static void main(String[] args) {
+		 
+		//valid matrix
+		Matrix vanilla = new Matrix(3,3);
+		
+		//small row/column
+		Matrix tooSmallRow = new Matrix(-100,3);
+		Matrix tooSmallColumn = new Matrix(5, 0);
+		
+		//large row/column
+		Matrix tooLargeRow = new Matrix(99, 3);
+		Matrix tooLargeColumn = new Matrix(5, 69);
+		
+		//horizontally flipping
+		Matrix hFlipped = new Matrix(4,5).horizontalFlip();
+		
+		//vertically flipping
+		Matrix vFlipped = new Matrix(3,4).verticalFlip();
+		Matrix transposed1 = new Matrix(3,2).transpose();
+		
+		//transposing
+		Matrix transposed2 = new Matrix(1,1).transpose();
+		Matrix transposed3 = new Matrix(5,5).transpose();
+		
+		/*adding valid and invalid matrices*/
+		Matrix m1 = new Matrix(3,3);
+		Matrix m2 = new Matrix(3,3);
+		Matrix m3 = new Matrix(4,4);
+		
+		//valid addition
+		System.out.println("=== valid addition, m1 + m2 ===\nm1 before add():\n" + m1);
+		System.out.println("m2 before add() :\n" + m2);
+		if(m1.add(m2)){
+			System.out.println("m1 and m2 after add():\n" + m1);
+			System.out.println(m2);
+		}
+		
+		//invalid addition 
+		System.out.println("=== invalid additon, m2 + m3 ===\nm2 before add():\n" + m2);
+		System.out.println("m3 before add() :\n" + m3);
+		if(m2.add(m3) == false){
+			System.out.println("m2 and m3 after add():\n" + m2);
+			System.out.println(m3);
+		}
+		
+		//multiplication, positive number
+		Matrix m4 = new Matrix(3,3);
+		System.out.println("== m4 original:\n" + m4);
+		System.out.println("=> m4 * 3 (positive number):\n" + m4.multiplyBy(3));
+		
+		//multiplication, negative number
+		Matrix m5 = new Matrix(3,3);
+		System.out.println("== m5 original:\n" + m5);
+		System.out.println("=> m5 * -2 (negative number):\n" + m5.multiplyBy(-2));
+		
+		//multiplication, zero
+		Matrix m6 = new Matrix(4,4);
+		System.out.println("== m6 original:\n" + m6);
+		System.out.println("=> m6 * 0 (zero):\n" + m6.multiplyBy(0));
+		
+		//multiplication, one (should be unchanged)
+		Matrix m7 = new Matrix(2,3);
+		System.out.println("== m7 original:\n" + m7);
+		System.out.println("=> m7 * 1:\n" + m7.multiplyBy(1));
+		
+		//multiplication, negative one (makes negative)
+		Matrix m8 = new Matrix(2,1);
+		System.out.println("== m8 original:\n" + m8);
+		System.out.println("=> m8 * -1:\n" + m8.multiplyBy(-1));
+
+	}
+
+}
+
+
+/** DRIVER
+ * - construct > 1) with valid 2)3) row/col too small 4)5) row/col too large
+ * - all of which is proven my getnumrows/columns
+ * - perform all matrix transformations
+ * - perform invalid addtion <expect return false>
+ * - perform correct multiplication <pos,neg,zero>
+ * - 
+ */

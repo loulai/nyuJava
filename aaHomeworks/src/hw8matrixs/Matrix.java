@@ -1,45 +1,19 @@
 package hw8matrixs;
 
-/**
- * @author louiselai
- *
+/** Description: This class represents a Matrix class. It takes two int parameters (row size, column size) and generates a 2D array which is interpreted as a matrix.
+ *  Created on: 18th November 2014
+ * @author loulai
  */
 public class Matrix {
 	
 	public static void main(String[] args){
 		Matrix myMatrix = new Matrix(2,2);
 		System.out.print(myMatrix);
-		
-//		myMatrix.multiplyBy(3);
-//		System.out.println();
-//		System.out.print(myMatrix);
-		
-//		//testing for add, works
-//		Matrix newMatrix = new Matrix(1,2);
-//		System.out.println();
-//		System.out.print(newMatrix);
-//		System.out.println();
-//		System.out.print(myMatrix.add(newMatrix));
-//		System.out.println();
-//		System.out.print(myMatrix);
-		
-//		System.out.println();
-//		System.out.print(myMatrix.transpose());
-//		
-//		//testing and printing vertical flip
-//		System.out.println();
-//		System.out.print(myMatrix.verticalFlip());
-		
-//		//testing and printing horizontal flip
-//		System.out.println();
-//		System.out.print(myMatrix.horizontalFlip());
 	}
 	
-
 	private int numOfRows;
 	private int numOfColumns;
 	private int[][] rawMatrix;
-	
 	
 	/** Constructor that generates a matrix with rows & cols between 1-5 inclusive, else reverts to either 1 (too small) or 5 (too large)
 	 * @param row     desired number of rows
@@ -49,7 +23,7 @@ public class Matrix {
 	
 		//the following two if statements catch when a number too large or too small is passed as an argument
 		if(row <= 0) this.numOfRows = 1; //if 0 or negative, make it 1
-		else if (row > 5) this.numOfColumns = 5; //larger than 5? make it 5
+		else if (row > 5) this.numOfRows = 5; //larger than 5? make it 5
 		
 		if(column <= 0) this.numOfColumns = 1; //same logic as rows
 		else if (column > 5) this.numOfColumns = 5;
@@ -69,14 +43,14 @@ public class Matrix {
 	}
 	
 	
-	/**
+	/** getter for number of rows
 	 * @return data field of how many rows are in the matrix (i.e. how many arrays)
 	 */
 	public int getNumOfRows(){
 		return numOfRows;
 	}
 	
-	/**
+	/** getter for number of columns
 	 * @return data field of how many cols are in the matrix (i.e. how many elements within one array)
 	 */
 	public int getNumOfColumns(){
@@ -84,7 +58,7 @@ public class Matrix {
 	}
 	
 	
-	/**
+	/** flips the values within the matrix horizontally
 	 * @return the modified, horizontally flipped object of Matrix class
 	 */
 	public Matrix horizontalFlip() {
@@ -100,7 +74,7 @@ public class Matrix {
 		return this; //returns the Matrix object
 	}
 	
-	/**
+	/** flips the values within the matrix vertically
 	 * @return the modified, vertically flipped object of Matrix class
 	 */
 	public Matrix verticalFlip() { //logic is the same as method horizontalFlip(), except for column and rows are switched
@@ -113,7 +87,7 @@ public class Matrix {
 		rawMatrix = newMatrix;
 		return this;
 	}
-	/**
+	/** transposes the values within the matrix, and also modifies the dimensions of the matrix
 	 * @return the modified, transposed object of Matrix class. Matrix now has different dimensions; the row is swapped for cols and vie versa
 	 */
 	public Matrix transpose(){
@@ -170,16 +144,14 @@ public class Matrix {
 		return addable;
 	}
 
-	
-	
-	/**overides default toString() method
-	 * @return  Formatted String representation of a Matrix.
+	/**overrides default toString() method
+	 * @return  Formatted String representation of a Matrix
 	 */
 	public String toString(){
 		String myString = ""; //must have a value, even if null, to be properly initialized
 		for(int i = 0; i < numOfRows; i++){ //looping through #row times
 			for(int k = 0; k < numOfColumns; k++){  //looping through #column times
-				myString = myString + String.format("%4d |", rawMatrix[i][k]); //goes through each element of the inner array (i.e. each "column" for the row), and adds
+				myString = myString + String.format("%4d ", rawMatrix[i][k]); //goes through each element of the inner array (i.e. each "column" for the row), and adds
 				                                                               // it to the string
 			}
 		 myString = myString + "\n"; //adds line break after the end of each row's iteration, to make it look like a matrix
@@ -189,19 +161,5 @@ public class Matrix {
 
 }
 
-/** constructor with 2 params, row column
-
- * - all matrix methods
- * - multiply(3) <another instance method>
- */
-
-/** DRIVER
- * - construct > 1) with valid 2)3) row/col too small 4)5) row/col too large
- * - all of which is proven my getnumrows/columns
- * - perform all matrix transformations
- * - perform invalid addtion <expect return false>
- * - perform correct multiplication <pos,neg,zero>
- * - 
- */
 
 
