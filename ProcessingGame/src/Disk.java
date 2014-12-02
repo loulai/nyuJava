@@ -21,8 +21,8 @@ class Disk {
 			y = canvas.random(0, canvas.height);
 			rx = 60;
 			ry = 60;
-			xSpeed = canvas.random(-10, 10 );
-			ySpeed = canvas.random(-10, 10 );
+			xSpeed = canvas.random(-1, 1 );
+			ySpeed = canvas.random(-1, 1 );
 			
 			int valueChooser = (int)((Math.random() * 4) + 1);
 			

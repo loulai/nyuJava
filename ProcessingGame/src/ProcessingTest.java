@@ -5,6 +5,7 @@ public class ProcessingTest extends PApplet {
 	int timeCounter = 0;
 	Disk[] totalDisks = new Disk[8];
 	int score = 0;
+	int counter = 0;
 	
 	public void setup() {
 		
@@ -37,6 +38,16 @@ public class ProcessingTest extends PApplet {
 					if(mouseX >= (d.getX() - 30) && mouseX <= (d.getX() + 30) && mouseY >= (d.getY() - 30) && mouseY <= (d.getY() + 30)){
 						score = score + d.getValue();
 						d.setNewCoordinates();
+						Disk[] newDisks = new Disk[totalDisks.length - 1];
+						
+						for (int k = 0; k < totalDisks.length; k++){
+							if (i != k){
+								newDisks[counter] = totalDisks[k];
+								counter++;
+							}
+						}
+						totalDisks = newDisks;
+						counter = 0;
 					}
 				}
 				text(score, 70,70);
