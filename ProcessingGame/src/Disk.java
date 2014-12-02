@@ -60,7 +60,6 @@ class Disk {
 		}
 		
 		private void changeShape () {
-
 			float tmp = rx;
 			rx = ry;
 			ry = tmp;
