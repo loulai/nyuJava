@@ -36,7 +36,7 @@ public class ProcessingTest extends PApplet {
 				textAlign(CENTER);
 				text(d.getValue(), d.getX(), d.getY());
 				
-				if(timeCounter > 400){
+				if(timeCounter > 400) {
 					d.moveQuicker();
 				}
 				

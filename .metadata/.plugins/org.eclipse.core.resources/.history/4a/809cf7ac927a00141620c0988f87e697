@@ -21,7 +21,7 @@ public class ProcessingTest extends PApplet {
 	
 	long startTime = System.currentTimeMillis();
 	public void draw() {
-		if (timeCounter < 5000) {
+		if (timeCounter < 1000) {
 			
 			background(100,100,100);	
 			
@@ -36,17 +36,11 @@ public class ProcessingTest extends PApplet {
 				textAlign(CENTER);
 				text(d.getValue(), d.getX(), d.getY());
 				
-				if(timeCounter > 400){
-					d.moveQuicker();
-				}
 				
-//				
-//				if(timeSince(startTime) % 2000 <= 4 && printCounter == 0){
-//					printCounter ++;
-//					System.out.println("hello " + printCounter);
-//				}
-//				
-//				printCounter = 0;
+				if(timeSince(startTime) % 2000 == 0 && printCounter == 0){
+					printCounter ++;
+					System.out.println("hello");
+				}
 				
 				
 //				boolean again = true;
