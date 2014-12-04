@@ -14,11 +14,11 @@ public class Movie {
 //		throws IllegalArgumentException;
 		this.title = title;
 		this.rating = rating;
-		setYear(year);
+		if(year >= 1870 && year <= 2014) this.year = year;
+		else throw new IllegalArgumentException("Invalid Year");
 	}
 	
 	public void setYear(int year){
-//		throws IllegalArgumentException;
 		if(year >= 1870 && year <= 2014) this.year = year;
 		else throw new IllegalArgumentException("Invalid Year");
 	}

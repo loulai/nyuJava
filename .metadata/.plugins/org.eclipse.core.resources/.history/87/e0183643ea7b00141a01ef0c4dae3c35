@@ -18,7 +18,6 @@ public class Movie {
 	}
 	
 	public void setYear(int year){
-//		throws IllegalArgumentException;
 		if(year >= 1870 && year <= 2014) this.year = year;
 		else throw new IllegalArgumentException("Invalid Year");
 	}
