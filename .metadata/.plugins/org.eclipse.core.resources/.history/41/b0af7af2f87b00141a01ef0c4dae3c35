@@ -16,7 +16,7 @@ public class Movie {
 	public Movie(String title, int year, double rating) throws IllegalArgumentException{
 		this.quantity++;
 		this.title = title;
-		setRating(rating);
+		this.rating = rating;
 		setYear(year);
 	}
 	
@@ -28,35 +28,6 @@ public class Movie {
 	@Override
 	public String toString() {
 		return String.format("%-10s (%-4d), rating: %2.1f, number in stock: %4d", title, year, rating, quantity);
-	}
-	
-	public String getTitle(){
-		return this.title;
-	}
-	
-	public int getYear(){
-		return this.year;
-	}
-	
-	public double getRating() {
-		return this.rating;
-	}
-	
-	public void setRating(double otherRating) {
-		if(otherRating >= 0.0 && otherRating <= 4.0) this.rating = otherRating;
-		else throw new IllegalArgumentException("Invalid Rating");
-	}
-	
-	public void increaseQuantity() throws IllegalArgumentException{
-		this.quantity ++;
-	}
-	
-	public boolean exists(String otherMovieTitle, int otherMovieYear){
-		if(this.getTitle().compareToIgnoreCase(otherMovieTitle) == 0 && (this.getYear() == otherMovieYear)){
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 }

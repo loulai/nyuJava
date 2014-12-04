@@ -16,7 +16,7 @@ public class Movie {
 	public Movie(String title, int year, double rating) throws IllegalArgumentException{
 		this.quantity++;
 		this.title = title;
-		setRating(rating);
+		this.rating = rating;
 		setYear(year);
 	}
 	
@@ -43,11 +43,10 @@ public class Movie {
 	}
 	
 	public void setRating(double otherRating) {
-		if(otherRating >= 0.0 && otherRating <= 4.0) this.rating = otherRating;
-		else throw new IllegalArgumentException("Invalid Rating");
+		this.rating = otherRating;
 	}
 	
-	public void increaseQuantity() throws IllegalArgumentException{
+	public void increaseQuantity() {
 		this.quantity ++;
 	}
 	
