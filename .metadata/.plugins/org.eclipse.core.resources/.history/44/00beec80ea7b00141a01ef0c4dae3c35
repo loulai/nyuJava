@@ -11,6 +11,7 @@ public class Movie {
 	}
 	
 	public Movie(String title, int year, double rating) throws IllegalArgumentException{
+		throws IllegalArgumentException;
 		this.title = title;
 		this.rating = rating;
 		setYear(year);
@@ -20,5 +21,6 @@ public class Movie {
 		if(year >= 1870 && year <= 2014) this.year = year;
 		else throw new IllegalArgumentException("Invalid Year");
 	}
+	//else throw newIllegalArgumentException("Invalid YEar");
 
 }

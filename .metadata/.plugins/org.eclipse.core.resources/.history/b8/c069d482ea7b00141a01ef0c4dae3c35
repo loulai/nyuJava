@@ -20,5 +20,6 @@ public class Movie {
 		if(year >= 1870 && year <= 2014) this.year = year;
 		else throw new IllegalArgumentException("Invalid Year");
 	}
+	//else throw newIllegalArgumentException("Invalid YEar");
 
 }
