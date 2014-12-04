@@ -21,8 +21,15 @@ public class ProcessingTest extends PApplet {
 	
 	long startTime = System.currentTimeMillis();
 	public void draw() {
+		long endTime = System.currentTimeMillis();
+		timeCounter ++;
 		if (timeCounter < 5000) {
 			
+//			if(timeCounter % 1000 > 0){
+//				System.out.println(timeCounter);
+//			}
+			
+			System.out.println(endTime - startTime);
 			background(100,100,100);	
 			
 			for(int i = 0; i < totalDisks.length; i ++) {
