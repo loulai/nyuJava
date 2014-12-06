@@ -2,14 +2,11 @@
 public class Test {
 
 	public static void main(String[] args) {
-		long startTime = System.currentTimeMillis();
 		
-		for(int i = 0; i < 100; i++ ){
-			
+		for(int i = 0; i < 130; i++){
+			int cSeed = (int)(Math.random() * 4);
+			System.out.println(cSeed);
 		}
-		
-		long endTime = System.currentTimeMillis();
-		
-		System.out.println(startTime - endTime);
 	}
+		
 }
