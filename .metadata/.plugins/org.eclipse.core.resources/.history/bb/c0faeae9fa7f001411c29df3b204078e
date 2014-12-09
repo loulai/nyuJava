@@ -8,8 +8,7 @@ public class Inventory {
 	
 	public static void main(String[] args) {
 		Inventory movieList = new Inventory();
-		Movie birdman = new Movie("Birdman", 2014, 3.7);
-		movieList.list.returnMovie("Birdman", 2014, 3.7);
+		movieList.list.add(new Movie("Birdman", 2014, 3.7));
 		movieList.list.add(new Movie("Batman", 1989, 3.2));
 		movieList.list.add(new Movie("King Kong", 1993, 3.8));
 		
@@ -38,11 +37,9 @@ public class Inventory {
 				int moviePosition = list.indexOf(toBeReturned);
 				list.get(moviePosition).increaseQuantity();
 				list.get(moviePosition).setRating(rating);
-				System.out.println("movie exists!");
 			} else {
 				Movie createdMovie = new Movie(title, year, rating);
 				list.add(createdMovie);
-				System.out.println("movie aint there, new one created");
 			}
 		}
 	}
