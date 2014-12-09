@@ -1,5 +1,4 @@
 package hw10Netflix;
-import java.util.ArrayList;
 
 public class Movie {
 	
@@ -50,6 +49,14 @@ public class Movie {
 	
 	public void increaseQuantity() throws IllegalArgumentException{
 		this.quantity ++;
+	}
+	
+	public boolean exists(String otherMovieTitle, int otherMovieYear){
+		if(this.getTitle().compareToIgnoreCase(otherMovieTitle) == 0 && (this.getYear() == otherMovieYear)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }

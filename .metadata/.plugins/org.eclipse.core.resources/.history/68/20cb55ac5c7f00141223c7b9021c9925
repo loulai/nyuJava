@@ -9,17 +9,6 @@ public class Inventory {
 	public static void main(String[] args) {
 	}
 	
-	public static boolean exists(ArrayList<Movie> arrayOfMovies, String otherMovieTitle, int otherMovieYear){
-		boolean exists = false;
-		for(int i =0; i < arrayOfMovies.size(); i++){
-			Movie m = arrayOfMovies.get(i);
-				if(m.getTitle().compareToIgnoreCase(otherMovieTitle) == 0 && (m.getYear() == otherMovieYear)){
-					exists = true;
-				} 
-		}
-		return exists;
-	}
-	
 	public void returnList(String title, int year, double rating){
 		for(int i = 0; i < movies.size(); i++){
 			if(movies.get(i).exists(title, year)){
@@ -37,11 +26,8 @@ public class Inventory {
 		}
 	}
 	
-	
 	public void rent(String title, int year){
-		if(exists(movies, title, year)){
-			
-		}
+		if()
 	}
 
 }
