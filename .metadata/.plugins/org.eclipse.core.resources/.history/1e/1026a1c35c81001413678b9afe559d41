@@ -27,6 +27,11 @@ public class Movie{
 		else throw new IllegalArgumentException("Invalid Year, must be between 1870 and 2014 inclusive");
 	}
 	
+	@Override
+	public String toString() {
+		return String.format("%-10s (%-4d), rating: %2.1f, number in stock: %4d", title, year, rating, quantity);
+	}
+	
 	public String getTitle(){
 		return this.title;
 	}
@@ -47,10 +52,4 @@ public class Movie{
 	public void increaseQuantity() throws IllegalArgumentException{
 		this.quantity ++;
 	}
-	
-	@Override
-	public String toString() {
-		return String.format("%-10s (%-4d), rating: %2.1f, number in stock: %4d", title, year, rating, quantity);
-	}
-	
 }

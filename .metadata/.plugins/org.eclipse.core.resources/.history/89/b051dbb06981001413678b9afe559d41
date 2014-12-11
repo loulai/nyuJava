@@ -31,24 +31,26 @@ public class Inventory {
 //		
 //	}
 	
-	public void add(String title, int year, double rating){ 
-		try{
-			for(int i = 0; i < list.size(); i++){
-				if(this.containsMovie(title, year)){
-					Movie matchingMovie = this.list.get(i);
-					matchingMovie.increaseQuantity(); //must be above setRating() because has to execute before the likelyhood of throwing and exception
-					matchingMovie.setRating(rating);
-				} else {
-						list.add(new Movie(title, year, rating));	
-				}
+	public void add(String title, int year) throws IllegalArgumentException{ 
+		for(int i = 0; i < list.size(); i++){
+			if(this.containsMovie(title, year)){
+				Movie matchingMovie = this.list.get(i)i;
+				matchingMovie.increaseQuantity();
+				
+				this.list.get(i).setRating(rating);
+			} else{
+				
 			}
-		} catch(IllegalArgumentException e){}
+		}
+		
 	}
 	
 	public boolean containsMovie(String title, int year){
+		Movie matchingMovie = null;
 		boolean isInInventory = false;
 		for (int i = 0; i < list.size(); i++){
 			if(this.list.get(i).getTitle() == title && this.list.get(i).getYear() == year){
+//				matchingMovie = this.list.get(i);
 				isInInventory = true;
 			} 
 		}
@@ -65,21 +67,21 @@ public class Inventory {
 //		return matchingMovie;
 //	}
 	
-//	public void returnList(String title, int year, double rating){
-//		for(int i = 0; i < list.size(); i++){
-//			if(list.get(i).exists(title, year)){
-//				list.get(i).increaseQuantity();
-//				
-//				try{
-//					list.get(i).setRating(rating);
-//				} catch (IllegalArgumentException e){
-//					System.out.println("Doing Nothing...");
-//				}
-//			} else {
-//				Movie newMovie = new Movie(title, year, rating);
-//				list.add(newMovie);
-//			}
-//		}
+	public void returnList(String title, int year, double rating){
+		for(int i = 0; i < list.size(); i++){
+			if(list.get(i).exists(title, year)){
+				list.get(i).increaseQuantity();
+				
+				try{
+					list.get(i).setRating(rating);
+				} catch (IllegalArgumentException e){
+					System.out.println("Doing Nothing...");
+				}
+			} else {
+				Movie newMovie = new Movie(title, year, rating);
+				list.add(newMovie);
+			}
+		}
 	}
 	
 	
