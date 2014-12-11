@@ -3,12 +3,11 @@ import java.util.ArrayList;
 
 public class Movie{
 	
-	//need to throw exceptions on setTitle()?
-	
 	private String title;
 	private int year;
 	private double rating;
 	private int quantity = 0;
+	
 
 	public static void main(String[] args) {
 		Movie jelly = new Movie("Adventures of Mr. Bean", 1994, 4.0);
@@ -24,7 +23,7 @@ public class Movie{
 	
 	public void setYear(int year) throws IllegalArgumentException{
 		if(year >= 1870 && year <= 2014) this.year = year;
-		else throw new IllegalArgumentException("Invalid Year, must be between 1870 and 2014 inclusive");
+		else throw new IllegalArgumentException("Invalid Year");
 	}
 	
 	@Override
@@ -44,9 +43,9 @@ public class Movie{
 		return this.rating;
 	}
 	
-	public void setRating(double otherRating) throws IllegalArgumentException{
+	public void setRating(double otherRating) {
 		if(otherRating >= 0.0 && otherRating <= 4.0) this.rating = otherRating;
-		else throw new IllegalArgumentException("Invalid Rating number, must be between 0 and 4 inclusive");
+		else throw new IllegalArgumentException("Invalid Rating");
 	}
 	
 	public void increaseQuantity() throws IllegalArgumentException{
