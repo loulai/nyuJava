@@ -10,11 +10,6 @@ public class Person {
 
 	}
 	
-	//why do I HAVE to this default constuctor in order for Student(String name) to work?
-//	public Person(){
-//		
-//	}
-	
 	public Person(String name){
 		this.name = name;
 	}

@@ -1,0 +1,23 @@
+package finalPractise;
+
+public class Student extends Person{
+	
+	private double GPA;
+
+	public static void main(String[] args) {
+		Student lou = new Student();
+		System.out.println(lou.getClass().getSimpleName());
+		System.out.println(lou.getClass().getCanonicalName());
+		System.out.println(lou.getClass().getName());
+		System.out.println(lou.getClass().getTypeName());
+	}
+	
+	public void setGPA(double newGPA){
+		this.GPA = newGPA;
+	}
+	
+//	public String toString(){
+//		return this.getClass().getCanonicalName();
+//	}
+
+}
