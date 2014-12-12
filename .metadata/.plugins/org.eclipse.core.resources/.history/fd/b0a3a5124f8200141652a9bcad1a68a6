@@ -55,7 +55,6 @@ public class Inventory {
 					Movie matchingMovie = this.list.get(i);
 					matchingMovie.increaseQuantity(); //must be above setRating() because has to execute before the likelyhood of throwing and exception
 					matchingMovie.setRating(rating);
-					System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
 				} else { //if it doesn't exist
 						list.add(new Movie(title, year, rating));	
 				}
@@ -73,7 +72,7 @@ public class Inventory {
 					} else { //the movie EXISTS and there are more than one of it, so decrease quantity instead of remove
 						matchingMovie.decreaseQuantity();
 						matchingMovie.setRating(rating); //reset rating
-						
+						System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
 					}
 				} else { //if movie DOESNT exist, add it to inventory
 						list.add(new Movie(title, year, rating));	

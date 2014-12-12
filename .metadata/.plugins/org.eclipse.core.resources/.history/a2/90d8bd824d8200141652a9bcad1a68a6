@@ -10,10 +10,6 @@ public class Inventory {
 	
 	public static void main(String[] args) {
 		Inventory movieList = new Inventory();
-		
-		/*
-		 * Begin section: reading text file and populating movieList
-		 */
 		java.io.File moviesDB = new java.io.File("/Users/louiselai/Desktop/Programming/workspace/aaHomeworks/bin/hw10Netflix/movies_db.txt"); //fetching the correct file
 		
 		try{ //surrounding the entire thing for the input potentially not existing, because of the file not existing
@@ -33,30 +29,19 @@ public class Inventory {
 		} catch (FileNotFoundException e1) {
 			System.out.println("==whoops, file not found==");
 		}
-		/*
-		 * End section: reading text file and populating movieList
-		 * Begin section: adding more movies
-		 */
-		
-		movieList.addMovie("Bears", 2014, 3.5);
-		movieList.addMovie("Star Wars - A New Hope", 1997, 3.8);
-		movieList.addMovie("Casablanca", 1942, 3.9);
-		movieList.addMovie("Duck Soup", 1933, 3.75);
-		System.out.println(movieList);
 	}
 	
 	public void addMovie(String title, int year, double rating){ 
 		try{
-//			if(this.list.size() == 0){ //for the very first time adding anything, when movieList is empty
-//				this.list.add(new Movie(title, year, rating));
-//			}
+			if(this.list.size() == 0){ //for the very first time adding anything
+				this.list.add(new Movie(title, year, rating));
+			}
 			for(int i = 0; i < list.size(); i++){
-				if(this.containsMovie(title, year)){ //if the movie exists in the inventory
+				if(this.containsMovie(title, year)){
 					Movie matchingMovie = this.list.get(i);
 					matchingMovie.increaseQuantity(); //must be above setRating() because has to execute before the likelyhood of throwing and exception
 					matchingMovie.setRating(rating);
-					System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
-				} else { //if it doesn't exist
+				} else {
 						list.add(new Movie(title, year, rating));	
 				}
 			}
@@ -73,7 +58,6 @@ public class Inventory {
 					} else { //the movie EXISTS and there are more than one of it, so decrease quantity instead of remove
 						matchingMovie.decreaseQuantity();
 						matchingMovie.setRating(rating); //reset rating
-						
 					}
 				} else { //if movie DOESNT exist, add it to inventory
 						list.add(new Movie(title, year, rating));	
@@ -85,7 +69,7 @@ public class Inventory {
 	public boolean containsMovie(String title, int year){
 		boolean isInInventory = false;
 		for (int i = 0; i < list.size(); i++){
-			if(this.list.get(i).getTitle().equals(title) && this.list.get(i).getYear() == year){
+			if(this.list.get(i).getTitle() == title && this.list.get(i).getYear() == year){
 				isInInventory = true;
 			} 
 		}
@@ -93,11 +77,14 @@ public class Inventory {
 	}
 	
 	public String toString(){
-		String finalString = "====================== LOOK AT ALL THESE MOVIES I HAVE NO TIME TO WATCH =======================\n";
+		String finalString = "=========================== LOOK AT ALL THESE MOVIES I HAVE NO TIME TO WATCH ===========================\n";
 		for(int i = 0; i < this.list.size(); i ++){
-			finalString = finalString + String.format("%3d. %-36s (%-4d), rating: %2.1f, number in stock: %3d \n", (i + 1),  list.get(i).getTitle(), list.get(i).getYear(), list.get(i).getRating(), list.get(i).getQuantity());
+			finalString = finalString + String.format("%3d. %-36s (%-4d), rating: %2.1f, number in stock: %4d \n", (i + 1),  list.get(i).getTitle(), list.get(i).getYear(), list.get(i).getRating(), list.get(i).getQuantity());
 		}
 		return finalString;
 	}
+
+	
+	
 
 }
