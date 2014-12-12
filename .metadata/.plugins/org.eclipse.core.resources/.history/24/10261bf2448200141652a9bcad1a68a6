@@ -1,10 +1,21 @@
 package hw10Netflix;
 import java.util.ArrayList;
 
-
-/** This class represents a single movie that will be used in the Inventory class
- * created on: December 8th 2014
- * @author loulai
+/**
+ * @author louiselai
+ *
+ */
+/**
+ * @author louiselai
+ *
+ */
+/**
+ * @author louiselai
+ *
+ */
+/**
+ * @author louiselai
+ *
  */
 public class Movie{
 	
@@ -13,6 +24,11 @@ public class Movie{
 	private double rating;
 	private int quantity = 0;
 
+	public static void main(String[] args) {
+//		Movie jelly = new Movie("Adventures of Mr. Bean", 1994, 4.0);
+//		System.out.println(jelly);
+	}
+	
 	/** Constructor method for Movie object that sets a movie's title, year, rating, and increases quantity
 	 * @param title  String title of movie
 	 * @param year   int    year the movie was made
@@ -26,6 +42,7 @@ public class Movie{
 		setYear(year);
 	}
 	
+	
 	/** setter for years
 	 * @param year  int year movie was made
 	 * @throws IllegalArgumentException
@@ -35,6 +52,7 @@ public class Movie{
 		else throw new IllegalArgumentException("Invalid Year, must be between 1870 and 2014 inclusive");
 	}
 	
+
 	/** getting for Movie title
 	 * @return String the title of the movie
 	 */

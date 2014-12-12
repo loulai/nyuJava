@@ -1,10 +1,21 @@
 package hw10Netflix;
 import java.util.ArrayList;
 
-
-/** This class represents a single movie that will be used in the Inventory class
- * created on: December 8th 2014
- * @author loulai
+/**
+ * @author louiselai
+ *
+ */
+/**
+ * @author louiselai
+ *
+ */
+/**
+ * @author louiselai
+ *
+ */
+/**
+ * @author louiselai
+ *
  */
 public class Movie{
 	

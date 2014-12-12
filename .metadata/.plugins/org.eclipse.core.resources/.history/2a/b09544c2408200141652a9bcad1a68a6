@@ -13,16 +13,11 @@ public class Inventory {
 		movieList.addMovie("Batman", 1989, 3.2);
 		movieList.addMovie("King Kong", 1993, 3.8);
 		System.out.println("hello");
-		System.out.println(movieList.list.size());
 		System.out.println(movieList);
-		System.out.println("helloq");
 	}
 	
 	public void addMovie(String title, int year, double rating){ 
 		try{
-			if(this.list.size() == 0){ //for the very first time adding anything
-				this.list.add(new Movie(title, year, rating));
-			}
 			for(int i = 0; i < list.size(); i++){
 				if(this.containsMovie(title, year)){
 					Movie matchingMovie = this.list.get(i);
@@ -64,9 +59,9 @@ public class Inventory {
 	}
 	
 	public String toString(){
-		String finalString = "================== LOOK AT ALL THESE MOVIES ==================\n";
+		String finalString = "";
 		for(int i = 0; i < this.list.size(); i ++){
-			finalString = finalString + String.format("%3d. %-10s (%-4d), rating: %2.1f, number in stock: %4d \n", (i + 1),  list.get(i).getTitle(), list.get(i).getYear(), list.get(i).getRating(), list.get(i).getQuantity());
+			finalString = finalString + String.format("%3d. %-10s (%-4d), rating: %2.1f, number in stock: %4d \n", i,  list.get(i).getTitle(), list.get(i).getYear(), list.get(i).getRating(), list.get(i).getQuantity());
 		}
 		return finalString;
 	}
