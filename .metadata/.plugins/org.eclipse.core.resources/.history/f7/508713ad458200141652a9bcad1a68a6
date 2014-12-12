@@ -9,7 +9,6 @@ public class Inventory {
 	public static void main(String[] args) {
 		Inventory movieList = new Inventory();
 		Movie birdman = new Movie("Birdman", 2014, 3.7);
-		movieList.addMovie("Birdman", 2014, 3.0);
 		movieList.addMovie("Batman", 1989, 3.2);
 		movieList.addMovie("King Kong", 1993, 3.8);
 	

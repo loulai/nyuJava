@@ -9,11 +9,13 @@ public class Inventory {
 	public static void main(String[] args) {
 		Inventory movieList = new Inventory();
 		Movie birdman = new Movie("Birdman", 2014, 3.7);
-		movieList.addMovie("Birdman", 2014, 3.0);
+		movieList.rentMovie("Birdman", 2014, 3.0);
 		movieList.addMovie("Batman", 1989, 3.2);
 		movieList.addMovie("King Kong", 1993, 3.8);
-	
+		System.out.println("hello");
+		System.out.println(movieList.list.size());
 		System.out.println(movieList);
+		System.out.println("helloq");
 	}
 	
 	public void addMovie(String title, int year, double rating){ 

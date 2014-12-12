@@ -27,7 +27,7 @@ public class Movie{
 	
 	/** setter for years
 	 * @param year  int year movie was made
-	 * @throws IllegalArgumentException throws if the year is not between 1870 and 2014
+	 * @throws IllegalArgumentException if the year is not betwwen 1870 and 2014
 	 */
 	public void setYear(int year) throws IllegalArgumentException{
 		if(year >= 1870 && year <= 2014) this.year = year;

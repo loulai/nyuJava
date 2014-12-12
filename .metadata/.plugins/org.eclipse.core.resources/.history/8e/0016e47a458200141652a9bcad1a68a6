@@ -1,6 +1,7 @@
 package hw10Netflix;
 import java.util.ArrayList;
 
+
 /** This class represents a single movie that will be used in the Inventory class
  * created on: December 8th 2014
  * @author loulai
@@ -27,7 +28,7 @@ public class Movie{
 	
 	/** setter for years
 	 * @param year  int year movie was made
-	 * @throws IllegalArgumentException throws if the year is not between 1870 and 2014
+	 * @throws IllegalArgumentException
 	 */
 	public void setYear(int year) throws IllegalArgumentException{
 		if(year >= 1870 && year <= 2014) this.year = year;
