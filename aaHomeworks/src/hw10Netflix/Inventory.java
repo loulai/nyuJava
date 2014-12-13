@@ -32,8 +32,6 @@ public class Inventory {
 		} catch (FileNotFoundException e1) {
 			System.out.println("==whoops, file not found==");
 		}
-		
-		System.out.println(movieList); //prints the whole movie list
 		/*
 		 * End section: reading text file and populating movieList
 		 * Begin section: adding more movies
@@ -41,78 +39,84 @@ public class Inventory {
 		
 		movieList.addMovie("Bears", 2014, 3.5);
 		movieList.addMovie("Bears", 2014, 2.0);
+		
 		System.out.println(movieList);
+
 	}
 	
 	public void addMovie(String otherTitle, int otherYear, double otherRating) throws IllegalArgumentException{ 
 		try{
-			for(int i = 0; i < this.list.size(); i++){
-				System.out.println(i);
-				System.out.printf("%20s %5d %3.2f\n", otherTitle, otherYear, otherRating);
-//				this.list.get(i).getTitle() == otherTitle && this.list.get(i).getYear() == otherYear
+			/* loop #1 tests each movie to see if it matches. if it does, then the quantity is incremented */
+			for(int i = 0; i < this.list.size(); i++){ 
 					if(this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear){ //match the title and year
 						Movie matchingMovie = this.list.get(i); //fetching the movie that already exists
 						matchingMovie.increaseQuantity();       //incrementing quantity and resetting rating (if the value is legit)
 						matchingMovie.setRating(otherRating);
-						System.out.println(matchingMovie);
-					} else if (this.list.get(i).getTitle() != otherTitle && this.list.get(i).getYear() != otherYear){
-						this.list.add(new Movie(otherTitle, otherYear, otherRating));
-						return;
+						return; //stops method once a match is found
 					}
 			}
 			
-//				if(this.containsMovie(otherTitle, otherYear)){ //if the movie exists in the inventory
-//					Movie matchingMovie = this.list.get(i);
-//					System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
-//					matchingMovie.increaseQuantity(); //must be above setRating() because has to execute before the likelyhood of throwing and exception
-//					matchingMovie.setRating(rating);
-//					System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
-//				} else { //if it doesn't exist
-//					System.out.println("HOALLAALALA");
-//						list.add(new Movie(otherTitle, otherYear, rating));	
-//				}
-		} catch(IllegalArgumentException e){}
-	}
-	
-	public boolean containsMovie(String title, int year){
-		boolean isInInventory = false;
-		for (int i = 0; i < list.size(); i++){
-			if(this.list.get(i).getTitle().equals(title) && this.list.get(i).getYear() == year){
-				isInInventory = true;
-			} 
-		}
-		return isInInventory;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public void rentMovie(String title, int year, double rating){ 
-		try{
-			for(int i = 0; i < list.size(); i++){
-				if(this.containsMovie(title, year)){ //at this point the movie EXISTS in the inventory (containsMovie() method below)
-						Movie matchingMovie = this.list.get(i); //fetching the movie
-					if(matchingMovie.getQuantity() == 1){ //the movie both EXISTS and there is only one of it, so remove it
-						list.remove(matchingMovie); //note: the rating is not reset because it wasn't in the instructions
-					} else { //the movie EXISTS and there are more than one of it, so decrease quantity instead of remove
-						matchingMovie.decreaseQuantity();
-						matchingMovie.setRating(rating); //reset rating
-						
-					}
-				} else { //if movie DOESNT exist, add it to inventory
-						list.add(new Movie(title, year, rating));	
+			//Method will only progress to this point if there is NO match
+			/* loop #2 tests each movie to see if it DOESNT match. If it doesn't, it adds the movie.  */
+			for(int i = 0; i < this.list.size(); i++){
+				if (!this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) || this.list.get(i).getYear() != otherYear){
+					this.list.add(new Movie(otherTitle, otherYear, otherRating));
+					return; //stops once
 				}
 			}
-		} catch(IllegalArgumentException e){} //if an exception is thrown (like invalid year or rating), do nothing
+			
+		} catch(IllegalArgumentException e){} //handling exceptions from rate/year
 	}
 	
+	
+	
+//	
+//	public boolean containsMovie(String title, int year){
+//		boolean isInInventory = false;
+//		for (int i = 0; i < list.size(); i++){
+//			if(this.list.get(i).getTitle().equals(title) && this.list.get(i).getYear() == year){
+//				isInInventory = true;
+//			} 
+//		}
+//		return isInInventory;
+//	}
+	
+//	if(this.containsMovie(otherTitle, otherYear)){ //if the movie exists in the inventory
+//		Movie matchingMovie = this.list.get(i);
+//		System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
+//		matchingMovie.increaseQuantity(); //must be above setRating() because has to execute before the likelyhood of throwing and exception
+//		matchingMovie.setRating(rating);
+//		System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
+//	} else { //if it doesn't exist
+//		System.out.println("HOALLAALALA");
+//			list.add(new Movie(otherTitle, otherYear, rating));	
+//	}
 
+	
+	
+	
+	
+	
+	
+	
+//	public void rentMovie(String title, int year, double rating){ 
+//		try{
+//			for(int i = 0; i < list.size(); i++){
+//				if(this.containsMovie(title, year)){ //at this point the movie EXISTS in the inventory (containsMovie() method below)
+//						Movie matchingMovie = this.list.get(i); //fetching the movie
+//					if(matchingMovie.getQuantity() == 1){ //the movie both EXISTS and there is only one of it, so remove it
+//						list.remove(matchingMovie); //note: the rating is not reset because it wasn't in the instructions
+//					} else { //the movie EXISTS and there are more than one of it, so decrease quantity instead of remove
+//						matchingMovie.decreaseQuantity();
+//						matchingMovie.setRating(rating); //reset rating
+//						
+//					}
+//				} else { //if movie DOESNT exist, add it to inventory
+//						list.add(new Movie(title, year, rating));	
+//				}
+//			}
+//		} catch(IllegalArgumentException e){} //if an exception is thrown (like invalid year or rating), do nothing
+//	}
 	
 	public String toString(){
 		String finalString = "====================== LOOK AT ALL THESE MOVIES I HAVE NO TIME TO WATCH =======================\n";
