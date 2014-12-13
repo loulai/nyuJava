@@ -91,7 +91,6 @@ public class Inventory {
 						return; //stops method once a match is found
 					}
 			}
-			
 			for(int i = 0; i < this.list.size(); i++){
 				if (this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear && this.list.get(i).getQuantity() == 1){
 					System.out.println("title matches and year matches but quantity less than 1");

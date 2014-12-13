@@ -87,7 +87,9 @@ public class Inventory {
 					if(this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear && this.list.get(i).getQuantity() > 1){ //match the title and year
 						System.out.println("title matches and year matches and quantity more than 1");
 						Movie matchingMovie = this.list.get(i); //fetching the movie that already exists
+						System.out.println("before decrease quantity" + matchingMovie.getQuantity());
 						matchingMovie.decreaseQuantity();       //incrementing quantity and resetting rating (if the value is legit)
+						System.out.println("after decrease quantity" + matchingMovie.getQuantity());
 						return; //stops method once a match is found
 					}
 			}

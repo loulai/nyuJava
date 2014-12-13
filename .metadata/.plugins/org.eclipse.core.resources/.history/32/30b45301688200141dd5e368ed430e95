@@ -84,22 +84,21 @@ public class Inventory {
 		try{
 			/* loop #1 tests each movie to see if it matches. if it does, then the quantity is decreased */
 			for(int i = 0; i < this.list.size(); i++){ 
+				System.out.println("HELLO");
 					if(this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear && this.list.get(i).getQuantity() > 1){ //match the title and year
-						System.out.println("title matches and year matches and quantity more than 1");
 						Movie matchingMovie = this.list.get(i); //fetching the movie that already exists
 						matchingMovie.decreaseQuantity();       //incrementing quantity and resetting rating (if the value is legit)
 						return; //stops method once a match is found
 					}
 			}
-			
 			for(int i = 0; i < this.list.size(); i++){
 				if (this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear && this.list.get(i).getQuantity() == 1){
-					System.out.println("title matches and year matches but quantity less than 1");
-					//if movie exists in inventory BUT there is only ONE of it, remove it from the arrayList
+					//if movie exists in inventory and there is only ONE of it, remove it from the arrayList
 					Movie matchingMovie = this.list.get(i);
 					this.list.remove(matchingMovie);
 				}
 			}
+			
 		} catch(IllegalArgumentException e){} //handling exceptions from rate/year
 
 		

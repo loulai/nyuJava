@@ -81,7 +81,7 @@ public class Movie{
 	/** decreasing the quantity variable of a Movie object
 	 */
 	public void decreaseQuantity() {
-		if(this.quantity > 0){
+		if(this.quantity < 0){
 			this.quantity --;
 		}
 	}
