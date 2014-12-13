@@ -57,7 +57,7 @@ public class Inventory {
 						System.out.println(matchingMovie);
 					} else if (this.list.get(i).getTitle() != otherTitle && this.list.get(i).getYear() != otherYear){
 						this.list.add(new Movie(otherTitle, otherYear, otherRating));
-						return;
+//						return;
 					}
 			}
 			

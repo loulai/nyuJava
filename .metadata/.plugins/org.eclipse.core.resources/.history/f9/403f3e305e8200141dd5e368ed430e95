@@ -47,18 +47,17 @@ public class Inventory {
 	public void addMovie(String otherTitle, int otherYear, double otherRating) throws IllegalArgumentException{ 
 		try{
 			for(int i = 0; i < this.list.size(); i++){
-				System.out.println(i);
 				System.out.printf("%20s %5d %3.2f\n", otherTitle, otherYear, otherRating);
 //				this.list.get(i).getTitle() == otherTitle && this.list.get(i).getYear() == otherYear
-					if(this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear){ //match the title and year
-						Movie matchingMovie = this.list.get(i); //fetching the movie that already exists
-						matchingMovie.increaseQuantity();       //incrementing quantity and resetting rating (if the value is legit)
-						matchingMovie.setRating(otherRating);
-						System.out.println(matchingMovie);
-					} else if (this.list.get(i).getTitle() != otherTitle && this.list.get(i).getYear() != otherYear){
-						this.list.add(new Movie(otherTitle, otherYear, otherRating));
-						return;
-					}
+				if(this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear){ //match the title and year
+					Movie matchingMovie = this.list.get(i); //fetching the movie that already exists
+					matchingMovie.increaseQuantity();       //incrementing quantity and resetting rating (if the value is legit)
+					matchingMovie.setRating(otherRating);
+					System.out.println(matchingMovie);
+				} else if (this.list.get(i).getTitle() != otherTitle && this.list.get(i).getYear() != otherYear){
+					this.list.add(new Movie(otherTitle, otherYear, otherRating));
+					return;
+				}
 			}
 			
 //				if(this.containsMovie(otherTitle, otherYear)){ //if the movie exists in the inventory
