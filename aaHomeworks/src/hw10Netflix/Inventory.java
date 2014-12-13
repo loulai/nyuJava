@@ -37,9 +37,22 @@ public class Inventory {
 		 * Begin section: adding more movies
 		 */
 		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{TESTING ADDMOVIE METHOD}");
 		movieList.addMovie("Bears", 2014, 3.5);
-		movieList.addMovie("Bears", 2014, 2.0);
+		movieList.addMovie("Star Wars - A New Hope", 1997, 3.8);
+		movieList.addMovie("Casablanca", 1942, 3.9); //already exists in text file, so increases quantity
+		movieList.addMovie("Duck Soup", 1933, 3.75); //already exists in text file, so increases quantity
+		System.out.println(movieList);
 		
+		movieList.addMovie("Casablanca", 1942, 3.9); //testing quantity increment, which is now 3
+		movieList.addMovie("Bears", 2050, 2.0); //testing invalid year input. Notice quantity did not increase.
+		System.out.println(movieList);
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>{TESTING RENTMOVIE METHOD}");
+		movieList.rentMovie("The Nightmare Before Christmas", 1993); //does nothing because the movie doesn't exist
+		System.out.println(movieList);
+		
+		movieList.rentMovie("Duck Soup", 1933);
 		System.out.println(movieList);
 
 	}
@@ -61,45 +74,34 @@ public class Inventory {
 			for(int i = 0; i < this.list.size(); i++){
 				if (!this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) || this.list.get(i).getYear() != otherYear){
 					this.list.add(new Movie(otherTitle, otherYear, otherRating));
-					return; //stops once
+					return; 
+				}
+			}
+		} catch(IllegalArgumentException e){} //handling exceptions from rate/year
+	}
+
+	public void rentMovie(String otherTitle, int otherYear){ 
+		try{
+			/* loop #1 tests each movie to see if it matches. if it does, then the quantity is decreased */
+			for(int i = 0; i < this.list.size(); i++){ 
+				System.out.println("HELLO");
+					if(this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear && this.list.get(i).getQuantity() > 1){ //match the title and year
+						Movie matchingMovie = this.list.get(i); //fetching the movie that already exists
+						matchingMovie.decreaseQuantity();       //incrementing quantity and resetting rating (if the value is legit)
+						return; //stops method once a match is found
+					}
+			}
+			for(int i = 0; i < this.list.size(); i++){
+				if (this.list.get(i).getTitle().equalsIgnoreCase(otherTitle) && this.list.get(i).getYear() == otherYear && this.list.get(i).getQuantity() == 1){
+					//if movie exists in inventory and there is only ONE of it, remove it from the arrayList
+					Movie matchingMovie = this.list.get(i);
+					this.list.remove(matchingMovie);
 				}
 			}
 			
 		} catch(IllegalArgumentException e){} //handling exceptions from rate/year
-	}
-	
-	
-	
-//	
-//	public boolean containsMovie(String title, int year){
-//		boolean isInInventory = false;
-//		for (int i = 0; i < list.size(); i++){
-//			if(this.list.get(i).getTitle().equals(title) && this.list.get(i).getYear() == year){
-//				isInInventory = true;
-//			} 
-//		}
-//		return isInInventory;
-//	}
-	
-//	if(this.containsMovie(otherTitle, otherYear)){ //if the movie exists in the inventory
-//		Movie matchingMovie = this.list.get(i);
-//		System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
-//		matchingMovie.increaseQuantity(); //must be above setRating() because has to execute before the likelyhood of throwing and exception
-//		matchingMovie.setRating(rating);
-//		System.out.println(matchingMovie.getTitle() + " " + matchingMovie.getQuantity());
-//	} else { //if it doesn't exist
-//		System.out.println("HOALLAALALA");
-//			list.add(new Movie(otherTitle, otherYear, rating));	
-//	}
 
-	
-	
-	
-	
-	
-	
-	
-//	public void rentMovie(String title, int year, double rating){ 
+		
 //		try{
 //			for(int i = 0; i < list.size(); i++){
 //				if(this.containsMovie(title, year)){ //at this point the movie EXISTS in the inventory (containsMovie() method below)
@@ -116,10 +118,10 @@ public class Inventory {
 //				}
 //			}
 //		} catch(IllegalArgumentException e){} //if an exception is thrown (like invalid year or rating), do nothing
-//	}
+	}
 	
 	public String toString(){
-		String finalString = "====================== LOOK AT ALL THESE MOVIES I HAVE NO TIME TO WATCH =======================\n";
+		String finalString = "=================== LOOK AT ALL THESE MOVIES I HAVE NO TIME TO WATCH =========================\n";
 		for(int i = 0; i < this.list.size(); i ++){
 			finalString = finalString + String.format("%3d. %-36s (%-4d), rating: %2.1f, number in stock: %3d \n", (i + 1),  list.get(i).getTitle(), list.get(i).getYear(), list.get(i).getRating(), list.get(i).getQuantity());
 		}
@@ -128,10 +130,4 @@ public class Inventory {
 
 }
 
-//if(this.list.size() == 0){ //for the very first time adding anything, when movieList is empty
-//this.list.add(new Movie(title, year, rating));
-//}
 
-//movieList.addMovie("Star Wars - A New Hope", 1997, 3.8);
-//movieList.addMovie("Casablanca", 1942, 3.9);
-//movieList.addMovie("Duck Soup", 1933, 3.75);
