@@ -1,0 +1,20 @@
+package FinalQuestion11;
+
+public class CalendarDate {
+
+	private int day;
+	private int month;
+	public static void main(String[] args) {
+		CalendarDate myDate = new CalendarDate();
+		System.out.println(myDate.getDay());
+	}
+	
+	public CalendarDate(){
+		this.day = (int)(Math.random() * 31) + 1;
+	}
+	
+	public int getDay(){
+		return this.day;
+	}
+
+}
