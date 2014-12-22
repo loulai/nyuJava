@@ -116,8 +116,6 @@ public class StackOfCharacters {
 		}
 	}
 	
-		
-	
 	/*
 	 * Returns true if the array is at max capacity
 	 */
