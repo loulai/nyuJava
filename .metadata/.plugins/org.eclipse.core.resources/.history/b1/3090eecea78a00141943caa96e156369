@@ -25,14 +25,15 @@ public class LeBubble {
 		boolean flag = true;
 		int temp;
 		
-		while(flag){
+		
 			for(int i = 0; i < daIntArray.length - 1; i++){
+				while(flag){
 				if(daIntArray[i] > daIntArray[i+1]){
 					temp = daIntArray[i];
 					daIntArray[i] = daIntArray[i+1];
 					daIntArray[i+1] = temp;
 					flag = false;
-					System.out.println(i + " hi");
+					System.out.println("hi");
 				}
 			}
 		}

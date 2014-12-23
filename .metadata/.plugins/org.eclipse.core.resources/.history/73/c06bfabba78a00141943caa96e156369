@@ -32,7 +32,6 @@ public class LeBubble {
 					daIntArray[i] = daIntArray[i+1];
 					daIntArray[i+1] = temp;
 					flag = false;
-					System.out.println(i + " hi");
 				}
 			}
 		}
