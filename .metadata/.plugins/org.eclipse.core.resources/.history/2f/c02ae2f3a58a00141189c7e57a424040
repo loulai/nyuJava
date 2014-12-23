@@ -9,7 +9,7 @@ public class LeBubble {
 		
 		LeBubble myBubbleIntArray = new LeBubble(theNums);
 		
-		System.out.println(myBubbleIntArray);
+		System.out.println(myBubbleIntArray.bubbleSort());
 		
 	}
 	
