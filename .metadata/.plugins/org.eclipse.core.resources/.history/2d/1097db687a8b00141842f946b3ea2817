@@ -3,11 +3,10 @@ package sortingAlphabetically;
 public class GiftSorter {
 
 	public static void main(String[] args) {
-		String myString = "abc";
+		String myString = "hellotheresortme";
 				
 		System.out.println(myString.codePointAt(0));
 		System.out.println(myString.codePointAt(1));
-		System.out.println(myString.codePointAt(2));
 
 		char[] myChars = myString.toCharArray();
 		
