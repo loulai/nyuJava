@@ -11,11 +11,9 @@ public class GiftSorter {
 
 		char[] myChars = myString.toCharArray();
 		
-		for(int i = 0; i < myChars.length - 1; i++){
-			if(myString.codePointAt(i) > myString.codePointAt(i+1)){
-				
-			}
-		}
+//		for(int i = 0; i < myChars.length - 1; i++){
+//			if(myString.codePointAt(i));
+//		}
 		
 		
 //		System.out.println(sortGiftCode("sdbca"));
