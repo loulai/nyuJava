@@ -1,0 +1,19 @@
+package findLargest;
+import java.util.Scanner;
+public class FindLargest {
+	public static void Main(String[] args){
+		System.out.println("input string of integer without spaces, and indicate end by typing 0");
+		Scanner input = new Scanner(System.in);
+		int largest = input.nextInt();
+		int b = input.nextInt();
+		
+		System.out.printf("%d %d", largest, b);
+		
+//		while(current != 0){
+//			if(b > largest){
+//				
+//			}
+//		}
+		
+	}
+}
