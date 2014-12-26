@@ -19,18 +19,12 @@ public class FutureInterest {
 		if(year == 1){
 			futureVal = amount * mult;
 		} else{
-			for(int i = 0; i < year-1; i++){
+			for(int i = 0; i < year - 1; i++){
 				mult = mult * (1+rate);
 			}
-			System.out.println(mult);
 			futureVal = amount * mult;
 		}
-		
 		System.out.printf("\n=== The final investment value after %2s years is %4.2f ===", year, futureVal);
-		
-		
-		
-		
 	}
 
 }
