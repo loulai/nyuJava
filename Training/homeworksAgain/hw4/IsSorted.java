@@ -18,10 +18,10 @@ public class IsSorted {
 			if(intA[i] < intA[i + 1]) desc = false;
 		}
 		
-		if(asc == true) System.out.println("===list is sorted from SMALL to BIG (ascending)==");
+		if(desc == true && asc == true) System.out.println("=== why are all numbers the same you troll ===");
+		else if(asc == true) System.out.println("===list is sorted from SMALL to BIG (ascending)==");
 		else if(desc == true) System.out.println("===list is sorted from BIG to SMALL (descending)===");
 		else System.out.println("==list is not sorted at all===");
-		
 	}
 
 }
