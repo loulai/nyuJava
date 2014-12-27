@@ -21,6 +21,7 @@ public class Largest {
 				largest = n2;
 			}
 			n1 = input.nextInt();
+			
 			n2 = input.nextInt();
 				System.out.println("hello");
 				System.out.printf("n1: %d\nn2: %d\n", n1, n2);
