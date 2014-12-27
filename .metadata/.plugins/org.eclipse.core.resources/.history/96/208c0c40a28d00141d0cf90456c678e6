@@ -11,12 +11,10 @@ public class Largest {
 		Scanner input = new Scanner(System.in);
 		int[] numArr;
 		int counter = 0;
-		
+		System.out.println(counter);
 		while(input.hasNextInt()){
 			counter++;
 		}
-		
-		System.out.println(counter);
 		
 //		int largest = numArr[0];
 //		

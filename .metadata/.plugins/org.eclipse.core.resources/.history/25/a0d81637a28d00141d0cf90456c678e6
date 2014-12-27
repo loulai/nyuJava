@@ -16,8 +16,6 @@ public class Largest {
 			counter++;
 		}
 		
-		System.out.println(counter);
-		
 //		int largest = numArr[0];
 //		
 //		for(int i = 0; i < numArr.length - 1; i++){
@@ -25,7 +23,7 @@ public class Largest {
 //		}
 //		System.out.println("the largest number is: " + largest);
 		
-		
+		System.out.println(counter);
 	}
 
 }
