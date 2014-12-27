@@ -7,25 +7,13 @@ import java.util.Scanner;
 public class Largest {
 	
 	public static void main(String[] args){
-		System.out.println("input numbers, end with enter");
-		Scanner input = new Scanner(System.in);
-		int[] numArr;
-		int counter = 0;
+		int[] numArr = {1,2,3,4,5,8};
+		int largest = numArr[0];
 		
-		while(input.hasNextInt()){
-			counter++;
+		for(int i = 0; i < numArr.length - 1; i++){
+			if(numArr[i] < numArr[i + 1]) largest = numArr[i + 1]; 
 		}
-		
-		System.out.println(counter);
-		
-//		int largest = numArr[0];
-//		
-//		for(int i = 0; i < numArr.length - 1; i++){
-//			if(numArr[i] < numArr[i + 1]) largest = numArr[i + 1]; 
-//		}
-//		System.out.println("the largest number is: " + largest);
-		
-		
+		System.out.println("the largest number is: " + largest);
 	}
 
 }
