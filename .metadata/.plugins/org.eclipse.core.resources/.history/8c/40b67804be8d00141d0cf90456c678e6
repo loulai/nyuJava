@@ -5,16 +5,16 @@ public class SecondLargest {
 	public static void main(String[] args) {
 		int[] numArr = {3,1,4};
 		int big1 = numArr[0]; //first integer in array
-		int big2 = numArr[1]; //second integer. This takes care of an edge case where there are only two numbers, and the first number is the 
-		                      //largest and second number is 2nd largest (e.g. {2,1}), by letting the default largest be the second number.
-		                      //The for loop takes care of other cases.
+		int big2 = numArr[1]; //first integer too, because 
 		
 		for(int i = 0; i < numArr.length - 1; i++){
-			if(numArr[i + 1] > numArr[i]) {
+			if(numArr[i] < numArr[i + 1]) {
 				big2 = big1;
 				big1 = numArr[i + 1]; 
 			}
+			
 			if(numArr[i] > big2 && numArr[i] < big1) big2 = numArr[i];
+	
 		}
 		System.out.printf("     biggest: %d\n 2nd biggest: %d\n", big1, big2);
 	}
