@@ -1,0 +1,24 @@
+package findLargest;
+
+import java.util.Scanner;
+
+public class Largest {
+	
+	public static void main(String[] args){
+		System.out.println("input integers and press enter each time, and indicate end by typing 0:");
+		Scanner input = new Scanner(System.in);
+		String longS = input.nextLine();
+		char[] cArr = longS.toCharArray();
+		
+		for(int i  = 0; i < cArr.length; i++){
+			System.out.println(cArr[i]);
+		}
+		
+		
+		
+
+	
+		
+	}
+}
+

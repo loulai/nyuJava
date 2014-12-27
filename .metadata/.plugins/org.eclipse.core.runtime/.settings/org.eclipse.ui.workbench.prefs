@@ -1,5 +1,5 @@
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.team.cvs.ui.fontsandcolors
-ColorsAndFontsPreferencePage.selectedElement=Fpref_console_font
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jface.textfont
 eclipse.preferences.version=1
 org.eclipse.e4.ui.css.theme.e4_default.org.eclipse.ui.workbench.ACTIVE_TAB_INNER_KEYLINE_COLOR=255,255,255
 org.eclipse.e4.ui.css.theme.e4_default.org.eclipse.ui.workbench.ACTIVE_TAB_OUTER_KEYLINE_COLOR=196,197,193
@@ -11,4 +11,5 @@ org.eclipse.e4.ui.css.theme.e4_default.org.eclipse.ui.workbench.INACTIVE_TAB_OUT
 org.eclipse.e4.ui.css.theme.e4_default.org.eclipse.ui.workbench.INACTIVE_TAB_OUTLINE_COLOR=182,188,204
 org.eclipse.e4.ui.css.theme.e4_default.org.eclipse.ui.workbench.INACTIVE_UNSELECTED_TABS_COLOR_END=255,255,255
 org.eclipse.e4.ui.css.theme.e4_default.org.eclipse.ui.workbench.INACTIVE_UNSELECTED_TABS_COLOR_START=255,255,255
-org.eclipse.jface.textfont=1|Monaco|14.0|0|COCOA|1|Monaco;
+org.eclipse.jface.textfont=1|Monaco|12.0|0|COCOA|1|Monaco;
+pref_console_font=1|Monaco|12.0|0|COCOA|1|Monaco;
