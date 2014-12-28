@@ -20,19 +20,19 @@ public class ShiftByOne {
 		
 		store = chars[1];  //store r
 		chars[1] = chars[0]; // change r into c
-		System.out.printf("==   first shift: %s, (%s)\n", new String(chars), store);
+		System.out.printf("==  first shift: %s, (%s)\n", new String(chars), store);
 		
 		//shift2
 		temp = store;  //make sure the correct char is saved before we overwrite store (temp gets r)
 		store = chars[2]; //overwrite store (store gets a)
 		chars[2] = temp; //change a into r (3rd pos gets r)
-		System.out.printf("==  second shift: %s, (%s)\n", new String(chars), store);
+		System.out.printf("== second shift: %s, (%s)\n", new String(chars), store);
 		
 		//shift3
 		temp = store;
 		store = chars[3];
 		chars[3] = temp;
-		System.out.printf("==   third shift: %s, (%s)\n", new String(chars), store);
+		System.out.printf("==  third shift: %s, (%s)\n", new String(chars), store);
 		
 		//shift4
 		temp = store;
@@ -40,11 +40,8 @@ public class ShiftByOne {
 		chars[4] = temp;
 		System.out.printf("==  fourth shift: %s, (%s)\n", new String(chars), store);
 		
-		//shiftLast
-		chars[0] = store; //it doesn't matter if nothing is 'saved' for the upcoming swaps
-		System.out.printf("==    last shift: %s, (%s)\n", new String(chars), store);
-		
-		System.out.println("==== SHIFTED STRING: " + new String(chars) + " ====");
+		String shifted = new String(chars);
+		System.out.println(shifted);
 	}
 
 }

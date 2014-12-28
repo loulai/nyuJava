@@ -40,11 +40,8 @@ public class ShiftByOne {
 		chars[4] = temp;
 		System.out.printf("==  fourth shift: %s, (%s)\n", new String(chars), store);
 		
-		//shiftLast
-		chars[0] = store; //it doesn't matter if nothing is 'saved' for the upcoming swaps
-		System.out.printf("==    last shift: %s, (%s)\n", new String(chars), store);
-		
-		System.out.println("==== SHIFTED STRING: " + new String(chars) + " ====");
+		String shifted = new String(chars);
+		System.out.println(shifted);
 	}
 
 }
