@@ -7,8 +7,6 @@ import java.util.Scanner;
  */
 
 public class Blackjack {
-
-	
 	public static void main(String[] args) {
 		
 		/* over arching concept, basic rules aside: two 'while' loops run under different conditions, 
@@ -23,25 +21,30 @@ public class Blackjack {
 		//USER: generating two random numbers and printing their names.
 		int userCardNumber1 = generateNumber();
 		int userCardNumber2 = generateNumber();
-		System.out.println("You drew    : " + cardNumberToName(userCardNumber1));
-		System.out.println("You drew    : " + cardNumberToName(userCardNumber2));
+		System.out.println("You drew     : " + cardNumberToName(userCardNumber1));
+		System.out.println("You drew     : " + cardNumberToName(userCardNumber2));
 		
 		//USER: tallying and printing score
 		int userScore = cardNumberToScore(userCardNumber1) + cardNumberToScore(userCardNumber2);
-		System.out.println("Your score  : " + userScore);
+		System.out.println("Your score   : " + userScore);
 		
 		//DEALER: generating two cards, tallying score. Not showing values because want to keep it hidden.
 		int dealerCardNumber1 = generateNumber();
 		int dealerCardNumber2 = generateNumber();
 		int dealerScore = cardNumberToScore(dealerCardNumber1) + cardNumberToScore(dealerCardNumber1);
-		System.out.println("Dealer also drew two cards");
+		System.out.println("Dealer score : XX");
+		System.out.println("(Dealer also drew two cards)");
 		
 		//Accounting for rare condition where someone wins straight up
 		if(userScore == 21) {
 			System.out.println("The force is strong. You straight up won! \n===YOU WIN===");
 		} else if (dealerScore == 21) {
 			System.out.println("Wow it's not your day. Dealer hit 21. \n===DEALER WINS===");
-		} 
+		} else if (dealerScore > 21){
+			System.out.println("you lucky mole dealer bust\n===YOU WIN===");
+		} else if (userScore > 21){
+			System.out.println("YOU SUCK YOU HAHAHHA YOU BUST\n===DEALER WINS===");
+		}
 		
 		//boolean is used as a condition for 'while' loop to run.
 		// It's true here because our first move is to ask the user if they want another card. It changes to false later on in the loop.

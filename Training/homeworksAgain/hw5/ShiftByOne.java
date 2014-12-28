@@ -3,7 +3,7 @@ package hw5;
 public class ShiftByOne {
 
 	public static void main(String[] args){
-		String s = "crabs";
+		String s = "table";
 		// 0 1 2 3 4
 		// c r a b s
 		// c c a b s (r)  >shift1 result
