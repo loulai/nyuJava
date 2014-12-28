@@ -18,6 +18,7 @@ public class ReverseString {
 			chars[chars.length - (i + 1)] = temp;
 		}
 		
+		//just printing and making the output of printing the char array look like a string with print (instead of println.. sneaky huh)
 		System.out.println("== OLD: " + s + " ==");
 		System.out.print("== NEW: ");
 		for(int i = 0; i < chars.length; i++){

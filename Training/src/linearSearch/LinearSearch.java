@@ -18,5 +18,4 @@ public class LinearSearch {
 		}
 		return contains;
 	}
-
 }

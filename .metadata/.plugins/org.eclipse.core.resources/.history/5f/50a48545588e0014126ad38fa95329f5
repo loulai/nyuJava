@@ -1,0 +1,35 @@
+package hw5;
+
+public class ShiftByOne {
+
+	public static void main(String[] args){
+		String s = "crabs";
+		// c r a b s
+		// c c a b s (r)
+		// c c r b s (a)
+		// c c r a s (b)
+		// c c r a b (s)
+		// s c r a b (c?)
+	
+		char[] chars = s.toCharArray();
+		char temp;
+		
+		temp = chars[1];  //store r
+		chars[1] = chars[0]; //change 2nd pos to be first letter
+		temp = chars[2];   //store the letter thats about to be replaced
+		chars[2] = temp;  //change 3rd pos to be second letter 
+		System.out.printf("==first shift: %s, (%s)\n", new String(chars), temp);
+		
+		//second shift
+
+	
+		System.out.printf("==second shift: %s, (%s)\n", new String(chars), temp);
+		
+		//third shift
+		System.out.printf("==third shift: %s, (%s)\n", new String(chars), temp);
+		
+		String shifted = new String(chars);
+		System.out.println(shifted);
+	}
+
+}

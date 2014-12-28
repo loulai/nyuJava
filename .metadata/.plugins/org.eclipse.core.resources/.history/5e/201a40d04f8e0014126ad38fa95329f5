@@ -1,0 +1,34 @@
+package hw5;
+
+public class ShiftByOne {
+
+	public static void main(String[] args){
+		String s = "hello";
+		        //  h e l l o
+		        //  0 1 2 3 4
+		        //  o h e l l <<
+	
+		char[] chars = s.toCharArray();
+		char temp;
+		char temp2;
+		
+		temp = chars[1];  //store e
+		chars[1] = chars[0]; //change 2nd pos to be first letter (e to h)
+		temp2 = chars[2];  
+		chars[2] = temp;  //change 3rd pos to be second letter (l to e)
+		System.out.println("first shift: " + new String(chars));
+		
+		//second shift
+		
+		System.out.println("second shift: " + new String(chars));
+		
+		//third shift
+		
+		System.out.println("third shift: " + new String(chars));
+		
+		
+		String shifted = new String(chars);
+		System.out.println(shifted);
+	}
+
+}
