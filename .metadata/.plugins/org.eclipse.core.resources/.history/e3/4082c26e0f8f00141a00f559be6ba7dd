@@ -20,13 +20,13 @@ public class ShiftByX {
 				storer = letters[i];
 				letters[i] = swapper;
 				swapper = storer;
-				if(i == (letters.length - 1)){
+				if(i == letters.length - 1){
 					System.out.printf("STORER[%s] SWAPPER[%s]\n", storer, swapper);
 				}
 			}	
 		}
 		System.out.printf("=== original : %s ===\n", s);
-		System.out.printf("=== shifted  : %s ===", new String(letters));
+		System.out.printf("=== shifted  : %s===", new String(letters));
 	}
 
 }

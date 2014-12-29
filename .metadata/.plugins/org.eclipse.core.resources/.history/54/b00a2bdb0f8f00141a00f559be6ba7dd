@@ -26,7 +26,7 @@ public class ShiftByX {
 			}	
 		}
 		System.out.printf("=== original : %s ===\n", s);
-		System.out.printf("=== shifted  : %s ===", new String(letters));
+		System.out.printf("=== shifted  : %s===", new String(letters));
 	}
 
 }
