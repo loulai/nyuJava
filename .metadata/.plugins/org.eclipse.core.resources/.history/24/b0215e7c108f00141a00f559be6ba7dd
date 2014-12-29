@@ -15,9 +15,7 @@ public class ShiftByX {
 		char storer;
 		
 		for(int k = 0; k < shiftInt; k++){
-			char swapper = letters[letters.length - 1]; //this needs to be reset everytime, because the last storer/swapper situation is a little messy. 
-			                                           // (i.e. at the end of the loop, swapper is loaded to swap again with the last char of the string
-			                                           // but the char that really needs to be loaded into swapper is the last char of the NEW string, not the old one (which is what swapper has, without this line)
+			char swapper = letters[letters.length - 1]; //this needs to be reset everytime, because the last storer/swapper situation is a little messy
 			for(int i = 0; i < letters.length; i++){
 				storer = letters[i];
 				letters[i] = swapper;
