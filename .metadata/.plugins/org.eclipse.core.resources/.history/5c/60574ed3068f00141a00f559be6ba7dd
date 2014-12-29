@@ -26,6 +26,7 @@ public class ShiftByOneRefactored {
 			chars[0] = storer;
 		}
 		
+		
 		System.out.printf("==  original: %s ==\n", s);
 		System.out.printf("== end shift: %s ==\n", new String(chars));
 		
