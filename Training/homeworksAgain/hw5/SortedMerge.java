@@ -29,18 +29,29 @@ public class SortedMerge {
 		int c1 = 0;
 		int c2 = 0;
 		
-		for(int i = 0; i < total.length - 1; i++){
+		for(int i = 0; i < total.length; i++){
+			
 			if(c1 < size1 && c2 < size2){
 				if(list1[c1] < list2[c2]){
 					total[i] = list1[c1];
 					c1++;
+					System.out.println(i + "          [c1: " + c1 + "]");
 				}else if (list1[c1] > list2[c2]){
 					total[i] = list2[c2];
 					c2++;
+					System.out.println(i + " [c2: " + c2 + "]");
 				}else if(list1[c1] == list2[c2]){
 					total[i] = list1[c1];
 					c1++;
-				}
+					System.out.println(i + "          [c1: " + c1 + "]");
+				} 
+			
+			} else if(c1 >= size1){
+				total[i] = list2[c2];
+				c2++;
+			} else if (c2 >= size2){
+				total[i] = list1[c1];
+				c1++;
 			}
 			
 		}
