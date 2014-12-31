@@ -106,7 +106,7 @@ public class SortedMerge {
 		}	
 	}
 
-	/** checks to see is a given list of doubles is sorted from smallest to largest (ascending) order
+	/** checks to see is a given list of doubles is sorted from smallest to largest (ascending) order.
 	 * @param list double[] List that needs to be determined if sorted or not
 	 * @return      boolean  true if it is sorted, false otherwise
 	 */
