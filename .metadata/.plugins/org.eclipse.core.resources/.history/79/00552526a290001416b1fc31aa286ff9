@@ -15,7 +15,5 @@ public class Matrix {
 		System.out.println();
 		}
 	}
-	
-	public stati
 
 }
