@@ -91,16 +91,16 @@ public class SortedMerge {
 			
 		}
 		//nice output
-		System.out.printf("\n==========  First Array (%d): ===============\n", size1);
+		System.out.printf("\n==========  First Array (%d): ==================\n", size1);
 		for(int i = 0; i < size1; i++){
 			System.out.printf("[%3.1f] ",list1[i]);
 		}	
 		
-		System.out.printf("\n========== Second Array (%d): ===============\n", size2);
+		System.out.printf("\n========== Second Array (%d): ==================\n", size2);
 		for(int i = 0; i < size2; i++){
 			System.out.printf("[%3.1f] ",list2[i]);
 		}	
-		System.out.printf("\n========== Merged Array (%d): ============================= <<<<\n", total.length);
+		System.out.printf("\n========== Merged Array (%d): ================== <<<<\n", total.length);
 		for(int i = 0; i < total.length; i++){
 			System.out.printf("[%3.1f] ",total[i]);
 		}	
