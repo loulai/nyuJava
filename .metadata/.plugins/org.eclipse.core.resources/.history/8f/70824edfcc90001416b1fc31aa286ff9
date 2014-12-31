@@ -3,7 +3,7 @@ package findSecondLargest;
 public class SecondLargest {
 
 	public static void main(String[] args) {
-		int[] numArr = {300,1,6,-9,8,19,21,20};
+		int[] numArr = {300,400,1,6,-9,8,19,21,20};
 		int big1 = numArr[0]; //first integer in array
 		int big2 = Integer.MIN_VALUE; //second integer. This takes care of an edge case where there are only two numbers, and the first number is the 
 		                      //largest and second number is 2nd largest (e.g. {2,1}), by letting the default largest be the second number.
