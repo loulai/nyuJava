@@ -16,8 +16,6 @@ public class Matrix {
 		}
 	}
 	
-	public static int[][] transpose(int[][] matrix){
-		return matrix;
-	}
+	public stati
 
 }
