@@ -3,7 +3,7 @@ package findSecondLargest;
 public class FindSecondLargestAgain {
 
 	public static void main(String[] args) {
-		int[] nums = {1,1,1,1,1};
+		int[] nums = {-1,0};
 		System.out.println(findSecondLargest(nums));
 	}
 	
