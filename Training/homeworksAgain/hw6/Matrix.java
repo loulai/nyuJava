@@ -53,8 +53,15 @@ public class Matrix {
 		return transposed;
 	}
 	
-	public static int[] rowMax(int[] matrix){
-			
+	public static int[] rowMax(int[][] matrix){
+		int[] rowMaxes = new int[matrix.length];
+		int largest;
+		for(int r = 0; r < matrix.length; r++){
+			largest = matrix[r][0];
+			for(int c = 0; c < matrix[0].length; c++){
+			}
+		}
+		return rowMaxes;
 	}
 	
 	
