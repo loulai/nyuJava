@@ -53,6 +53,10 @@ public class Matrix {
 		return transposed;
 	}
 	
+	public static int[] rowMax(int[] matrix){
+			
+	}
+	
 	
 
 }
