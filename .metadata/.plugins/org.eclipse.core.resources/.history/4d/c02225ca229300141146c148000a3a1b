@@ -26,10 +26,10 @@ public class Matrix {
 				hflipped[r][c] = matrix[r][matrix[0].length - c - 1]; //e.g. if each 'row' has 5 columns, for first row and col, hflipped[0][0] gets matrix[0][5 - 0 - 1]
 			}
 		}
-		return hflipped;
-	}
 	
-	public static in[][] verticalFlip(int[][] matrix)
+		return hflipped;
+		
+	}
 	
 	public static int[][] transpose(int[][] matrix){
 		return matrix;
