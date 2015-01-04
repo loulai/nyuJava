@@ -54,12 +54,11 @@ public class Matrix {
 	}
 	
 	public static int[] rowMax(int[][] matrix){
-		int[] rowMaxes = new int[matrix.length]; //new array, size of the #rows in matrix
+		int[] rowMaxes = new int[matrix.length];
 		int largest;
 		for(int r = 0; r < matrix.length; r++){
 			largest = matrix[r][0];
 			for(int c = 0; c < matrix[0].length; c++){
-				if(matrix[r][c] > largest) rowMaxes[r] = matrix[r][c];
 			}
 		}
 		return rowMaxes;
