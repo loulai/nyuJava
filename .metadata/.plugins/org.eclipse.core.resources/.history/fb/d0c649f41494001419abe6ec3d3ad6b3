@@ -11,14 +11,8 @@ public class Matrix {
 		printMatrix(verticalFlip(myMatrix));
 		System.out.println("=========== Transpose:");
 		printMatrix(transpose(myMatrix));
-		System.out.println("=========== Row Max:");
-		printArray(findRowMax(myMatrix));
-		
 	}
 	
-	public static void printArray(int[] nums){
-		for(int i = 0; i < nums.length; i++) System.out.printf("[%3d ]", nums[i]);
-	}
 	public static void printMatrix(int[][] matrix){
 		for(int r = 0; r < matrix.length; r++){ //run #row times
 			for(int c = 0; c < matrix[0].length; c++){ //run #column times
@@ -59,13 +53,13 @@ public class Matrix {
 		return transposed;
 	}
 	
-	public static int[] findRowMax(int[][] matrix){
+	public static int[] rowMax(int[][] matrix){
 		int[] rowMaxes = new int[matrix.length]; //new array, size of the #rows in matrix
 		int largest;
 		for(int r = 0; r < matrix.length; r++){
-			largest = matrix[r][0]; //largest gets the first value in each row. Reset when moves on to new row
+			largest = matrix[r][0];
 			for(int c = 0; c < matrix[0].length; c++){
-				if(matrix[r][c] > largest) rowMaxes[r] = matrix[r][c]; //rowMaxes works with sub[r] (usually sub[i]), because r is basically the index.. think about it.
+				if(matrix[r][c] > largest) rowMaxes[r] = matrix[r][c];
 			}
 		}
 		return rowMaxes;
