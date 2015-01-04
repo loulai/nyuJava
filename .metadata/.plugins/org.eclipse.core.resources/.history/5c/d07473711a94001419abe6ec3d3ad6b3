@@ -42,7 +42,7 @@ public class Matrix {
 	public static int[][] verticalFlip(int[][] matrix){
 		int[][] vFlipped = new int[matrix.length][matrix[0].length];
 		for(int c = 0; c < matrix[0].length; c++){
-			for(int r = 0; r < matrix.length; r++){ //because 'row' is the one changing #row times, and column stays the same. Jumping down rows. 
+			for(int r = 0; r < matrix.length; r++){ //because 'row' is the one changing #row times, and column stays the same
 				vFlipped[r][c] = matrix[matrix.length - r - 1][c];
 			}
 		}
@@ -51,11 +51,9 @@ public class Matrix {
 	
 	public static int[][] transpose(int[][] matrix){
 		int[][] transposed = new int[matrix[0].length][matrix.length];
-		/* chosen to fill the new matrix column by column (going down)*/
-		for(int c = 0; c < transposed.length; c++){ //run #columns of the NEW matrix (which is the #rows of old matrix, which is why it works)
+		for(int c = 0; c < transposed.length; c++){ //run #columns of the NEW matrix
 			for(int r = 0; r < transposed[0].length; r++){
-				transposed[c][r] = matrix[r][c];   //the slots to be changed is affected by the row change. The values are filled 'going down' the NEW array, collected
-				                                   //by 'going across' the OLD array
+				transposed[c][r] = matrix[r][c];
 			}
 		}
 		return transposed;
