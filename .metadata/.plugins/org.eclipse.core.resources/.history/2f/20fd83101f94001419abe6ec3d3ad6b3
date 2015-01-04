@@ -3,7 +3,7 @@ package hw6;
 public class Matrix {
 	
 	public static void main(String[] args){
-		int[][] myMatrix = {{-1}};
+		int[][] myMatrix = {{1,1,1},{2,2,2},{3,3,3}};
 		printMatrix(myMatrix);
 		System.out.println("=========== Horizontal flip:");
 		printMatrix(horizontalFlip(myMatrix));
@@ -20,8 +20,8 @@ public class Matrix {
 	}
 
  	public static void printArray(int[] nums, String display){
- 		if(display.equalsIgnoreCase("by column"))  for(int i = 0; i < nums.length; i++) System.out.printf("[%3d  ]", nums[i]);
- 		else if(display.equalsIgnoreCase("by row")) for(int i = 0; i < nums.length; i++) System.out.printf("[%3d  ]\n", nums[i]);
+ 		if(display.equalsIgnoreCase("by column"))  for(int i = 0; i < nums.length; i++) System.out.printf("[%3d ]", nums[i]);
+ 		else if(display.equalsIgnoreCase("by row")) for(int i = 0; i < nums.length; i++) System.out.printf("[%3d ]\n", nums[i]);
 	}
 	public static void printMatrix(int[][] matrix){
 		for(int r = 0; r < matrix.length; r++){ //run #row times
