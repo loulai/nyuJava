@@ -81,7 +81,7 @@ public class Matrix {
 		int[][] newMatrix = new int[numOfRows][numOfColumns];
 		for(int i = 0; i < numOfColumns; i++) {
 			for(int j = 0; j < numOfRows; j++){
-				newMatrix[numOfRows - 1 - j][i] = rawMatrix[j][i]; //note that the assignment is [j][i], instead of the usual [i][j] because we're flipping columns not rows
+				newMatrix[numOfRows - 1 - j][i] = rawMatrix[j][i]; 
 			}
 		}
 		rawMatrix = newMatrix;

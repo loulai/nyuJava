@@ -77,6 +77,18 @@ public class Matrix {
 		return rowMaxes;
 	}
 	
+	public static int[] columnSum(int[][] matrix){
+		int[] columnSums = new int[matrix[0].length];
+		int sum;
+		for(int c = 0; c < matrix[0].length; c++){
+			sum = matrix[0][c]; //let the initial 'sum' be the first value of each column (coz we're going down)
+			for(int r = 0; r < matrix.length - 1; r++){
+				sum = sum + matrix[r + 1][c];
+			}
+		}
+		return columnSums;
+	}
+	
 	
 
 }
