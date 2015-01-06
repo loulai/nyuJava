@@ -29,6 +29,8 @@ public class AlreadySortedMerge {
 		}
 		
 		for(int i = 0; i < merged.length; i++) System.out.printf("[%d] ", merged[i]);
+		
+
 	}
 
 }

@@ -19,16 +19,18 @@ public class AlreadySortedMerge {
 					merged[i] = nums2[c2];
 					c2++;
 				}
-			} else if(c1 == nums1.length){ //if c1 is used up to capacity and c2 isnt, fill the remaining slots in the final merged array
+			} else if(c1 == nums1.length && c2 < nums2.length){ //if c1 is used up to capacity and c2 isnt, fill the remaining slots in the final merged array
 				merged[i] = nums2[c2];
 				c2++;
-			} else if (c2 == nums2.length){
+			} else if (c2 == nums2.length && c1 < nums1.length){
 				merged[i] = nums1[c1];
 				c1++;
 			}
 		}
 		
 		for(int i = 0; i < merged.length; i++) System.out.printf("[%d] ", merged[i]);
+		
+
 	}
 
 }
