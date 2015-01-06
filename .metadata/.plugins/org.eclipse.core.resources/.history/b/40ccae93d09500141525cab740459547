@@ -4,7 +4,7 @@ package findThenSum;
 public class FindThenSum {
 
 	 public static void main(String[] args){
-		 int finalSum = sumEvensBetween(1,5, "ih");
+		 int finalSum = sumEvensBetween(-5, 0, "inclusive");
 		 System.out.println(finalSum);
 		 System.out.println(sumOddsBetween(0,5));
 	 }
@@ -13,11 +13,10 @@ public class FindThenSum {
 	 public static int sumEvensBetween(int first, int last, String incl){
 		 int sum = 0;
 		 if(first%2 != 0) first = first + 1;
-		 
 		 if(incl.equalsIgnoreCase("inclusive")){
 			 for(int i = first; i <= last; i+=2) sum = sum + i;
 		 } else {
-			 for(int i = first + 2; i < last; i+=2) sum = sum + i;
+			 for(int i = first + 2; i < last;) sum = sum + i;
 		 }
 		 return sum;
 	 }
