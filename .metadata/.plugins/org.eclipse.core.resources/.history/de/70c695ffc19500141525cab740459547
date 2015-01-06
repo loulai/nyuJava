@@ -1,10 +1,9 @@
-/** given an interval, sum all the even numbers in between (inclusive) **/
 package findThenSum;
 
 public class FindThenSum {
 
 	 public static void main(String[] args){
-		 int finalSum = sumEvensBetween(-5,0);
+		 int finalSum = sumEvensBetween(5,10);
 		 System.out.println(finalSum);
 	 }
 	 
