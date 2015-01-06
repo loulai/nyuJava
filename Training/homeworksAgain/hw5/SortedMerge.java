@@ -69,26 +69,13 @@ public class SortedMerge {
 			/*filling in final array with whichever value is smallest*/
 			if(c1 < size1 && c2 < size2){
 				
-				if(list1[c1] < list2[c2]){
-					total[i] = list1[c1];
-					c1++; //increment each time one value of the array has been inserted. Same below for list2.
-				}else if (list1[c1] > list2[c2]){
-					total[i] = list2[c2];
-					c2++;
-				}else if(list1[c1] == list2[c2]){ //for when there are two equal numbers
-					total[i] = list1[c1]; //in this situation, list1 is chosen to be inserted in first. The next iteration slots in the same value (naturally) but 
-					                      // from list2 instead. It doesn't matter if it was list1 or list2 first, as long as the list counter increment corresponds.
-					c1++; 
-				} 
+				if(list1[c1] <= list2[c2]) total[i] = list1[c1++];//increment each time one value of the array has been inserted. Same below for list2.
+				else if (list1[c1] > list2[c2]) total[i] = list2[c2++];
+				
 			/*when the 'end' of a list is reached*/
-			} else if(c1 >= size1){ //list1 has been 'used up'
-				total[i] = list2[c2]; //fill the remaining spaces in final array with remaining values from list2
-				c2++;
-			} else if (c2 >= size2){ //list2 used up this time, so fill with leftover list1 values
-				total[i] = list1[c1];
-				c1++;
+			} else if(c1 >= size1) total[i] = list2[c2++]; //list1 has been 'used up' fill the remaining spaces in final array with remaining values from list2
+			  else if (c2 >= size2){ total[i] = list1[c1++];//list2 used up this time, so fill with leftover list1 values
 			}
-			
 		}
 		//nice output
 		System.out.printf("\n==========  First Array (%d): ===============\n", size1);
@@ -100,7 +87,7 @@ public class SortedMerge {
 		for(int i = 0; i < size2; i++){
 			System.out.printf("[%3.1f] ",list2[i]);
 		}	
-		System.out.printf("\n========== Merged Array (%d): ============================= <<<<\n", total.length);
+		System.out.printf("\n========== Merged Array (%d): =============== <<<<\n", total.length);
 		for(int i = 0; i < total.length; i++){
 			System.out.printf("[%3.1f] ",total[i]);
 		}	
