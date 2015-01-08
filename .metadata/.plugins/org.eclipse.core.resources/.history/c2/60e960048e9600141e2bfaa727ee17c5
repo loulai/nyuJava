@@ -7,6 +7,7 @@ public class FindThenSum {
 		 int finalSum = sumEvensBetween(4,5, "not inclusive");
 		 System.out.println(finalSum);
 		 System.out.println(sumOddsBetween(0,5, "inclusive"));
+		 System.out.println(-3%2);
 	 }
 	 
 	 /* given an interval, sum all the even numbers in between. User specifies if end values are inclusive or not. */

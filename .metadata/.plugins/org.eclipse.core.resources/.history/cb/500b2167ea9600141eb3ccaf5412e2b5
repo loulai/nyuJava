@@ -6,7 +6,6 @@ package hw7;
  *
  */
 public class Course {
-
 	
 	private String name;
 	private String instructor;
