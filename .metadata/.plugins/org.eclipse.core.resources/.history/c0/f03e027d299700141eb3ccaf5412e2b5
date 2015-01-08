@@ -13,10 +13,11 @@ public class OrderedCourses {
 		for(int i = 0; i < 10; i++){
 			listOfCourses[i] = new Course(courseNames[i], courseInstructor[i], courseCapacity[i], courseNumOfStudents[i],courseCode[i]);
 		}
-	
+		
+		int sum = 0;
 		for(int i = 0; i < 10; i++) {
 			System.out.println(listOfCourses[i].getInstructor());
-			System.out.println(i);
+			sum = sum + i;
 		}
 		
 	}
