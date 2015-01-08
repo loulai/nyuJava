@@ -14,12 +14,10 @@ public class OrderedCourses {
 			listOfCourses[i] = new Course(courseNames[i], courseInstructor[i], courseCapacity[i], courseNumOfStudents[i],courseCode[i]);
 		}
 		for(int i = 0; i < 10; i++) System.out.printf("%-12s| %10s %5d/%-5d (%4s)\n", listOfCourses[i].getName(), listOfCourses[i].getInstructor(), listOfCourses[i].getNumOfStudents(), listOfCourses[i].getCapacity(), listOfCourses[i].getCourseCode());
-		System.out.println("by instructor : =================== ");
+		System.out.println("===================");
 		Course[] sorted = sortByInstuctor(listOfCourses);
+	
 		for(int i = 0; i < 10; i++) System.out.printf("%-12s| %10s %5d/%-5d (%4s)\n", sorted[i].getName(), sorted[i].getInstructor(), sorted[i].getNumOfStudents(), sorted[i].getCapacity(), sorted[i].getCourseCode());
-		System.out.println("by capacity   : =================== ");
-		Course[] sortedCapacity = sortByCapacity(listOfCourses);
-		for(int i = 0; i < 10; i++) System.out.printf("%-12s| %10s %5d/%-5d (%4s)\n", sortedCapacity[i].getName(), sortedCapacity[i].getInstructor(), sortedCapacity[i].getNumOfStudents(), sortedCapacity[i].getCapacity(), sortedCapacity[i].getCourseCode());
 		
 	}
 	
@@ -27,37 +25,22 @@ public class OrderedCourses {
 		Course[] orderedCourses = new Course[listOfCourses.length];
 		boolean flag = true;
 		Course temp;
+		int c =0;
 		while(flag){
-			flag = false;
+			
 			for(int i = 0; i < listOfCourses.length - 1; i++ ){ //while loop runs until no more swaps is needed to occur
+				flag = false;
 				if(listOfCourses[i].getInstructor().compareToIgnoreCase(listOfCourses[i + 1].getInstructor()) > 0){
 					temp = listOfCourses[i];
 					listOfCourses[i] = listOfCourses[i+1];
 					listOfCourses[i + 1] = temp;
 					flag = true;
+					c++;
+					System.out.println("swap occured! "+ c);
 				}
 			}
 		}
 		for(int i = 0; i < listOfCourses.length; i++) orderedCourses[i] = listOfCourses[i];
-		return orderedCourses;
-	}
-	
-	public static Course[] sortByCapacity(Course[] listOfCourses){
-		Course[] orderedCourses = new Course[listOfCourses.length];
-		Course temp;
-		boolean flag = true;
-		while(flag){
-			flag = false;
-			for(int i = 0; i < listOfCourses.length - 1; i++){
-				if(listOfCourses[i].getCapacity() > listOfCourses[i + 1].getCapacity()){
-					temp = listOfCourses[i];
-					listOfCourses[i] = listOfCourses[i + 1];
-					listOfCourses[i + 1] = temp;
-					flag = true;
-				}
-			}
-			for(int i = 0; i <listOfCourses.length; i++) orderedCourses[i] = listOfCourses[i];
-		}
 		return orderedCourses;
 	}
 

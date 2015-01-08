@@ -14,10 +14,11 @@ public class OrderedCourses {
 			listOfCourses[i] = new Course(courseNames[i], courseInstructor[i], courseCapacity[i], courseNumOfStudents[i],courseCode[i]);
 		}
 		for(int i = 0; i < 10; i++) System.out.printf("%-12s| %10s %5d/%-5d (%4s)\n", listOfCourses[i].getName(), listOfCourses[i].getInstructor(), listOfCourses[i].getNumOfStudents(), listOfCourses[i].getCapacity(), listOfCourses[i].getCourseCode());
-		System.out.println("by instructor : =================== ");
+		System.out.println("===================");
+		
 		Course[] sorted = sortByInstuctor(listOfCourses);
 		for(int i = 0; i < 10; i++) System.out.printf("%-12s| %10s %5d/%-5d (%4s)\n", sorted[i].getName(), sorted[i].getInstructor(), sorted[i].getNumOfStudents(), sorted[i].getCapacity(), sorted[i].getCourseCode());
-		System.out.println("by capacity   : =================== ");
+		
 		Course[] sortedCapacity = sortByCapacity(listOfCourses);
 		for(int i = 0; i < 10; i++) System.out.printf("%-12s| %10s %5d/%-5d (%4s)\n", sortedCapacity[i].getName(), sortedCapacity[i].getInstructor(), sortedCapacity[i].getNumOfStudents(), sortedCapacity[i].getCapacity(), sortedCapacity[i].getCourseCode());
 		
@@ -53,7 +54,6 @@ public class OrderedCourses {
 					temp = listOfCourses[i];
 					listOfCourses[i] = listOfCourses[i + 1];
 					listOfCourses[i + 1] = temp;
-					flag = true;
 				}
 			}
 			for(int i = 0; i <listOfCourses.length; i++) orderedCourses[i] = listOfCourses[i];
