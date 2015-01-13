@@ -23,7 +23,28 @@ public class FindThenSum {
 		 return sum;
 	 }
 	 
-	 /* this time sum odds, ends also inclusive/not also depends on user input */
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 /* this time sum odds, ends also inclusive */
 	 public static int sumOddsBetween(int first, int last, String mod){
 		 int sum = 0;
 		

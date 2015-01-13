@@ -4,7 +4,7 @@ package findThenSum;
 public class FindThenSum {
 
 	 public static void main(String[] args){
-		 int finalSum = sumEvensBetween(1,4, "inclusive");
+		 int finalSum = sumEvensBetween(4,5, "not inclusive");
 		 System.out.println(finalSum);
 		 System.out.println(sumOddsBetween(0,5, "inclusive"));
 	 }
@@ -12,6 +12,7 @@ public class FindThenSum {
 	 /* given an interval, sum all the even numbers in between. User specifies if end values are inclusive or not. */
 	 public static int sumEvensBetween(int first, int last, String mod){
 		 int sum = 0;
+		 
 		 if(mod.equalsIgnoreCase("inclusive")){
 			 if(first%2 != 0) first = first + 1; //make even if starting value is odd
 			 for(int i = first; i <= last; i+=2) sum = sum + i;
@@ -23,7 +24,28 @@ public class FindThenSum {
 		 return sum;
 	 }
 	 
-	 /* this time sum odds, ends also inclusive/not also depends on user input */
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 /* this time sum odds, ends also inclusive */
 	 public static int sumOddsBetween(int first, int last, String mod){
 		 int sum = 0;
 		
