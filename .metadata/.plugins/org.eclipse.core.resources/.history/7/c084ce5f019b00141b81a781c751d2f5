@@ -9,7 +9,7 @@ class Dummy {
 
     public void Dummy() {}
 
-    public void Dummy(String name) {
+    public Dummy(String name) {
         this.name = name;
     }
 
