@@ -23,32 +23,5 @@ public class Movie {
 		return this.title;
 	}
 	
-	private void setTitle(String newTitle){
-		this.title = newTitle;
-	}
-	
-	private double getDuration(){
-		return this.duration;
-	}
-	
-	private void setDuration(double newDuration){
-		this.duration = newDuration;
-	}
-	
-	private int getReleaseYear(){
-		return this.releaseYear;
-	}
-	
-	private void setReleaseYear(int newReleaseYear){
-		this.releaseYear = newReleaseYear;
-	}
-	
-	private float getRating(){
-		return this.rating;
-	}
-	
-	private void setRating(float newRating){
-		this.rating = newRating;
-	}
 
 }
