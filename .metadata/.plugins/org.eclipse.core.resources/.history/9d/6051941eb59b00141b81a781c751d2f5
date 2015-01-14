@@ -27,9 +27,9 @@ public class Matrix {
 		String finalString = "";
 		for(int r = 0; r < this.rawMatrix.length; r++){
 			for(int c = 0; c < this.rawMatrix[0].length; c++){
-				finalString = finalString  + String.format("%4d", this.rawMatrix[r][c]);
+				finalString = finalString  + Integer.toString(this.rawMatrix[r][c]) + " ";
 			}
-			finalString = finalString + "\n";
+			finalString = finalString + "/n";
 		}
 		return finalString;
 	}
