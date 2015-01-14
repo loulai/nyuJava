@@ -23,11 +23,6 @@ public class Matrix {
 		return matrix;
 	}
 	
-	private int[][] hFlip(Matrix matrix){
-		int[][] rawMatrix = this.rawMatrix;
-		return rawMatrix;
-	}
-	
 	public String toString(){
 		String finalString = "";
 		for(int r = 0; r < this.rawMatrix.length; r++){
@@ -38,8 +33,6 @@ public class Matrix {
 		}
 		return finalString;
 	}
-	
-	
 	
 	
 }
