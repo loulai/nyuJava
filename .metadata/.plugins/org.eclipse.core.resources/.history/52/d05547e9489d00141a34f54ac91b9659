@@ -21,7 +21,7 @@ public class FindSecondLargestAgain {
 				secondLargest = largest;
 				largest = nums[i];
 			}
-			if(nums[i] > secondLargest && nums[i] <= largest) secondLargest = nums[i];
+			if(nums[i] > secondLargest && nums[i] < largest) secondLargest = nums[i];
 		}
 		return secondLargest;
 	}
