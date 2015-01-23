@@ -8,7 +8,7 @@ public class Matrix {
 		Matrix myMatrix = new Matrix();
 		System.out.println("========== original:");
 		System.out.println(myMatrix);
-		System.out.println("========== hflip:");
+		System.out.println("========== hlip:");
 		System.out.println(myMatrix.hFlip());
 	}
 	
@@ -26,7 +26,7 @@ public class Matrix {
 		return matrix;
 	}
 	
-	private Matrix hFlip(){
+	private int[][] hFlip(){
 		int[][] rawMatrix = this.rawMatrix;
 		int temp;
 		
@@ -37,7 +37,7 @@ public class Matrix {
 				this.rawMatrix[r][this.rawMatrix[0].length - c - 1] = temp; //swapping mirror value
 			}
 		}
-		return this;
+		return rawMatrix;
 	}
 	
 	public String toString(){

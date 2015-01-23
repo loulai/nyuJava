@@ -6,10 +6,8 @@ public class Matrix {
 	
 	public static void main(String[] args){
 		Matrix myMatrix = new Matrix();
-		System.out.println("========== original:");
+		System.out.println("========== original matrix:");
 		System.out.println(myMatrix);
-		System.out.println("========== hflip:");
-		System.out.println(myMatrix.hFlip());
 	}
 	
 	private Matrix(){
@@ -26,18 +24,18 @@ public class Matrix {
 		return matrix;
 	}
 	
-	private Matrix hFlip(){
+	private int[][] hFlip(Matrix matrix){
 		int[][] rawMatrix = this.rawMatrix;
 		int temp;
 		
 		for(int r = 0; r < this.rawMatrix.length; r++){
-			for(int c = 0; c < (this.rawMatrix[0].length / 2); c++){
-				temp = this.rawMatrix[r][c]; //store current value in current position
-				this.rawMatrix[r][c] = this.rawMatrix[r][this.rawMatrix[0].length - c - 1]; //change value in current position
-				this.rawMatrix[r][this.rawMatrix[0].length - c - 1] = temp; //swapping mirror value
+			for(int c = 0; c < this.rawMatrix[0].length; c++){
+				temp = this.rawMatrix[r][c];
+				this.rawMatrix[r][c];
 			}
 		}
-		return this;
+		
+		return rawMatrix;
 	}
 	
 	public String toString(){
