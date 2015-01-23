@@ -6,6 +6,7 @@ public class Matrix {
 	
 	public static void main(String[] args){
 		Matrix myMatrix = new Matrix();
+		System.out.println("========== original matrix:");
 		System.out.println(myMatrix);
 	}
 	

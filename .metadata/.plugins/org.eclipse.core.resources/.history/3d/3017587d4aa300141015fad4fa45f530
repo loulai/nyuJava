@@ -25,6 +25,15 @@ public class Matrix {
 	
 	private int[][] hFlip(Matrix matrix){
 		int[][] rawMatrix = this.rawMatrix;
+		int temp;
+		
+		for(int r = 0; r < this.rawMatrix.length; r++){
+			for(int c = 0; c < this.rawMatrix[0].length; c++){
+				temp = this.rawMatrix[r][c];
+				this.rawMatrix[r][c];
+			}
+		}
+		
 		return rawMatrix;
 	}
 	
