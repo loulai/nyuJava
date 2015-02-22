@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1424640647110_1" label="102 Data Structures" name="102 Data Structures">
+<item elementID="=Calculator Assignment" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/102 Data Structures" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1410286680005_0" label="Window Working Set" name="Aggregate for window 1410286680004"/>
+<mruList name="102 Data Structures"/>
 </workingSetManager>
