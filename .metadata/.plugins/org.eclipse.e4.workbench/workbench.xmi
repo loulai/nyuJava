@@ -82,8 +82,8 @@
             </children>
             <children xsi:type="basic:PartSashContainer" xmi:id="_cwfzX5GwEeSr-Z3H4qb6Ww" containerData="8587" selectedElement="_cwfzYJGwEeSr-Z3H4qb6Ww" horizontal="true">
               <children xsi:type="basic:PartSashContainer" xmi:id="_cwfzYJGwEeSr-Z3H4qb6Ww" containerData="7500" selectedElement="_cwfzYZGwEeSr-Z3H4qb6Ww">
-                <children xsi:type="advanced:Placeholder" xmi:id="_cwfzYZGwEeSr-Z3H4qb6Ww" elementId="org.eclipse.ui.editorss" containerData="8445" ref="_cwhCTZGwEeSr-Z3H4qb6Ww"/>
-                <children xsi:type="basic:PartStack" xmi:id="_cwfzYpGwEeSr-Z3H4qb6Ww" elementId="bottom" containerData="1555" selectedElement="_cwfzZ5GwEeSr-Z3H4qb6Ww">
+                <children xsi:type="advanced:Placeholder" xmi:id="_cwfzYZGwEeSr-Z3H4qb6Ww" elementId="org.eclipse.ui.editorss" containerData="8154" ref="_cwhCTZGwEeSr-Z3H4qb6Ww"/>
+                <children xsi:type="basic:PartStack" xmi:id="_cwfzYpGwEeSr-Z3H4qb6Ww" elementId="bottom" containerData="1846" selectedElement="_cwfzZ5GwEeSr-Z3H4qb6Ww">
                   <tags>newtablook</tags>
                   <tags>org.eclipse.e4.secondaryDataStack</tags>
                   <children xsi:type="advanced:Placeholder" xmi:id="_cwfzY5GwEeSr-Z3H4qb6Ww" elementId="org.eclipse.ui.views.ProblemView" toBeRendered="false" ref="_cwho6pGwEeSr-Z3H4qb6Ww"/>
@@ -212,13 +212,13 @@
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_IZvg8LsCEeSAvPQrjsR4zg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ArrayStack.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ArrayStack.java&quot; partName=&quot;ArrayStack.java&quot; title=&quot;ArrayStack.java&quot; tooltip=&quot;Calculator/src/temp/ArrayStack.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Calculator/src/temp/ArrayStack.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1714&quot; selectionTopPixel=&quot;439&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ArrayStack.java&quot; partName=&quot;ArrayStack.java&quot; title=&quot;ArrayStack.java&quot; tooltip=&quot;Calculator/src/temp/ArrayStack.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Calculator/src/temp/ArrayStack.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1401&quot; selectionTopPixel=&quot;415&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
         </children>
         <children xsi:type="basic:Part" xmi:id="_JjRU0LsCEeSAvPQrjsR4zg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Convertor.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Convertor.java&quot; partName=&quot;Convertor.java&quot; title=&quot;Convertor.java&quot; tooltip=&quot;Calculator/src/temp/Convertor.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Calculator/src/temp/Convertor.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;869&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Convertor.java&quot; partName=&quot;Convertor.java&quot; title=&quot;Convertor.java&quot; tooltip=&quot;Calculator/src/temp/Convertor.java&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Calculator/src/temp/Convertor.java&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;795&quot; selectionTopPixel=&quot;75&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -443,7 +443,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cwhpSJGwEeSr-Z3H4qb6Ww" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_oFK5cLsZEeSRhaaGSxedsA" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_cwksdpGwEeSr-Z3H4qb6Ww"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_b3b5MLuFEeSWSqJNPi_rnw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_cwksdpGwEeSr-Z3H4qb6Ww"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cwhpVZGwEeSr-Z3H4qb6Ww" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -467,7 +467,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cwhpepGwEeSr-Z3H4qb6Ww" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_oFPx8rsZEeSRhaaGSxedsA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_cwkr_ZGwEeSr-Z3H4qb6Ww"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_b3h_0ruFEeSWSqJNPi_rnw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_cwkr_ZGwEeSr-Z3H4qb6Ww"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cwhphZGwEeSr-Z3H4qb6Ww" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -863,7 +863,7 @@
       <tags>platform:cocoa</tags>
       <parameters xmi:id="_cwi27ZGwEeSr-Z3H4qb6Ww" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.search.ui.views.SearchView"/>
     </bindings>
-    <bindings xmi:id="_nmCtcbsZEeSRhaaGSxedsA" keySequence="COMMAND+CTRL+F" command="_cwl6YJGwEeSr-Z3H4qb6Ww"/>
+    <bindings xmi:id="_bVu6ULuFEeSWSqJNPi_rnw" keySequence="COMMAND+CTRL+F" command="_cwl6YJGwEeSr-Z3H4qb6Ww"/>
   </bindingTables>
   <bindingTables xmi:id="_cwi275GwEeSr-Z3H4qb6Ww" elementId="org.eclipse.jdt.ui.javaEditorScope" bindingContext="_cwjdzJGwEeSr-Z3H4qb6Ww">
     <bindings xmi:id="_cwi28JGwEeSr-Z3H4qb6Ww" keySequence="COMMAND+SHIFT+C" command="_cwkFIJGwEeSr-Z3H4qb6Ww"/>
@@ -977,7 +977,7 @@
     <bindings xmi:id="_cwi3M5GwEeSr-Z3H4qb6Ww" keySequence="F7" command="_cwl6EpGwEeSr-Z3H4qb6Ww"/>
   </bindingTables>
   <bindingTables xmi:id="_cwi3NJGwEeSr-Z3H4qb6Ww" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_cwjd1pGwEeSr-Z3H4qb6Ww">
-    <bindings xmi:id="_nmDUgLsZEeSRhaaGSxedsA" keySequence="M1+W" command="_cwl6YpGwEeSr-Z3H4qb6Ww"/>
+    <bindings xmi:id="_bVvhYLuFEeSWSqJNPi_rnw" keySequence="M1+W" command="_cwl6YpGwEeSr-Z3H4qb6Ww"/>
   </bindingTables>
   <bindingTables xmi:id="_cwi3NpGwEeSr-Z3H4qb6Ww" bindingContext="_cwjd2pGwEeSr-Z3H4qb6Ww"/>
   <bindingTables xmi:id="_cwi3N5GwEeSr-Z3H4qb6Ww" bindingContext="_cwjd25GwEeSr-Z3H4qb6Ww"/>
