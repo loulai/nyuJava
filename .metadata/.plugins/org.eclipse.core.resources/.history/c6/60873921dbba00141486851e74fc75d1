@@ -1,8 +1,0 @@
-
-public class Calculator {
-	public static void main(String[] args){
-		String stringInput = "hello";
-		System.out.println(stringInput.substring(0,5));
-	}
-	
-}
