@@ -2,6 +2,8 @@
 <workingSetManager>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1424640647110_1" label="102 Data Structures" name="102 Data Structures">
 <item elementID="=Calculator" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Primes with Queues" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1410286680005_0" label="Window Working Set" name="Aggregate for window 1410286680004"/>
+<mruList name="102 Data Structures"/>
 </workingSetManager>
