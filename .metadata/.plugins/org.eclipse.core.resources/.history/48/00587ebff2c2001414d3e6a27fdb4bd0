@@ -18,15 +18,11 @@ public class Sieve {
 		primesTo(n);
 	}
 	
-	/** method outputs all primes number up until the upper bound (inclusive)
-	 * @param n                         Upper bound, which is input by user    
-	 * @throws IllegalArgumentException Error thrown if upper bound is less than 2
-	 */
 	public static void primesTo(Integer n) throws IllegalArgumentException{
 		if (n < 2) throw new IllegalArgumentException("Upper bound must be greater than 2, try again");
 		ArrayUnbndQueue numbers = new ArrayUnbndQueue();
 		ArrayUnbndQueue primes = new ArrayUnbndQueue();
-		ArrayUnbndQueue aside = new ArrayUnbndQueue(); //used to hold the prime numbers that are also divisors, and is output at the end of method
+		ArrayUnbndQueue aside = new ArrayUnbndQueue();
 		Integer p;
 		Integer p2;
 		
