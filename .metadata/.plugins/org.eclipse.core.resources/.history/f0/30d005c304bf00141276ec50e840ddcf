@@ -1,0 +1,16 @@
+package temp;
+
+public class Calculator {
+	
+	
+	String postFixString; //calc.pfixexp = XXX
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+    Convertor c = Convertor(expression);
+    
+
+}

@@ -1,0 +1,62 @@
+package temp;
+import java.util.Scanner;
+import java.math.*;
+public class Sieve {
+
+	public static void main(String[] args) {
+		System.out.println("Calculate primes up until which number?: ");
+		Scanner input = new Scanner(System.in);
+		Integer n = input.nextInt();
+		primesTo(n);
+	}
+	
+	public static void primesTo(Integer lastNum){
+		ArrayUnbndQueue numbers = new ArrayUnbndQueue<Integer>();
+		ArrayUnbndQueue primes = new ArrayUnbndQueue<Integer>();
+		
+		/* divs and others are a split of the numbers queue*/
+		ArrayUnbndQueue divs = new ArrayUnbndQueue();     //contains all numbers < sqrt(n)
+		ArrayUnbndQueue others = new ArrayUnbndQueue();   //everything else < n
+		
+		Integer p;
+		Integer p2 = null;
+		Integer temp;
+		
+		for (int i = 2; i <= lastNum; i++) numbers.enqueue(i); //filling numbers queue from 2 to n
+		
+		while(!numbers.isEmpty()){ //splitting up 'numbers' into 'divs' and 'others'
+			temp = (Integer) numbers.dequeue();
+			if(temp <= Math.sqrt(lastNum)) {
+				System.out.println("divs  : " + temp);
+				divs.enqueue(temp);
+			}
+			else {
+				System.out.println("others: " + temp);
+				others.enqueue(temp);
+			}
+		}
+		
+		while(!divs.isEmpty()){
+			p = (Integer) divs.dequeue();
+			System.out.println("=====");
+			System.out.println("current div: " + p);
+			System.out.println("is others empty?:" + others.isEmpty());
+			System.out.println("is primes empty?:" + primes.isEmpty());
+		
+			while(!others.isEmpty()){
+				p2 = (Integer) others.dequeue();
+				System.out.println(p2 + " % " + p);
+				if(!(p2 % p == 0)) primes.enqueue(p2);
+			}
+			
+			while(!primes.isEmpty()) others.enqueue(primes.dequeue()); //others = primes
+			
+			if(!divs.isEmpty()) {
+				while(!primes.isEmpty()) primes.dequeue(); //primes = null
+			}
+		}
+		System.out.println("is divs empty?:" + divs.isEmpty());
+		while(primes.isEmpty() && !others.isEmpty()) System.out.print(others.dequeue() + " ");
+	}
+	
+}

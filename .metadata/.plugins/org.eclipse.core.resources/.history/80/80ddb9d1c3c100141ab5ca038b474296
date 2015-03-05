@@ -1,0 +1,55 @@
+package temp;
+import java.util.Scanner;
+import java.Math;
+public class Sieve {
+
+	public static void main(String[] args) {
+		System.out.println("Calculate primes up until which number?: ");
+		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		primesTo(n);
+
+	}
+	
+	public static void primesTo(int n){
+		ArrayUnbndQueue numbers = new ArrayUnbndQueue();
+		ArrayUnbndQueue primes = new ArrayUnbndQueue();
+		
+		/* divs and others are a split of the numbers stack.*/
+		ArrayUnbndQueue divs = new ArrayUnbndQueue();     //contains all numbers < sqrt(n)
+		ArrayUnbndQueue others = new ArrayUnbndQueue();   //everything else < n
+		
+		int p;
+		int p2;
+		
+		for (int i = 2; i < n; i++) numbers.enqueue(n);
+		
+//		for(int i = 2; i < (int) Math.sqrt(n); i++){
+//			top = i;
+//			for(int k = 2; k < n - 1; k++){
+//				nxt = k + 1;
+//				if(nxt % top == 0){
+//					`
+//				}
+//			}
+//		}
+		
+		System.out.println(n);
+	}
+
+}
+
+
+//numbers.enqueue(i); //filling numbers queue from 2 to n
+//
+//while(!numbers.isEmpty()){ //splitting up 'numbers' into 'divs' and 'others'
+//	temp = (Integer) numbers.dequeue();
+//	if(temp <= Math.sqrt(lastNum)) {
+//		System.out.println("divs  : " + temp);
+//		divs.enqueue(temp);
+//	}
+//	else {
+//		System.out.println("others: " + temp);
+//		others.enqueue(temp);
+//	}
+//}
