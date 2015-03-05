@@ -1,8 +1,8 @@
 /**
-  * Graders     : Shuang Zhou, Navneet Saini 
 + * Author      : Lou (Louise) Lai
-  * Professor   : Evan Korth
 + * Date        : Monday March 2nd, 2015
++ * Professor   : Evan Korth
++ * Graders     : Shuang Zhou, Navneet Saini 
 + * Description : Sieve class filters out primes from 2 until the user's upper bound (n), using the Sieve of Eratosthenes method
 + **/
 
@@ -35,26 +35,28 @@ public class Sieve {
 		}
 		
 		p = (Integer) numbers.dequeue(); //obtaining first divisor
-		aside.enqueue(p); //putting it in 'aside' queue
+		aside.enqueue(p); //putting it in aside
 		
 		while(p <= Math.sqrt(n)){
 			do { 
 				p2 = (Integer) numbers.dequeue();
+				System.out.println("second divisor:" + p2);
 				if( p2 % p != 0){
-					primes.enqueue(p2); //falls through to 'primes' queue if mod is not 0
+					primes.enqueue(p2); //falls through to primes if mod is not 0
+					System.out.println(" <<< " + p2);
 				}
 			} while(!numbers.isEmpty());
-			
-			p = (Integer) primes.dequeue(); //preparing for next round, same logic as obtaining first divisor (p) before the while loop
+			p = (Integer) primes.dequeue(); //preparing for next round
 			aside.enqueue(p);
+			System.out.println("==== next round div:" + p);
 			
-			while(!primes.isEmpty()) numbers.enqueue(primes.dequeue()); //filling 'numbers' queue with numbers from 'primes', in preparation for next outer while loop 
+			while(!primes.isEmpty()) numbers.enqueue(primes.dequeue()); //numbers = primes
+		//	while(!primes.isEmpty()) primes.dequeue(); //primes = null, so the primes are blanked out, ready for the next while loop iteration
 		}
 		
 		/* output */
-		System.out.printf("Primes up to %d are: ", n);
-		while(!aside.isEmpty()) System.out.print(" " + aside.dequeue() + " "); //printing out all the primes that are divisors
-		while(!numbers.isEmpty()) System.out.print(" " + numbers.dequeue() + " "); //printing out all the remaining primes
+		while(!aside.isEmpty()) System.out.print("[" + aside.dequeue() + "]"); 
+		while(!numbers.isEmpty()) System.out.print(" " + numbers.dequeue() + " ");
 	}
 
 }
