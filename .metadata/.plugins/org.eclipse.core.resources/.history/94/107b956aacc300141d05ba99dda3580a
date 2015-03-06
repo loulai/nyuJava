@@ -58,10 +58,10 @@ public class LLHomeworkFunctions {
 		if(head1.getLink() == null && head2.getLink() == null){
 			if(head1.getInfo() != head2.getInfo()){
 				isEqual = false;
-			} 
-		} else if (head1.getLink() == null || head2.getLink() == null){
-			isEqual = false; //always, coz ONE of them is null
-			//if both of them were null, the above condition catches it and deals with equality comparison
+			} else if (head1 == null || head2 == null){
+				isEqual = false; //always, coz ONE of them is null
+				//if both of them were null, the above condition catches it and deals with equality comparison
+			}
 		}
 		return isEqual;
 	}
