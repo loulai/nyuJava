@@ -1,0 +1,42 @@
+//----------------------------------------------------------------------------
+// Implements Integer nodes for a Linked List.
+//----------------------------------------------------------------------------
+
+package temp;
+
+public class LLIntegerNode {
+  private Integer info;
+  private LLIntegerNode link;
+  
+  public LLIntegerNode(Integer info)
+  {
+    this.info = info;
+    link = null;
+  }
+ 
+  public void setInfo(Integer info)
+  // Sets info string of this LLStringNode.
+  {
+    this.info = info;
+  }
+
+  public Integer getInfo()
+  // Returns info string of this LLStringNode.
+  {
+    return info;
+  }
+ 
+  public void setLink(LLIntegerNode link)
+  // Sets link of this LLStringNode.
+  {
+    this.link = link;
+  }
+
+  public LLIntegerNode getLink()
+  // Returns link of this LLStringNode.
+  {
+    return link;
+  }
+}
+ 
+ 

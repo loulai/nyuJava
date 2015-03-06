@@ -1,0 +1,23 @@
+package temp;
+import java.io.*;
+import java.util.*;
+
+public class temp2 {
+	
+	 // int[] a contains integers between 1 and 5
+	  public static void findMissing(int[] a) {
+	    int missingNumber;
+	   
+	    for (int i = 1; i <= (a.length - 1); i++){
+	      System.out.println(i);
+	    }
+	   
+	  }
+	  
+	  public static void main(String[] args) {
+		    int[] numbers = {5, 3, 1, 2};
+		    
+		    findMissing(numbers);
+	  }
+	  
+}
