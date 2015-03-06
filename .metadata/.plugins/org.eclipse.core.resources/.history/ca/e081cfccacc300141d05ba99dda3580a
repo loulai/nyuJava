@@ -16,8 +16,8 @@ public class LLHomeworkFunctions {
 		b1.setLink(b2);
 		LLNode<Integer> b3 = new LLNode<Integer>(9);
 		b2.setLink(b3);
-		LLNode<Integer> b4 = new LLNode<Integer>(10);
-		b3.setLink(b4);
+//		LLNode<Integer> b4 = new LLNode<Integer>(10);
+//		b3.setLink(b4);
 
 		System.out.println(equalLists(a1, b1));
 	}
