@@ -5,8 +5,8 @@
 package temp;
 
 public class LLNode<T> {
-  private T info;
-  private LLNode<T> link;
+  protected T info;
+  protected LLNode<T> link;
   
   public LLNode(T info)
   {
