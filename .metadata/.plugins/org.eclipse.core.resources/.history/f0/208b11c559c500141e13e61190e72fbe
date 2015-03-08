@@ -14,10 +14,6 @@ If there were 5 nodes, the while loop runs also only twice for the same reason.
 If there were 4 nodes, the while loop runs only once, similarly because after one iteration the condition of the next two nodes not
 pointing to null no longer holds true.
 If there were 3 nodes, the while loops runs one too. 
-The while loop never runs if there are two or less nodes, because the second node already points to null so the condition for the
-while loop is false.
-
-Thus, in the situation of non-recursive lists, the runtime is (n-1)/2.
 
 
 

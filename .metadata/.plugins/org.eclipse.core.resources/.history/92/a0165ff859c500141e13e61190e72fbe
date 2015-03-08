@@ -27,7 +27,7 @@ public class TerminatesTest {
 //		b6.setLink(b5);
 		b1.setLink(b4);
 		
-		System.out.println("Can list 'b' be terminated? " + terminates(b4)); //testing results, if you want
+		System.out.println("Can list 'b' be terminated? " + terminates(b6)); //testing results, if you want
 		
 	}
 	
