@@ -2,7 +2,7 @@ package temp;
 
 public class LLHomeworkFunctions {
 
-	public static void main(String [] args) {
+	static public void main(String [] args) {
 		
 		/* setting up linked list */
 		LLNode<Integer> a1 = new LLNode<Integer>(8);
