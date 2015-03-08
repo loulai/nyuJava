@@ -1,0 +1,25 @@
+package temp;
+
+public class TerminatesTest {
+
+	public static void main(String[] args) {
+		
+		LinkedStack<Integer> linkedStack = new LinkedStack<Integer>();
+		linkedStack.push(1);
+		linkedStack.push(2);
+		linkedStack.push(3);
+		
+		System.out.println(linkedStack.top());
+	}
+	
+	/**
+	 * @param <T>
+	 * @param list1
+	 * @return true if the list eventually terminates, and false if the list points back at one of it's
+	 *  previous nodes.
+	 */
+	static public <T> boolean terminates(LLNode<T> list) {
+		return true;
+	}
+	
+}
