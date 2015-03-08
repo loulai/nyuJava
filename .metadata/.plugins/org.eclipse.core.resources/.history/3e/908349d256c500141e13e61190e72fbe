@@ -1,0 +1,7 @@
+
+Runtime Analysis for Part 2
+=================
+
+Runtime is dependent on long the linked list is. 
+For example, if there were 4 nodes in the linked list, the method's while loop will run 3 times.
+If there were 

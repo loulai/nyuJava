@@ -1,0 +1,13 @@
+
+Runtime Analysis for Part 2
+=================
+
+Runtime is dependent on long the linked list is. 
+For example, if there were 4 nodes and the list was recursive, the method's while loop will run 3 times.
+If there were 3 nodes, it runs 2 times.
+
+Thus, in the situation of recursive lists, the running time for the algorithm is n - 1, or just n.
+
+
+
+
