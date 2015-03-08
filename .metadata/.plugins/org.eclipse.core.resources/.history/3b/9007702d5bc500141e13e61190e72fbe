@@ -32,7 +32,7 @@ public class LLHomeworkFunctions {
 	static public <T> boolean equalLists(LLNode<T> list1, LLNode<T> list2) {
 		/**ask: is it ok that the two nodes given are assumed to be the FIRST node pushed into the stack, and 
 		 * not the top of the list? Because there is no way that this can be called for the real LinkedList class,
-		 * at least not without either storing the first node or popping the entire thing (kinda crazy)
+		 * at least not without either storing the first node or popping the entire thing
 		 */
 		boolean isEqual = true;
 		LLNode<T> head1 = list1;

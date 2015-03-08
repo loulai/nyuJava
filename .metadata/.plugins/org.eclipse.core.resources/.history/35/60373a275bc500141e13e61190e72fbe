@@ -22,18 +22,16 @@ public class LLHomeworkFunctions {
 		System.out.println(equalLists(a1, b1));
 	}
 	
-	/** Checks to see if lists are equal, in terms of both length and values
-	 * @param LLNode<T> the LLNode class type
-	 * @param list1     the first node pushed into the first linked list. NOT the head of the list.
-	 * @param list2     the first node too, but of the second list.
-	 * @return true      if the lists are equal. Assume both lists terminate.
+	/**
+	 * @param <T>
+	 * @param list1
+	 * @param list2
+	 * @return true if the lists are equal.  Assume both lists terminate.
 	 */
 	
 	static public <T> boolean equalLists(LLNode<T> list1, LLNode<T> list2) {
-		/**ask: is it ok that the two nodes given are assumed to be the FIRST node pushed into the stack, and 
-		 * not the top of the list? Because there is no way that this can be called for the real LinkedList class,
-		 * at least not without either storing the first node or popping the entire thing (kinda crazy)
-		 */
+		// TODO: Part 1 of this assignment is to implement this correctly.
+		
 		boolean isEqual = true;
 		LLNode<T> head1 = list1;
 		LLNode<T> head2 = list2;
@@ -45,14 +43,14 @@ public class LLHomeworkFunctions {
 			}
 			System.out.printf("%d == %d\n", head1.getInfo(), head2.getInfo());
 			System.out.println(isEqual);
-			
 			/*increment*/
+			
 			head1 = head1.getLink();
 			head2 = head2.getLink();
 			
-//			System.out.println("--------------");
-//			System.out.println("next h1: " + head1.getInfo());
-//			System.out.println("next h2: " + head2.getInfo());
+			System.out.println("--------------");
+			System.out.println("next h1: " + head1.getInfo());
+			System.out.println("next h2: " + head2.getInfo());
 		}
 		
 		if(head1.getLink() == null && head2.getLink() == null){
