@@ -1,0 +1,58 @@
+package temp;
+
+public class TerminatesTest {
+
+	public static void main(String[] args) {
+		
+//		LinkedStack<Integer> linkedStack = new LinkedStack<Integer>();
+//		linkedStack.push(1);
+//		linkedStack.push(2);
+//		linkedStack.push(3);
+//		System.out.println(linkedStack.top());
+		
+		/* setting up linked lists */
+		 /* list can be terminated */
+		LLNode<Integer> a1 = new LLNode<Integer>(1);
+		LLNode<Integer> a2 = new LLNode<Integer>(2);
+		a2.setLink(a1);
+		LLNode<Integer> a3 = new LLNode<Integer>(3);
+		a3.setLink(a2);
+		
+		/* list can't be terminated (recursive) */
+		LLNode<Integer> b1 = new LLNode<Integer>(1);
+		LLNode<Integer> b2 = new LLNode<Integer>(2);
+		b2.setLink(b1);
+//		LLNode<Integer> b3 = new LLNode<Integer>(3);
+//		b3.setLink(b2);
+//		LLNode<Integer> b4 = new LLNode<Integer>(4);
+//		b4.setLink(b3);
+//		b1.setLink(b4);
+		
+//		System.out.println(b1.getLink().getInfo());
+		System.out.println("Can list 'b' be terminated? " + terminates(b3));
+		
+	}
+	
+	/**
+	 * @param <T>
+	 * @param list  must be the 'end' of the list; i.e. the top of the stack, which is the last node pushed in
+	 * @return true if the list eventually terminates, and false if the list points back at one of it's
+	 *  previous nodes.
+	 */
+	static public <T> boolean terminates(LLNode<T> list) {
+		boolean canBeTerminated = true;
+		LLNode<Integer> slow = (LLNode<Integer>) list;
+		LLNode<Integer> fast = (LLNode<Integer>) list;
+		
+		while(canBeTerminated && fast.getLink() != null && fast.getLink().getLink() != null){
+			System.out.printf("s: %d | f: %d\n" , slow.getInfo(), fast.getInfo());
+			slow = slow.getLink();
+			fast = fast.getLink().getLink();
+			if(slow == fast)
+				canBeTerminated = false;
+		}
+		return canBeTerminated;
+		
+	}
+	
+}
