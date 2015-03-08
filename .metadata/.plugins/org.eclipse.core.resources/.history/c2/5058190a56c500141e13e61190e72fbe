@@ -19,11 +19,11 @@ public class TerminatesTest {
 		b2.setLink(b1);
 		LLNode<Integer> b3 = new LLNode<Integer>(3);
 		b3.setLink(b2);
-//		LLNode<Integer> b4 = new LLNode<Integer>(4);
-//		b4.setLink(b3);
-		b1.setLink(b3);
+		LLNode<Integer> b4 = new LLNode<Integer>(4);
+		b4.setLink(b3);
+		b1.setLink(b4);
 		
-		System.out.println("Can list 'b' be terminated? " + terminates(b3)); //testing results, if you want
+		System.out.println("Can list 'b' be terminated? " + terminates(a3)); //testing results, if you want
 		
 	}
 	

@@ -64,29 +64,14 @@ public class LLHomeworkFunctions {
 		return isEqual;
 	}
 	
-	/** Checks to see if the linked list stack can can be terminated, by checking the equality of references (logic explained more below)
-	 * @param LLNode<T> the LLNode class type
-	 * @param list      a node within the linked list
-	 * @return true if the list eventually terminates, and false if the list points back at one of its
+	/**
+	 * @param <T>
+	 * @param list1
+	 * @return true if the list eventually terminates, and false if the list points back at one of it's
 	 *  previous nodes.
 	 */
 	static public <T> boolean terminates(LLNode<T> list) {
-		/* overarching logic: there is one 'slow' and one 'fast' reference to nodes within the linked list.
-		 * The 'fast' reference is incremented (using getLink()) twice as fast as the 'slow' reference.
-		 * If the 'fast' and 'slow' ever overlap, this means the list does not terminate and is recursive.
-		 */
-		boolean canBeTerminated = true;
-		LLNode<Integer> slow = (LLNode<Integer>) list; //both start of referencing the top of the list
-		LLNode<Integer> fast = (LLNode<Integer>) list;
-		
-		while(canBeTerminated && fast.getLink() != null && fast.getLink().getLink() != null){ //last two conditions makes sure the while loop ends if the list in question can be terminated
-//			System.out.printf("s: %d | f: %d\n" , slow.getInfo(), fast.getInfo()); //just for debugging and testing if you want
-			slow = slow.getLink();
-			fast = fast.getLink().getLink();
-			if(slow == fast)
-				canBeTerminated = false;
-		}
-		return canBeTerminated;
+		return true;
 	}
 
 }
