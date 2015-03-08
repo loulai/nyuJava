@@ -2,9 +2,13 @@ package temp;
 
 public class SlowMaxStack<T> implements MaxStack<T> {
 
-	private final Maximizer<T> maximizer;
+	private final Maximizer<T> maximizer; //>>> Diego: why do we even need a maximizer object??
 	private LLNode<T> top;
 	
+	public static void main(String[] args){
+		Maximizer<T> m = new Maximizer<T>(); //>>Diego: why doesn't this work?
+	}
+
 	public SlowMaxStack(Maximizer<T> maximizer) {
 		this.maximizer = maximizer;
 	}

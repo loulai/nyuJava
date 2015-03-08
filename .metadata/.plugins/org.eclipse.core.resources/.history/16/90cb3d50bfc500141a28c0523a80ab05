@@ -27,11 +27,11 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	public void push(T info) {
 		top = top.pushValue(info); //pushing into source stack
 		
-//		/* maxStack tracker */
-//		if(maxStack.top.info.){
-//			maxStack.top.pushValue(info); //push into the stack if it's stack is empty
-//		}
-//		
+		/* maxStack tracker */
+		if(maxStack.top.info.){
+			maxStack.top.pushValue(info); //push into the stack if it's stack is empty
+		}
+		
 	}
 
 	@Override

@@ -41,8 +41,8 @@ public class LLNode<T> {
   
   /* additional two methods from homework code */
   public LLNode(T info, LLNode<T> link) {
-	  	this.info = info;
 		this.link = link;
+		this.info = info;
 	}
 	
 	public LLNode<T> pushValue(T info) {
