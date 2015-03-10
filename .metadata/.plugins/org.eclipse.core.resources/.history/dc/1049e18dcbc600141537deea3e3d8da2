@@ -9,12 +9,12 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	public static void main(String[] args){
 		/* setting up linked list */
 		FastMaxStack<Integer> f = new FastMaxStack<Integer>(new IntegerMaximizer());
-		f.push(7);
+		f.push(2);
 		f.push(3);
 		Integer top = f.top.info;
 		f.pop();
 		Integer top2 = f.top.info;
-		System.out.printf("is %d greater than %d? >> %s", top, top2, IntegerMaximizer.isLargerOrEqualTo(top, top2) );
+		System.out.printf("is %d greater than %d? > %s", top, top2, IntegerMaximizer.isLargerOrEqualTo(top, top2) );
 	}
 
 	public FastMaxStack(IntegerMaximizer maximizer) {

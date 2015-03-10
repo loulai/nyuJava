@@ -5,7 +5,7 @@ public interface MaxStack<T> {
 	
 	void push(T info);
 	
-	void pop();
+	T pop();
 	
 	T getMaxSoFar();
 }

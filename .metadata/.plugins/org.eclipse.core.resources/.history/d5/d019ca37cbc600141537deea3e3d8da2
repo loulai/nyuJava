@@ -9,12 +9,11 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	public static void main(String[] args){
 		/* setting up linked list */
 		FastMaxStack<Integer> f = new FastMaxStack<Integer>(new IntegerMaximizer());
-		f.push(7);
+		f.push(2);
 		f.push(3);
-		Integer top = f.top.info;
-		f.pop();
-		Integer top2 = f.top.info;
-		System.out.printf("is %d greater than %d? >> %s", top, top2, IntegerMaximizer.isLargerOrEqualTo(top, top2) );
+		Integer top = f.pop();
+		Integer top2 = f.pop();
+		System.out.printf("%d is greater than %d?: %s", top, top2, "h");
 	}
 
 	public FastMaxStack(IntegerMaximizer maximizer) {
@@ -41,7 +40,7 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	}
 
 	@Override
-	public void pop() throws StackUnderflowException {
+	public T pop() throws StackUnderflowException {
 		T topNodeInfo;
 		 if (!isEmpty()){
 			 topNodeInfo = top.link.info;
@@ -49,6 +48,7 @@ public class FastMaxStack<T> implements MaxStack<T>{
 		 } else {
 			 throw new StackUnderflowException("Pop attempted on an empty stack.");
 		 }
+		 return topNodeInfo;
 	}
 
 	@Override

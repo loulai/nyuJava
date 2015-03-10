@@ -9,7 +9,7 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	public static void main(String[] args){
 		/* setting up linked list */
 		FastMaxStack<Integer> f = new FastMaxStack<Integer>(new IntegerMaximizer());
-		f.push(7);
+		f.push(2);
 		f.push(3);
 		Integer top = f.top.info;
 		f.pop();

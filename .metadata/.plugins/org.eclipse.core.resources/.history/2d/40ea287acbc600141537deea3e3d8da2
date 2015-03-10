@@ -11,7 +11,7 @@ public class IntegerMaximizer implements Maximizer<Integer> {
 				  return t2;
 		  }
 		  
-		  public static boolean isLargerOrEqualTo(Integer topOfSourceStack, Integer topOfMaxStack){
+		  public boolean isLargerOrEqualTo(Integer topOfSourceStack, Integer topOfMaxStack){
 			  boolean isLargerOrEqualTo = false;
 			  if(topOfSourceStack.compareTo(topOfMaxStack) >= 0)
 				  isLargerOrEqualTo = true;
