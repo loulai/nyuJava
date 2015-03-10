@@ -1,6 +1,26 @@
 package temp;
 
 public class LLHomeworkFunctions {
+
+	public static void main(String [] args) {
+		
+		/* setting up linked list */
+		LLNode<Integer> a1 = new LLNode<Integer>(8);
+		LLNode<Integer> a2 = new LLNode<Integer>(6);
+		a1.setLink(a2);
+		LLNode<Integer> a3 = new LLNode<Integer>(9);
+		a2.setLink(a3);
+		
+		LLNode<Integer> b1 = new LLNode<Integer>(3);
+		LLNode<Integer> b2 = new LLNode<Integer>(6);
+		b1.setLink(b2);
+		LLNode<Integer> b3 = new LLNode<Integer>(9);
+		b2.setLink(b3);
+		LLNode<Integer> b4 = new LLNode<Integer>(10);
+		b3.setLink(b4);
+
+		System.out.println(equalLists(a1, b1));
+	}
 	
 	/** Checks to see if lists are equal, in terms of both length and values
 	 * @param LLNode<T> the LLNode class type
