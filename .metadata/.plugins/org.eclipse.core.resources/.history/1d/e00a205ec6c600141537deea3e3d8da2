@@ -1,0 +1,48 @@
+package temp;
+
+public class FastMaxStack<T> implements MaxStack<T>{
+
+	private final IntegerMaximizer maximizer;
+	private LLNode<T> top;
+	private LinkedStack<T> maxStack;
+	
+	public static void main(String[] args){
+		/* setting up linked list */
+		FastMaxStack<Integer> f = new FastMaxStack<Integer>(new IntegerMaximizer());
+		f.push(2);
+		f.push(3);
+	}
+
+	public FastMaxStack(IntegerMaximizer maximizer) {
+		this.maximizer = maximizer;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return top == null;
+	}
+
+	@Override
+	public void push(T info) {
+		top = top.pushValue(info); //pushing into source stack
+		
+//		/* maxStack tracker */
+//		if(maxStack.top.info){
+//			maxStack.top.pushValue(info); 
+//		}
+		
+	}
+
+	@Override
+	public T pop() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T getMaxSoFar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
