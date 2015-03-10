@@ -10,11 +10,11 @@ public class FastMaxStack implements MaxStack<Integer>{
 		/* setting up linked list */
 		FastMaxStack f = new FastMaxStack(new IntegerMaximizer());
 		f.push(1);
-		System.out.printf("f.top         : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
+		System.out.printf("f.top.info    : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		f.push(3);
-		System.out.printf("f.top         : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
+		System.out.printf("f.top.info    : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		f.push(2);
-		System.out.printf("f.top         : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
+		System.out.printf("f.top.info    : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		
 		Integer top = f.top.info;
 //		f.pop();
@@ -51,12 +51,10 @@ public class FastMaxStack implements MaxStack<Integer>{
 
 	@Override
 	public void pop() throws StackUnderflowException {
+		Integer topNodeInfo;
 		 if (!isEmpty()){
+			 topNodeInfo = top.link.info;
 			 this.top = top.link;
-			 
-			 if(top.link.info.equals(maxStackTop.info)){ //if the top of source stack equals top of maxStack
-				 maxStackTop = maxStackTop.link;  //remove it from the stack
-			 }
 		 } else {
 			 throw new StackUnderflowException("Pop attempted on an empty stack.");
 		 }
@@ -64,7 +62,8 @@ public class FastMaxStack implements MaxStack<Integer>{
 
 	@Override
 	public Integer getMaxSoFar() {
-		return maxStackTop.info;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
