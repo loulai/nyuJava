@@ -1,7 +1,8 @@
 package temp;
 
 public class FastMaxStack<T> implements MaxStack<T>{
-	
+
+	private final Maximizer<T> maximizer;
 	private LLNode<T> top;
 	private LinkedStack<T> maxStack;
 	
@@ -27,11 +28,11 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	public void push(T info) {
 		top = top.pushValue(info); //pushing into source stack
 		
-//		/* maxStack tracker */
-//		if(maxStack.top.info.){
-//			maxStack.top.pushValue(info); //push into the stack if it's stack is empty
-//		}
-//		
+		/* maxStack tracker */
+		if(maxStack.top.info){
+			maxStack.top.pushValue(info); 
+		}
+		
 	}
 
 	@Override
