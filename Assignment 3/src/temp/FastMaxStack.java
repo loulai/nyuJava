@@ -2,66 +2,11 @@ package temp;
 
 public class FastMaxStack implements MaxStack<Integer>{
 
-	private final IntegerMaximizer maximizer;
+	private final FastIntegerMaximizer maximizer;
 	private LLNode<Integer> top = null;
 	private LLNode<Integer> maxStackTop;
 	
-	public static void main(String[] args){
-		
-		/* setting up linked list */
-		FastMaxStack f = new FastMaxStack(new IntegerMaximizer());
-		f.push(1);
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println("==========");
-		f.push(2);
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println("==========");
-		f.push(3);
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println("==========");
-		f.push(3);
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println("==========");
-		f.push(1);
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println(">>>>>>>>>>");
-		f.pop();
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println(">>>>>>>>>>");
-		f.pop();
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println(">>>>>>>>>>");
-		f.pop();
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println(">>>>>>>>>>");
-		f.pop();
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-		System.out.println(">>>>>>>>>>");
-		f.pop();
-		System.out.println("Source   : " + f.top.info);
-		System.out.println("MaxStack : " + f.maxStackTop.info);
-		
-	}
-
-	public FastMaxStack(IntegerMaximizer maximizer) {
+	public FastMaxStack(FastIntegerMaximizer maximizer) {
 		this.maximizer = maximizer;
 	}
 
@@ -80,7 +25,7 @@ public class FastMaxStack implements MaxStack<Integer>{
 		 * logic: insert in the tracker stack is the tracker stack is empty (i.e. it's the first value being pushed, ever)
 		 *        or if the value being pushed is greater or equal to the current top of the max stack
 		 * */
-		if(maxStackTop == null || IntegerMaximizer.isLargerOrEqualTo(info, maxStackTop.info)){
+		if(maxStackTop == null || FastIntegerMaximizer.isLargerOrEqualTo(info, maxStackTop.info)){
 			LLNode<Integer> newMaxNode = new LLNode<Integer>(info);
 			newMaxNode.setLink(maxStackTop);
 			maxStackTop = newMaxNode;
@@ -92,7 +37,6 @@ public class FastMaxStack implements MaxStack<Integer>{
 	public void pop() throws StackUnderflowException {
 		 if (!isEmpty()){
 			 if(maxStackTop.info.equals(top.info)){ //if the top of source stack equals top of maxStack
-				 System.out.println("[REMOVED " + maxStackTop.info + "]");
 				 maxStackTop = maxStackTop.link;  //remove it from the max stack
 			 }
 		this.top = top.link;

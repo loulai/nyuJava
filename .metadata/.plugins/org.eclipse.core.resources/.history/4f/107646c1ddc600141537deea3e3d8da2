@@ -1,0 +1,47 @@
+package temp;
+
+public class SlowMaxStack implements MaxStack<Integer> {
+
+	public static void main(String[] args){
+		SlowMaxStack slow = new SlowMaxStack(new SlowIntegerMaximizer());
+		slow.push(1);
+		slow.push(2);
+		slow.push(3);
+		System.out.println(slow.getMaxSoFar());
+	}
+
+	private final SlowIntegerMaximizer maximizer;
+	private LLNode<Integer> top = null;
+	
+	public SlowMaxStack(SlowIntegerMaximizer maximizer) {
+		this.maximizer = maximizer;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return top == null;
+	}
+
+	@Override
+	public void push(Integer info) {
+		LLNode<Integer> newNode = new LLNode<Integer>(info);
+		newNode.setLink(top);
+	}
+
+	@Override
+	public void pop() {
+		top = top.link;
+	}
+
+	@Override
+	public Integer getMaxSoFar() {
+		Integer currentMax = maximizer.getGlobalMin();
+		
+		for(LLNode<Integer> node = top; node != null; node = node.link) {
+			currentMax = maximizer.getMax(currentMax, node.info);
+		}
+		
+		return currentMax;
+	}
+
+}

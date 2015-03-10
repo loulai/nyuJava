@@ -1,11 +1,10 @@
 package temp;
 
-public class SlowMaxStack<T> implements MaxStack<T> {
-
-	private final Maximizer<T> maximizer;
-	private LLNode<T> top;
+public class SlowMaxStack implements MaxStack<Integer> {
+	private final SlowIntegerMaximizer maximizer;
+	private LLNode<Integer> top = null;
 	
-	public SlowMaxStack(Maximizer<T> maximizer) {
+	public SlowMaxStack(SlowIntegerMaximizer maximizer) {
 		this.maximizer = maximizer;
 	}
 
@@ -15,25 +14,24 @@ public class SlowMaxStack<T> implements MaxStack<T> {
 	}
 
 	@Override
-	public void push(T info) {
-		top = top.pushValue(info);
+	public void push(Integer info) {
+		LLNode<Integer> newNode = new LLNode<Integer>(info);
+		newNode.setLink(top);
+		top = newNode;
 	}
 
 	@Override
-	public T pop() {
-		T info = top.info;
+	public void pop() {
 		top = top.link;
-		return info;
 	}
 
 	@Override
-	public T getMaxSoFar() {
-		T currentMax = maximizer.getGlobalMin();
+	public Integer getMaxSoFar() {
+		Integer currentMax = maximizer.getGlobalMin();
 		
-		for(LLNode<T> node = top; node != null; node = node.link) {
-			currentMax = maximizer.getMax(currentMax, node.info); //Diego >> how is the method getMax() defined?
+		for(LLNode<Integer> node = top; node != null; node = node.link) {
+			currentMax = maximizer.getMax(currentMax, node.info);
 		}
-		
 		return currentMax;
 	}
 
