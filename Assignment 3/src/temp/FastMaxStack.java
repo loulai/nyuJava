@@ -9,17 +9,21 @@ public class FastMaxStack implements MaxStack<Integer>{
 	public static void main(String[] args){
 		/* setting up linked list */
 		FastMaxStack f = new FastMaxStack(new IntegerMaximizer());
-		f.push(1);
-		System.out.printf("f.top         : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		f.push(3);
-		System.out.printf("f.top         : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		f.push(2);
-		System.out.printf("f.top         : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
+		f.push(1);
+		String sourceStackString = "Source :";
+		String maxStackString = "Max    :";
 		
-		Integer top = f.top.info;
-//		f.pop();
-		Integer top2 = f.top.info;
-		System.out.printf("%d >= %d:  %s", top, top2, IntegerMaximizer.isLargerOrEqualTo(top, top2) );
+		while(!f.isEmpty()){
+			sourceStackString = sourceStackString + " [ " + f.top.info + " ] ";
+			maxStackString = maxStackString + " [ " + f.maxStackTop.info + " ] ";
+			System.out.println(sourceStackString);
+			System.out.println(maxStackString);
+			System.out.println("max so far >> " + f.getMaxSoFar());
+			System.out.println("=========");
+			f.pop();
+		}
 		
 	}
 
@@ -52,19 +56,22 @@ public class FastMaxStack implements MaxStack<Integer>{
 	@Override
 	public void pop() throws StackUnderflowException {
 		 if (!isEmpty()){
-			 this.top = top.link;
-			 
-			 if(top.link.info.equals(maxStackTop.info)){ //if the top of source stack equals top of maxStack
-				 maxStackTop = maxStackTop.link;  //remove it from the stack
+			 if(maxStackTop.info.equals(top.info)){ //if the top of source stack equals top of maxStack
+				 maxStackTop = maxStackTop.link;  //remove it from the max stack
 			 }
+		this.top = top.link;
 		 } else {
 			 throw new StackUnderflowException("Pop attempted on an empty stack.");
 		 }
+	
 	}
 
 	@Override
 	public Integer getMaxSoFar() {
-		return maxStackTop.info;
+		Integer maxIntegerSoFar = null;
+		if(!isEmpty())
+			maxIntegerSoFar = maxStackTop.info;
+		return maxIntegerSoFar;
 	}
 
 }
