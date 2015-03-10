@@ -9,21 +9,54 @@ public class FastMaxStack implements MaxStack<Integer>{
 	public static void main(String[] args){
 		/* setting up linked list */
 		FastMaxStack f = new FastMaxStack(new IntegerMaximizer());
-		f.push(3);
-		f.push(2);
-		f.push(1);
 		String sourceStackString = "Source :";
 		String maxStackString = "Max    :";
 		
+		f.push(-1);
+		sourceStackString = sourceStackString + " [ " + f.top.info + " ] ";
+		maxStackString = maxStackString + " [ " + f.maxStackTop.info + " ] ";
+		System.out.println(sourceStackString);
+		System.out.println(maxStackString);
+		System.out.println("max so far >> " + f.getMaxSoFar());
+		System.out.println("=========");
+		
+		f.push(2);
+		sourceStackString = sourceStackString + " [ " + f.top.info + " ] ";
+		System.out.println(sourceStackString);
+		System.out.println(maxStackString);
+		System.out.println("max so far >> " + f.getMaxSoFar());
+		System.out.println("=========");
+		
+		f.push(1);
+		sourceStackString = sourceStackString + " [ " + f.top.info + " ] ";
+		maxStackString = maxStackString + " [ " + f.maxStackTop.info + " ] ";
+		System.out.println(sourceStackString);
+		System.out.println(maxStackString);
+		System.out.println("max so far >> " + f.getMaxSoFar());
+		System.out.println("=========");
+		
+		Integer a1 = 1;
+		Integer a2 = 1;
+		System.out.println(a1.equals(a2));
+		
 		while(!f.isEmpty()){
-			sourceStackString = sourceStackString + " [ " + f.top.info + " ] ";
-			maxStackString = maxStackString + " [ " + f.maxStackTop.info + " ] ";
-			System.out.println(sourceStackString);
-			System.out.println(maxStackString);
+			System.out.println(">>POPPIN'<<");
+			f.pop();
+			System.out.println("top of source stack: { " + f.top.info + " }");
 			System.out.println("max so far >> " + f.getMaxSoFar());
 			System.out.println("=========");
-			f.pop();
 		}
+		
+		
+//		while(!f.isEmpty()){
+//			sourceStackString = sourceStackString + " [ " + f.top.info + " ] ";
+//			maxStackString = maxStackString + " [ " + f.maxStackTop.info + " ] ";
+//			System.out.println(sourceStackString);
+//			System.out.println(maxStackString);
+//			System.out.println("max so far >> " + f.getMaxSoFar());
+//			System.out.println("=========");
+//			f.pop();
+//		}
 		
 	}
 
@@ -57,6 +90,7 @@ public class FastMaxStack implements MaxStack<Integer>{
 	public void pop() throws StackUnderflowException {
 		 if (!isEmpty()){
 			 if(maxStackTop.info.equals(top.info)){ //if the top of source stack equals top of maxStack
+				 System.out.println("REMOVED " + maxStackTop.info);
 				 maxStackTop = maxStackTop.link;  //remove it from the max stack
 			 }
 		this.top = top.link;
