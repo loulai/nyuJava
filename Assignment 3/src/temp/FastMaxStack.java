@@ -1,20 +1,25 @@
 package temp;
 
-public class FastMaxStack<T> implements MaxStack<T>{
+public class FastMaxStack implements MaxStack<Integer>{
 
 	private final IntegerMaximizer maximizer;
-	private LLNode<T> top = null;
-	private LLNode<T> maxStackTop;
+	private LLNode<Integer> top = null;
+	private LLNode<Integer> maxStackTop;
 	
 	public static void main(String[] args){
 		/* setting up linked list */
-		FastMaxStack<Integer> f = new FastMaxStack<Integer>(new IntegerMaximizer());
-		f.push(7);
+		FastMaxStack f = new FastMaxStack(new IntegerMaximizer());
+		f.push(1);
+		System.out.printf("====\nf.top.info    : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		f.push(3);
+		System.out.printf("====\nf.top.info    : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
+		f.push(2);
+		System.out.printf("====\nf.top.info    : %d \nf.maxStackTop : %d\n====\n", f.top.info, f.maxStackTop.info);
 		Integer top = f.top.info;
-		f.pop();
+//		f.pop();
 		Integer top2 = f.top.info;
-		System.out.printf("is %d greater than %d? >> %s", top, top2, IntegerMaximizer.isLargerOrEqualTo(top, top2) );
+		System.out.printf("%d >= %d:  %s", top, top2, IntegerMaximizer.isLargerOrEqualTo(top, top2) );
+		
 	}
 
 	public FastMaxStack(IntegerMaximizer maximizer) {
@@ -27,22 +32,25 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	}
 
 	@Override
-	public void push(T info) {
-		LLNode<T> newNode = new LLNode<T>(info);
+	public void push(Integer info) {
+		LLNode<Integer> newNode = new LLNode<Integer>(info);
 		newNode.setLink(top);
 		top = newNode;
 		
-//		/* maxStack tracker */
-//		if(maxStackTop.getLink() == null){
-//			newNode.setLink(maxStackTop);
-//			maxStackTop = newNode;
-//		} 
+		/* maxStack tracker */
+		//insert in the tracker stack is the tracker stack is empty (i.e. it's the first value being pushed, ever)
+		//or if the value being pushed is greater or equal to the current top of the max stack
+		if(maxStackTop == null || IntegerMaximizer.isLargerOrEqualTo(info, maxStackTop.info)){
+			LLNode<Integer> newMaxNode = new LLNode<Integer>(info);
+			newMaxNode.setLink(maxStackTop);
+			maxStackTop = newMaxNode;
+		} 
 		
 	}
 
 	@Override
 	public void pop() throws StackUnderflowException {
-		T topNodeInfo;
+		Integer topNodeInfo;
 		 if (!isEmpty()){
 			 topNodeInfo = top.link.info;
 			 this.top = top.link;
@@ -52,7 +60,7 @@ public class FastMaxStack<T> implements MaxStack<T>{
 	}
 
 	@Override
-	public T getMaxSoFar() {
+	public Integer getMaxSoFar() {
 		// TODO Auto-generated method stub
 		return null;
 	}
