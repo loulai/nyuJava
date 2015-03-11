@@ -2,25 +2,40 @@ package temp;
 
 public class LLHomeworkFunctions {
 	
+	public static void main(String[] args){
+		/* testing for part 1: equalLists() */
+		LinkedStack<Integer> a = new LinkedStack<Integer>();
+		a.push(1);
+		a.push(2);
+		a.push(3);
+		a.push(2);
+		
+		LinkedStack<Integer> b = new LinkedStack<Integer>();
+		b.push(1);
+		b.push(2);
+		b.push(3);
+		b.push(2);
+		b.push(2);
+		
+		System.out.println(equalLists(a, b));
+	}
+	
 	/** Checks to see if lists are equal, in terms of both length and values
 	 * @param LLNode<T> the LLNode class type
-	 * @param list1     the first node pushed into the first linked list. NOT the head of the list.
-	 * @param list2     the first node too, but of the second list.
+	 * @param list1     the head of the list
+	 * @param list2     the head of the second list
 	 * @return true      if the lists are equal. Assume both lists terminate.
 	 */
-	static public <T> boolean equalLists(LLNode<T> list1, LLNode<T> list2) {
-		/**ask: is it ok that the two nodes given are assumed to be the FIRST node pushed into the stack, and 
-		 * not the top of the list? Because there is no way that this can be called for the real LinkedList class,
-		 * at least not without either storing the first node or popping the entire thing (kinda crazy)
-		 */
+	static public <T> boolean equalLists(LinkedStack<T> list1, LinkedStack<T> list2) {
 		boolean isEqual = true;
-		LLNode<T> head1 = list1;
-		LLNode<T> head2 = list2;
+		LLNode<T> head1 = list1.top;
+		LLNode<T> head2 = list2.top;
 		
-		while(head1.getLink() != null && head2.getLink() != null){
+		while(head1 != null && head2 != null){
 			System.out.println("==============");
 			if(head1.getInfo() != head2.getInfo()){
 				isEqual = false;
+				break;
 			}
 			System.out.printf("%d == %d\n", head1.getInfo(), head2.getInfo());
 			System.out.println(isEqual);
@@ -28,16 +43,9 @@ public class LLHomeworkFunctions {
 			/*increment*/
 			head1 = head1.getLink();
 			head2 = head2.getLink();
-			
-//			System.out.println("--------------");
-//			System.out.println("next h1: " + head1.getInfo());
-//			System.out.println("next h2: " + head2.getInfo());
 		}
 		
-		if(head1.getLink() == null && head2.getLink() == null){
-			if(head1.getInfo() != head2.getInfo()){
-				isEqual = false;
-			} 
+		if(head1 == null && head2 == null){ //equality is true. because to get to this point the list must be equal in value. This validates it it equal in length.
 		} else {
 			isEqual = false; //always, because only ONE of them is null. This means they're different sizes.
 			//if both of them were null, the above condition catches it and deals with equality comparison
@@ -61,7 +69,6 @@ public class LLHomeworkFunctions {
 		LLNode<Integer> fast = (LLNode<Integer>) list;
 		
 		while(canBeTerminated && fast.getLink() != null && fast.getLink().getLink() != null){ //last two conditions makes sure the while loop ends if the list in question can be terminated
-//			System.out.printf("s: %d | f: %d\n" , slow.getInfo(), fast.getInfo()); //just for debugging and testing if you want
 			slow = slow.getLink();
 			fast = fast.getLink().getLink();
 			if(slow == fast)

@@ -1,3 +1,4 @@
+
 package temp;
 
 public class SlowMaxStack implements MaxStack<Integer> {
