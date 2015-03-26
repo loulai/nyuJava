@@ -2,7 +2,6 @@
 // Implements Integer nodes for a Linked List.
 //----------------------------------------------------------------------------
 
-package temp;
 
 public class LLNode<T> {
   protected T info;

@@ -15,6 +15,7 @@ public class FastIntegerMaximizer implements Maximizer<Integer> {
 			  boolean isLargerOrEqualTo = false;
 			  if(topOfSourceStack.compareTo(topOfMaxStack) >= 0)
 				  isLargerOrEqualTo = true;
+			  
 			  return isLargerOrEqualTo;
 		  }
 
