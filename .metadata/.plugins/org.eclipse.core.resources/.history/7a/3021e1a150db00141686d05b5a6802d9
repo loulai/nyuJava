@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ExpressionTree {
 	
-	LLNode<String> rootNode;
+	LLNode<String> topNode;
 	
 	public static void main(String[] args){
 		boolean again = true;
@@ -60,17 +60,17 @@ public class ExpressionTree {
 		}
 		
 		//set the expression 'tree'
-		rootNode = stack.top();
-		System.out.printf("%s, right: %s, left: %s", rootNode.getInfo(), rootNode.getRightChild().info, rootNode.getLeftChild().info);
+		topNode = stack.top();
+		System.out.printf("%s, right: %s, left: %s", topNode.getInfo(), topNode.getRightChild().info, topNode.getLeftChild().info);
 		
 		System.out.print("\n=== preorder  : ");
-		preorder(rootNode);
+		preorder(topNode);
 		
 		System.out.print("\n=== inorder   : ");
-		inorder(rootNode);
+		inorder(topNode);
 		
 		System.out.print("\n=== postorder : ");
-		postorder(rootNode);
+		postorder(topNode);
 	}
 	
 	public static void preorder(LLNode<String> tree){
