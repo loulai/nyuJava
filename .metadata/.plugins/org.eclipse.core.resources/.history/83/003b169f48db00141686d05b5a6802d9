@@ -1,55 +1,55 @@
 package temp;
 //----------------------------------------------------------------------------
-// Implements Integer nodes for a Linked List.
+// Implements Integer nodes for a Linked List, modified for an expression tree
 //----------------------------------------------------------------------------
 
 
-public class LLNode<T> {
-  protected T info;
-  protected LLNode<T> rightChild;
-  protected LLNode<T> leftChild;
-  
-  public LLNode(T info)
+public class LLIntegerNode {
+  protected Integer info;
+  protected LLIntegerNode rightChild;
+  protected LLIntegerNode leftChild;
+ 
+  public LLIntegerNode(Integer element)
   {
-    this.info = info;
+    this.info = element;
     rightChild = null;
     leftChild = null;
   }
  
-  public void setInfo(T info)
+  public void setInfo(Integer info)
   // Sets info T of this LLStringNode.
   {
     this.info = info;
   }
 
-  public T getInfo()
+  public Integer getInfo()
   // Returns info T of this LLStringNode.
   {
     return info;
   }
  
-  public void setRightChild(LLNode link)
+  public void setRightChild(LLIntegerNode link)
   {
 	  rightChild = link;
   }
   
-  public void setLeftChild(LLNode link)
+  public void setLeftChild(LLIntegerNode link)
   {
 	  leftChild = link;
   }
 
-  public LLNode getRightChild()
+  public LLIntegerNode getRightChild()
   {
     return rightChild;
   }
   
-  public LLNode getLeftChild()
+  public LLIntegerNode getLeftChild()
   {
     return leftChild;
   }
-//  
+  
 //  /* additional two methods from homework code */
-//  public LLNode(T info, LLNode<T> link) {
+//  public LLIntegerNode<Integer>(Integer info, LLIntegerNode<Integer> link) {
 //	  	this.info = info;
 //		this.link = link;
 //	}
