@@ -9,7 +9,7 @@ public class Convertor {
 	public static void main(String[] args){
 		boolean again = true;
 		while(again){
-			System.out.println(">>> This will spit out postifx. Type in prefix:");
+			System.out.println("This will spit out postifx. Type in prefix:");
 			Scanner input = new Scanner(System.in);
 			String originalInput = input.nextLine();
 			Convertor convertor = new Convertor(originalInput);

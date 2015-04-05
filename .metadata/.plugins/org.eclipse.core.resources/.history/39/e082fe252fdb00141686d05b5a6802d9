@@ -7,22 +7,12 @@ public class Convertor {
 	String postfix;
 	
 	public static void main(String[] args){
-		boolean again = true;
-		while(again){
-			System.out.println(">>> This will spit out postifx. Type in prefix:");
-			Scanner input = new Scanner(System.in);
-			String originalInput = input.nextLine();
-			Convertor convertor = new Convertor(originalInput);
-			System.out.println("Infix   : " + originalInput);
-			System.out.println("Postfix : " + convertor.toPostFix());
-			
-			//asking for repeat or not
-			System.out.println("=== Y for again, else program will terminate ===");
-			Scanner input2 = new Scanner(System.in);
-			again = false;
-			if(input2.next().equalsIgnoreCase("Y")) again = true;
-		}
-		
+		System.out.println("This will spit out postifx. Type in prefix:");
+		Scanner input = new Scanner(System.in);
+		String originalInput = input.nextLine();
+		Convertor convertor = new Convertor(originalInput);
+		System.out.println("Infix   : " + originalInput);
+		System.out.println("Postfix : " + convertor.toPostFix());
 	}
 	
 	public Convertor(String expression){
