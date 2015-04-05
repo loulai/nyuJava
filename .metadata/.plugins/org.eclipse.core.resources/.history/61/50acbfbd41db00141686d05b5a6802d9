@@ -1,13 +1,12 @@
 package temp;
 //----------------------------------------------------------------------------
-// Implements Integer nodes for a Linked List, modified for an expression tree
+// Implements Integer nodes for a Linked List.
 //----------------------------------------------------------------------------
 
 
 public class LLNode<T> {
   protected T info;
-  protected LLNode<T> rightChild;
-  protected LLNode<T> leftChild;
+  protected LLNode<T> link;
   
   public static void main(String[] args){
 	  new LLNode<Integer>(2).setLink(new LLNode<Integer>(1));
@@ -18,8 +17,7 @@ public class LLNode<T> {
   public LLNode(T info)
   {
     this.info = info;
-    rightChild = null;
-    leftChild = null;
+    link = null;
   }
  
   public void setInfo(T info)
@@ -34,24 +32,16 @@ public class LLNode<T> {
     return info;
   }
  
-  public void setRightChild(LLNode link)
+  public void setLink(LLNode link)
+  // Sets link of this LLStringNode.
   {
-	  rightChild = link;
-  }
-  
-  public void setLeftChild(LLNode link)
-  {
-	  leftChild = link;
+    this.link = link;
   }
 
-  public LLNode getRightChild()
+  public LLNode getLink()
+  // Returns link of this LLStringNode.
   {
-    return rightChild;
-  }
-  
-  public LLNode getLeftChild()
-  {
-    return leftChild;
+    return link;
   }
   
   /* additional two methods from homework code */
