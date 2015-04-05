@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;temp&apos; to &apos;CalculatorExpressionTree/src&apos;&#x0A;- Original project: &apos;Calculator&apos;&#x0A;- Destination element: &apos;CalculatorExpressionTree/src&apos;&#x0A;- Original element: &apos;Calculator/src/temp&apos;" description="Copy package" destination="=CalculatorExpressionTree/src" element1="/src&lt;temp" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1428194744008" version="1.0"/>
+</session>
