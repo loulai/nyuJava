@@ -1,9 +1,18 @@
 package temp;
 
+import java.util.Scanner;
+
 public class ExpressionTree {
 	
+	LLNode<String> topNode;
+	
 	public static void main(String[] args){
-		String postfixExpression = "100 3 + 5 -";
+		System.out.println("Type in prefix:");
+		Scanner input = new Scanner(System.in);
+		String originalInput = input.nextLine();
+		Convertor convertor = new Convertor(originalInput);
+		String postfixExpression = convertor.toPostFix();
+		
 		ExpressionTree ex = new ExpressionTree(postfixExpression);
 	}
 	
@@ -40,8 +49,41 @@ public class ExpressionTree {
 			}
 		}
 		
+		//set the expression 'tree'
+		topNode = stack.top();
+		System.out.printf("%s, right: %s, left: %s", topNode.getInfo(), topNode.getRightChild().info, topNode.getLeftChild().info);
 		
+		System.out.print("\n=== preorder  : ");
+		preorder(topNode);
 		
+		System.out.print("\n=== inorder   : ");
+		inorder(topNode);
+		
+		System.out.print("\n=== postorder : ");
+		postorder(topNode);
 	}
-
+	
+	public static void preorder(LLNode<String> tree){
+		if(tree == null) return;
+		System.out.print(tree.info + " ");
+		preorder(tree.getLeftChild());
+		preorder(tree.getRightChild());
+	}
+	
+	public static void inorder(LLNode<String> tree){
+		if(tree == null) return;
+		inorder(tree.getLeftChild());
+		System.out.print(tree.info + " ");
+		inorder(tree.getRightChild());
+	}
+	
+	public static void postorder(LLNode<String> tree){
+		if(tree == null) return;
+		postorder(tree.getLeftChild());
+		postorder(tree.getRightChild());
+		System.out.print(tree.info + " ");
+	}
+	
+	
+	
 }
