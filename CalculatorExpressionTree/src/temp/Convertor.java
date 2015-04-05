@@ -22,7 +22,6 @@ public class Convertor {
 			again = false;
 			if(input2.next().equalsIgnoreCase("Y")) again = true;
 		}
-		
 	}
 	
 	public Convertor(String expression){
