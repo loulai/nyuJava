@@ -15,7 +15,7 @@ public class ExpressionTree {
 			System.out.printf("%4s %b\n",arr[i], arr[i].matches("^-?\\d+$"));
 		}
 		
-		ArrayListStack<Integer> stack = new ArrayListStack<Integer>();
+		ArrayStack<LLNode<Integer>> stack = new ArrayStack<LLNode<Integer>>();
 		
 		for (int i = 0; i < arr.length; i++){
 			if(arr[i].matches("^-?\\d+$")){ //means if it's a digit

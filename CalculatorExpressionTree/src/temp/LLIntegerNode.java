@@ -4,12 +4,12 @@ package temp;
 //----------------------------------------------------------------------------
 
 
-public class LLIntegerNode<Integer> {
+public class LLIntegerNode {
   protected Integer info;
-  protected LLIntegerNode<Integer> rightChild;
-  protected LLIntegerNode<Integer> leftChild;
+  protected LLIntegerNode rightChild;
+  protected LLIntegerNode leftChild;
  
-  public LLIntegerNode<Integer>(Integer element)
+  public LLIntegerNode(Integer element)
   {
     this.info = element;
     rightChild = null;
@@ -28,22 +28,22 @@ public class LLIntegerNode<Integer> {
     return info;
   }
  
-  public void setRightChild(LLIntegerNode<Integer> link)
+  public void setRightChild(LLIntegerNode link)
   {
 	  rightChild = link;
   }
   
-  public void setLeftChild(LLIntegerNode<Integer> link)
+  public void setLeftChild(LLIntegerNode link)
   {
 	  leftChild = link;
   }
 
-  public LLIntegerNode<Integer> getRightChild()
+  public LLIntegerNode getRightChild()
   {
     return rightChild;
   }
   
-  public LLIntegerNode<Integer> getLeftChild()
+  public LLIntegerNode getLeftChild()
   {
     return leftChild;
   }
