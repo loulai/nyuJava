@@ -7,23 +7,13 @@ public class ExpressionTree {
 	LLNode<String> topNode;
 	
 	public static void main(String[] args){
-		boolean again = true;
-		while(again){
-			System.out.println("~ ~ ~ Type in prefix:");
-			Scanner input = new Scanner(System.in);
-			String originalInput = input.nextLine();
-			Convertor convertor = new Convertor(originalInput);
-			String postfixExpression = convertor.toPostFix();
-			
-			ExpressionTree ex = new ExpressionTree(postfixExpression);
-			
-			//asking for repeat or not
-			System.out.println("\n=== Y for again, else program will terminate ===");
-			Scanner input2 = new Scanner(System.in);
-			again = false;
-			if(input2.next().equalsIgnoreCase("Y")) again = true;
-		}
+		System.out.println("Type in prefix:");
+		Scanner input = new Scanner(System.in);
+		String originalInput = input.nextLine();
+		Convertor convertor = new Convertor(originalInput);
+		String postfixExpression = convertor.toPostFix();
 		
+		ExpressionTree ex = new ExpressionTree(postfixExpression);
 	}
 	
 	public ExpressionTree(String postfixExpression){

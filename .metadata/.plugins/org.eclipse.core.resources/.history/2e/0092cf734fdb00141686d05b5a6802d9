@@ -18,7 +18,7 @@ public class ExpressionTree {
 			ExpressionTree ex = new ExpressionTree(postfixExpression);
 			
 			//asking for repeat or not
-			System.out.println("\n=== Y for again, else program will terminate ===");
+			System.out.println("=== Y for again, else program will terminate ===");
 			Scanner input2 = new Scanner(System.in);
 			again = false;
 			if(input2.next().equalsIgnoreCase("Y")) again = true;
