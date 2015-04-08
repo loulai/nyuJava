@@ -6,7 +6,7 @@ public class Operator {
 	
 	public static void main(String[] args){
 		//test
-		Operator currentOperator = new Operator("("); //replace this with + - * / ^ to test
+		Operator currentOperator = new Operator("^"); //replace this with + - * / ^ to test
 		
 		System.out.println("FOR: " + currentOperator.stringValue);
 		System.out.println("* --------------------------------");
@@ -44,13 +44,15 @@ public class Operator {
 	}
 	
 	/** method compares values and determines if the current value of the instance variable is "smaller" than another operator. 
-	 *  The hierachy is: ( + , - ) < ( * , / , ^ )
+	 *  The hierachy is: ( + , - ) < ( * , / ) < ( ^ )
 	 * @param String   topOfStack the other String value that we compare with. This is usually the top value of the stack.
 	 * @return boolean             true if value is smaller than otherValue (usually the value at top of the stack), false if larger or equal.
 	 */
 	public boolean isSmallerThan(String topOfStack){
 		String currentOperator = this.stringValue;
-		if (currentOperator.equals("(") && !topOfStack.equals("( ")){ // parenthesis will always be smallest
+		if (currentOperator.equals("^ ")){
+			return false;
+		} else if (currentOperator.equals("(") && !topOfStack.equals("( ")){ // parenthesis will always be smallest
 			return true;
 		}else if (topOfStack.equals("( ") && !currentOperator.equals("(")){ //if the top of stack is (, and the current operator isn't (, current operator is always larger than top of stack operator
 			return false;
@@ -64,7 +66,7 @@ public class Operator {
 	public boolean isEqualTo(String topOfStack){
 		String currentOperator = this.stringValue;
 		boolean isEqual = false;
-		if((currentOperator).equals(topOfStack + " ")) {
+		if((currentOperator + " ").equals(topOfStack)) {
 			isEqual = true; //if it straight up matches
 		} else {
 			/*if currentOperator in the same hierarchy as the operator at top of the stack, isEqual is changed to true*/
