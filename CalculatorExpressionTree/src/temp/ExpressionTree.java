@@ -7,6 +7,11 @@ public class ExpressionTree {
 	LLTreeNode<String> rootNode;
 	
 	public static void main(String[] args){
+		
+//		LLTreeNode<String> zar = new LLTreeNode<String>("1");
+//		LLTreeNode<String> mult = new LLTreeNode<String>("-");
+//	
+		
 		boolean again = true;
 		while(again){
 			System.out.println("~ ~ ~ Type in prefix:");
@@ -82,15 +87,25 @@ public class ExpressionTree {
 	
 	public static void inorder(LLTreeNode<String> tree){
 		if(tree == null) return;
+		if(tree.getLeftChild() != null){
+			if(precedence(tree) > precedence(tree.getLeftChild())){
+				System.out.print("( ");
+				System.out.print(tree.info + " ");
+				System.out.print(" )");
+			} else {
+				inorder(tree.getLeftChild());
+				System.out.print(tree.info + " ");
+				inorder(tree.getRightChild());
+			}
+		}
+		
 		//check that r.left is inner note
 		//if getOpVal(r.left<= getOpVal)
 		//        print(" ").
 		//    Inorder(r.left).
-		inorder(tree.getLeftChild());
-		System.out.print("(");
-		System.out.print(tree.info + " ");
-		System.out.print(")");
-		inorder(tree.getRightChild());
+	
+		
+	
 	}
 	
 	public static void postorder(LLTreeNode<String> tree){
@@ -100,8 +115,20 @@ public class ExpressionTree {
 		System.out.print(tree.info + " ");
 	}
 	
-	public static int precedence(LLTreeNode tree){
+	/**
+	 * @param tree  Node to be assessed 
+	 * @return  int  either 0, 1, 2 or 3 depending on precedence of: (int) < ( + , - ) < ( * , / ) < ( ^ )
+	 */
+	public static int precedence(LLTreeNode<String> tree){
+		String info = tree.getInfo();
 		int precedence;
+		if(info.matches("^-?\\d+$")){ //if its a number
+			precedence = 0;
+		} else {
+			if (info.equals("+") || info.equals("-")) precedence = 1;
+			else if (info.equals("*") || info.equals("/")) precedence = 2;
+			else precedence = 3; //operator is ^ at this stage
+		}
 		return precedence;
 	}
 	

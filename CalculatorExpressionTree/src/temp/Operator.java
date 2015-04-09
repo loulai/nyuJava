@@ -44,7 +44,7 @@ public class Operator {
 	}
 	
 	/** method compares values and determines if the current value of the instance variable is "smaller" than another operator. 
-	 *  The hierachy is: ( + , - ) < ( * , / ) < ( ^ )
+	 *  The hierarchy is: ( + , - ) < ( * , / ) < ( ^ )
 	 * @param String   topOfStack the other String value that we compare with. This is usually the top value of the stack.
 	 * @return boolean             true if value is smaller than otherValue (usually the value at top of the stack), false if larger or equal.
 	 */
