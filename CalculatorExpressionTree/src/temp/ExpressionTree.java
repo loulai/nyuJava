@@ -8,10 +8,6 @@ public class ExpressionTree {
 	
 	public static void main(String[] args){
 		
-//		LLTreeNode<String> zar = new LLTreeNode<String>("1");
-//		LLTreeNode<String> mult = new LLTreeNode<String>("-");
-//	
-		
 		boolean again = true;
 		while(again){
 			System.out.println("~ ~ ~ Type in prefix:");
@@ -31,14 +27,23 @@ public class ExpressionTree {
 		
 	}
 	
+	public static void inOrder(LLTreeNode<String> tree){
+		if(tree != null){
+			if(tree.getInfo().matches("^-?\\d+$")){ //leaf
+				System.out.print(tree.getInfo() + " ");
+			} else {
+				System.out.print("( ");
+				inOrder(tree.getLeftChild());
+				System.out.print(tree.getInfo() + " ");
+				inOrder(tree.getRightChild());
+				System.out.print(") ");
+			}
+		}
+	}
+	
 	public ExpressionTree(String postfixExpression){
 		String[] arr = postfixExpression.split(" ");
-
-//		for (int i = 0; i < arr.length; i++){
-//			System.out.print(i + ". ");
-//			System.out.printf("%4s %b\n",arr[i], arr[i].matches("^-?\\d+$"));
-//		}
-//		
+		
 		ArrayStack<LLTreeNode<String>> stack = new ArrayStack<LLTreeNode<String>>(); //String because never needs to be evaluated (for this assignment)
 		
 		for (int i = 0; i < arr.length; i++){
@@ -72,7 +77,7 @@ public class ExpressionTree {
 		preorder(rootNode);
 		
 		System.out.print("\n=== inorder   : ");
-		inorder(rootNode);
+		inOrder(rootNode);
 		
 		System.out.print("\n=== postorder : ");
 		postorder(rootNode);
@@ -85,27 +90,15 @@ public class ExpressionTree {
 		preorder(tree.getRightChild());
 	}
 	
-	public static void inorder(LLTreeNode<String> tree){
-		if(tree == null) return;
-		if(tree.getLeftChild() != null){
-			if(precedence(tree) > precedence(tree.getLeftChild())){
-				System.out.print("( ");
-				System.out.print(tree.info + " ");
-				System.out.print(" )");
-			} else {
-				inorder(tree.getLeftChild());
-				System.out.print(tree.info + " ");
-				inorder(tree.getRightChild());
-			}
+	
+	public static String inorder(LLTreeNode<String> tree){
+		String expression = " ";
+		if (tree.getLeftChild() != null) {
+			expression = expression + inorder(tree.getLeftChild());
+			expression = expression + tree.getInfo();
+			expression = expression + inorder(tree.getRightChild());
 		}
-		
-		//check that r.left is inner note
-		//if getOpVal(r.left<= getOpVal)
-		//        print(" ").
-		//    Inorder(r.left).
-	
-		
-	
+		return expression;
 	}
 	
 	public static void postorder(LLTreeNode<String> tree){
