@@ -100,11 +100,6 @@ public class ExpressionTree {
 		System.out.print(tree.info + " ");
 	}
 	
-	public static int precedence(LLTreeNode tree){
-		int precedence;
-		return precedence;
-	}
-	
 	
 	
 }

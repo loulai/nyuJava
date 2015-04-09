@@ -87,9 +87,7 @@ public class ExpressionTree {
 		//        print(" ").
 		//    Inorder(r.left).
 		inorder(tree.getLeftChild());
-		System.out.print("(");
 		System.out.print(tree.info + " ");
-		System.out.print(")");
 		inorder(tree.getRightChild());
 	}
 	
@@ -98,11 +96,6 @@ public class ExpressionTree {
 		postorder(tree.getLeftChild());
 		postorder(tree.getRightChild());
 		System.out.print(tree.info + " ");
-	}
-	
-	public static int precedence(LLTreeNode tree){
-		int precedence;
-		return precedence;
 	}
 	
 	
