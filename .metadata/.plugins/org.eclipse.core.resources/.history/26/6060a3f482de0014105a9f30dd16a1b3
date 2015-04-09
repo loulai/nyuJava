@@ -1,0 +1,17 @@
+
+
+public class Snippet {
+	public static void inorder(LLTreeNode<String> tree){
+			if(tree != null){
+				if(tree.getInfo().matches("^-?\\d+$")){ //leaf
+					System.out.print(tree.getInfo() + " ");
+				} else {
+					System.out.print("( ");
+					inorder(tree.getLeftChild());
+					System.out.print(tree.getInfo() + " ");
+					inorder(tree.getRightChild());
+					System.out.print(") ");
+				}
+			}
+		}
+}
