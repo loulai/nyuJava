@@ -9,7 +9,6 @@ public class ExpressionTree {
 	public static void main(String[] args){
 		
 		boolean again = true;
-		
 		while(again){
 			System.out.println("~ ~ ~ Type in prefix:");
 			Scanner input = new Scanner(System.in);
@@ -28,13 +27,27 @@ public class ExpressionTree {
 		
 	}
 	
+	public static void inOrder(LLTreeNode<String> tree){
+		if(tree != null){
+			if(tree.getInfo().matches("^-?\\d+$")){ //leaf
+				System.out.print(tree.getInfo() + " ");
+			} else {
+				System.out.print("( ");
+				inOrder(tree.getLeftChild());
+				System.out.print(tree.getInfo() + " ");
+				inOrder(tree.getRightChild());
+				System.out.print(") ");
+			}
+		}
+	}
+	
 	public ExpressionTree(String postfixExpression){
 		String[] arr = postfixExpression.split(" ");
 		
 		ArrayStack<LLTreeNode<String>> stack = new ArrayStack<LLTreeNode<String>>(); //String because never needs to be evaluated (for this assignment)
 		
 		for (int i = 0; i < arr.length; i++){
-			if(arr[i].matches("^-?\\d+$")){ //means if it's a digit, matched my regular expressions
+			if(arr[i].matches("^-?\\d+$")){ //means if it's a digit
 				stack.push(new LLTreeNode<String>(arr[i])); //makes new Node, with info as the integer (as a string)
 				System.out.println(">> pushing in stack: " + stack.top().info);
 			} else {
@@ -64,7 +77,7 @@ public class ExpressionTree {
 		preorder(rootNode);
 		
 		System.out.print("\n=== inorder   : ");
-		inorder(rootNode);
+		inOrder(rootNode);
 		
 		System.out.print("\n=== postorder : ");
 		postorder(rootNode);
@@ -77,18 +90,15 @@ public class ExpressionTree {
 		preorder(tree.getRightChild());
 	}
 	
-	public static void inorder(LLTreeNode<String> tree){
-		if(tree != null){
-			if(tree.getInfo().matches("^-?\\d+$")){ //leaf
-				System.out.print(tree.getInfo() + " ");
-			} else {
-				System.out.print("( ");
-				inorder(tree.getLeftChild());
-				System.out.print(tree.getInfo() + " ");
-				inorder(tree.getRightChild());
-				System.out.print(") ");
-			}
+	
+	public static String inorder(LLTreeNode<String> tree){
+		String expression = " ";
+		if (tree.getLeftChild() != null) {
+			expression = expression + inorder(tree.getLeftChild());
+			expression = expression + tree.getInfo();
+			expression = expression + inorder(tree.getRightChild());
 		}
+		return expression;
 	}
 	
 	public static void postorder(LLTreeNode<String> tree){
@@ -97,5 +107,24 @@ public class ExpressionTree {
 		postorder(tree.getRightChild());
 		System.out.print(tree.info + " ");
 	}
+	
+	/**
+	 * @param tree  Node to be assessed 
+	 * @return  int  either 0, 1, 2 or 3 depending on precedence of: (int) < ( + , - ) < ( * , / ) < ( ^ )
+	 */
+	public static int precedence(LLTreeNode<String> tree){
+		String info = tree.getInfo();
+		int precedence;
+		if(info.matches("^-?\\d+$")){ //if its a number
+			precedence = 0;
+		} else {
+			if (info.equals("+") || info.equals("-")) precedence = 1;
+			else if (info.equals("*") || info.equals("/")) precedence = 2;
+			else precedence = 3; //operator is ^ at this stage
+		}
+		return precedence;
+	}
+	
+	
 	
 }

@@ -9,7 +9,6 @@ public class ExpressionTree {
 	public static void main(String[] args){
 		
 		boolean again = true;
-		
 		while(again){
 			System.out.println("~ ~ ~ Type in prefix:");
 			Scanner input = new Scanner(System.in);

@@ -12,10 +12,7 @@ Welcome to my assignment!
 
 Some things to note:
 
- - In the previous homework, the '^' operator was the same hierarchy as '*' and '/'. But that's not what
-   it's like in the real world of infix to postfix, so I've rearranged my hierarchy to reflect '^' as the top operator.
-   
- - I have created my own class called LLTreeNode<T>. It is similar to an LLNode<T>, but instead of 
+ - I have created my own class called LLTreeNode. It is similar to an LLNode, but instead of 
    just having one child, it now has two children (left and right).
    
  - there is a superfluous amount of parenthesis in the inorder traversal printing, and I'm aware of that (sorry!).

@@ -9,7 +9,6 @@ public class ExpressionTree {
 	public static void main(String[] args){
 		
 		boolean again = true;
-		
 		while(again){
 			System.out.println("~ ~ ~ Type in prefix:");
 			Scanner input = new Scanner(System.in);
@@ -34,7 +33,7 @@ public class ExpressionTree {
 		ArrayStack<LLTreeNode<String>> stack = new ArrayStack<LLTreeNode<String>>(); //String because never needs to be evaluated (for this assignment)
 		
 		for (int i = 0; i < arr.length; i++){
-			if(arr[i].matches("^-?\\d+$")){ //means if it's a digit, matched my regular expressions
+			if(arr[i].matches("^-?\\d+$")){ //means if it's a digit
 				stack.push(new LLTreeNode<String>(arr[i])); //makes new Node, with info as the integer (as a string)
 				System.out.println(">> pushing in stack: " + stack.top().info);
 			} else {
