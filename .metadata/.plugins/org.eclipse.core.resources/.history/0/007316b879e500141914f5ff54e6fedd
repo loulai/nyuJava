@@ -16,7 +16,6 @@ public class BinaryHeap<T extends Comparable<? super T>> {
 	System.out.println("Done.");
     }
     
-    //new method
     public int getSize(){
     	return this.currentSize;
     }

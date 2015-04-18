@@ -21,14 +21,7 @@ public class HuffmanTree {
 //		createFromHeap(bheap);
 //		htree.printLegend();
 		
-		BufferedReader buffRead = new BufferedReader(new FileReader(new File(System.getProperty("user.dir") + "/src/" + "data")));
-		
-		
-		while(true){
-			String line = buffRead.readLine();
-			if (line == null) break;
-			System.out.println(line);
-		}
+		BufferedReader buffread = new BufferedReader(new FileReader(new File("data.txt")));
 	
 	}
 
