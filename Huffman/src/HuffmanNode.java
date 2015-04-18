@@ -1,5 +1,5 @@
 
-public class HuffmanNode {
+public class HuffmanNode implements Comparable{
 	public String letter;
 	public Double frequency;
 	public HuffmanNode left;
@@ -24,6 +24,7 @@ public class HuffmanNode {
 		return s;
 	}
 	
+	@Override
 	public int compareTo(Object o){
 		HuffmanNode huff = (HuffmanNode) o;
 		return this.frequency.compareTo(huff.frequency);

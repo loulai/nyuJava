@@ -5,25 +5,22 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+
 public class HuffmanTree {
 	
 	HuffmanNode root;
 
-	public static void main(String[] args) throws IOException{
-		
+	public static void main(String[] args){
 //		bheap.printHeap();
 //		createFromHeap(bheap);
 //		htree.printLegend();
-		fileToHeap("data");
+//		fileToHeap("data");
 	}
 
 	public HuffmanTree(HuffmanNode huff){
 		this.root = huff;
 	}
-	
-	public void printLegend(){
-		printLegend(root, "");
-	}
+
 	
 	public static BinaryHeap fileToHeap(String filename) throws FileNotFoundException{
 		/* get first line from file */
@@ -45,16 +42,30 @@ public class HuffmanTree {
 			System.out.printf("[%s, %f]\n", arrayToHuffman[k].letter, arrayToHuffman[k].frequency);
 			k++;
 		}
-		BinaryHeap arrayToHeap = new BinaryHeap(stringToArray);
+		BinaryHeap arrayToHeap = new BinaryHeap(arrayToHuffman);
 		return arrayToHeap;
 	}
 	
-	private void printLegend(HuffmanNode t, String s){
-		
+	public void printLegend(){
+		printLegend(root, "");
 	}
 	
-	public static HuffmanTree createFromHeap(BinaryHeap b){
-		
+	private void printLegend(HuffmanNode t, String s){
+		if(t.letter.length() > 1){
+			printLegend(t.left + (s + "0");
+			printLegend(t.right + (s + "1"));
+		}
+	}
+	
+	public static HuffmanTree createFromHeap(BinaryHeap b) throws UnderflowException {
+		HuffmanNode tempLeft = (HuffmanNode) b.deleteMin();
+		while(!b.isEmpty()){
+			HuffmanNode tempRight = (HuffmanNode) b.deleteMin();
+			HuffmanNode newParent = new HuffmanNode(tempLeft, tempRight);
+			b.insert(newParent);
+		}
+		HuffmanTree r = new HuffmanTree(tempLeft);
+		return r;
 	}
 	
 
