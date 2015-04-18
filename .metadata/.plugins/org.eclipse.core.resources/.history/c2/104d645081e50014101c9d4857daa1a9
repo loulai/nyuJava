@@ -15,6 +15,11 @@ public class BinaryHeap<T extends Comparable<? super T>> {
                 System.out.println("Oops! " + i);
 	System.out.println("Done.");
     }
+    
+    //new method
+    public int getSize(){
+    	return this.currentSize;
+    }
 
     public BinaryHeap() { this(DEFAULT_CAPACITY); }
     public BinaryHeap(int capacity) {
@@ -28,11 +33,6 @@ public class BinaryHeap<T extends Comparable<? super T>> {
         for (T item : items)
             array[i++] = item;
         buildHeap();
-    }
-    
-    //new method
-    public int getSize(){
-    	return this.currentSize;
     }
 
     public boolean isEmpty() { return currentSize == 0; }

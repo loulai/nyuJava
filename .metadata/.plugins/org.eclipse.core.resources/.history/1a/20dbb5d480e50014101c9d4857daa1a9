@@ -14,7 +14,9 @@ public class HuffmanTree {
 //		bheap.printHeap();
 //		createFromHeap(bheap);
 //		htree.printLegend();
-		System.out.println(fileToHeap("data"));
+		System.out.println(fileToHeap("data")[0]);
+		System.out.println(fileToHeap("data")[1]);
+		System.out.println(fileToHeap("data")[2]);
 	}
 
 	public HuffmanTree(HuffmanNode huff){
@@ -25,7 +27,7 @@ public class HuffmanTree {
 		printLegend(root, "");
 	}
 	
-	public static BinaryHeap fileToHeap(String filename) throws FileNotFoundException{
+	public static String[] fileToHeap(String filename) throws FileNotFoundException{
 		/* get first line from file */
 		BufferedReader buffRead = new BufferedReader(new FileReader(new File(System.getProperty("user.dir") + "/src/" + filename)));
 		String fileToString = "";
@@ -37,8 +39,8 @@ public class HuffmanTree {
 		}
 		
 		String[] stringToArray = fileToString.split(" ");
-		BinaryHeap arrayToHeap = new BinaryHeap(stringToArray);
-		return arrayToHeap;
+		
+		return stringToArray;
 	}
 	
 	private void printLegend(HuffmanNode t, String s){
