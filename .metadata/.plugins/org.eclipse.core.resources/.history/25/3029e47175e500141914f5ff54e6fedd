@@ -1,0 +1,26 @@
+
+public class HuffmanNode {
+	public String letter;
+	public Double frequency;
+	public HuffmanNode left, right;
+	
+	public HuffmanNode(String letter, Double frequency){
+		
+	}
+	
+	public HuffmanNode(HuffmanNode left, HuffmanNode right){
+		
+	}
+	
+	public String toString(){
+		String s = "";
+		return s;
+	}
+	
+	public int compareTo(Object o){
+		
+	}
+	
+
+	
+}

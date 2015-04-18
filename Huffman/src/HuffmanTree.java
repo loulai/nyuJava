@@ -14,9 +14,28 @@ public class HuffmanTree {
 //			if(line== null) break;
 //			System.out.println(line);
 //		}
+		
+//		bheap.pritHeap();
+//		createFromHeap(bheap);
+//		htree.printLegend();
 	
 	}
+
+	public HuffmanTree(HuffmanNode huff){
+		this.root = huff;
+	}
 	
+	public void printLegend(){
+		printLegend(root, "");
+	}
+	
+	private void printLegend(HuffmanNode t, String s){
+		
+	}
+	
+	public static HuffmanTree createFromHeap(BinaryHeap b){
+		
+	}
 	
 
 }

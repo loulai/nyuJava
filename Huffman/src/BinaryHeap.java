@@ -4,6 +4,22 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     private int currentSize;      // Number of elements in heap
     private T [] array;		  // The heap array
 
+    public static void main(String [] args) throws UnderflowException {
+        int numItems = 10000;
+        BinaryHeap<Integer> h = new BinaryHeap<Integer>();
+        int i = 37;
+        for (i=37; i!=0; i=(i+37)%numItems)
+            h.insert(i);
+        for (i = 1; i < numItems; i++)
+            if (h.deleteMin() != i)
+                System.out.println("Oops! " + i);
+	System.out.println("Done.");
+    }
+    
+    public int getSize(){
+    	return this.currentSize;
+    }
+
     public BinaryHeap() { this(DEFAULT_CAPACITY); }
     public BinaryHeap(int capacity) {
         currentSize = 0;
@@ -78,17 +94,6 @@ public class BinaryHeap<T extends Comparable<? super T>> {
         array[hole] = tmp;
     }
 
-    public static void main(String [] args) throws UnderflowException {
-        int numItems = 10000;
-        BinaryHeap<Integer> h = new BinaryHeap<Integer>();
-        int i = 37;
-        for (i=37; i!=0; i=(i+37)%numItems)
-            h.insert(i);
-        for (i = 1; i < numItems; i++)
-            if (h.deleteMin() != i)
-                System.out.println("Oops! " + i);
-	System.out.println("Done.");
-    }
 }
 // Local Variables:
 // compile-command: "javac -Xlint:unchecked BinaryHeap.java; java BinaryHeap"
