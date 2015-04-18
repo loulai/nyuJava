@@ -30,7 +30,7 @@ public class HuffmanTree {
 	
 	public static String fileToHeap(String filename) throws FileNotFoundException{
 		BufferedReader buffRead = new BufferedReader(new FileReader(new File(System.getProperty("user.dir") + "/src/" + filename)));
-		String fileToString = "";
+		String fileToString;
 		try {
 			fileToString = buffRead.readLine();
 		} catch (IOException e) {
