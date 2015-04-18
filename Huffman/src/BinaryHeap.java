@@ -30,9 +30,13 @@ public class BinaryHeap<T extends Comparable<? super T>> {
         buildHeap();
     }
     
-    //new method
+    /* new methods */
     public int getSize(){
     	return this.currentSize;
+    }
+    
+    public void printHeap(){
+    	
     }
 
     public boolean isEmpty() { return currentSize == 0; }
