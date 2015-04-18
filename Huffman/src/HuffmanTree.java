@@ -14,7 +14,7 @@ public class HuffmanTree {
 //		bheap.printHeap();
 //		createFromHeap(bheap);
 //		htree.printLegend();
-		System.out.println(fileToHeap("data"));
+		fileToHeap("data");
 	}
 
 	public HuffmanTree(HuffmanNode huff){
@@ -37,6 +37,14 @@ public class HuffmanTree {
 		}
 		
 		String[] stringToArray = fileToString.split(" ");
+		HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
+		int k = 0;
+		for(int i = 0; i < stringToArray.length; i++){
+			HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
+			arrayToHuffman[k] = temp;
+			System.out.printf("[%s, %f]\n", arrayToHuffman[k].letter, arrayToHuffman[k].frequency);
+			k++;
+		}
 		BinaryHeap arrayToHeap = new BinaryHeap(stringToArray);
 		return arrayToHeap;
 	}
