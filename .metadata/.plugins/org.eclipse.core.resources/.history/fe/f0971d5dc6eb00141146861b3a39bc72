@@ -1,0 +1,22 @@
+
+public class MyBinarySearchTree<T extends Comparable<T>>{
+	
+	BSTNode<T> root;
+	boolean found;
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public void add(T o){
+		root = recAdd(o, root);
+	}
+	
+	private BSTNode recAdd(T o, BSTNode<T> tree){
+		if(o.compareTo(tree.getInfo()) <= 0){
+			tree.setLeft(link);
+		}
+	}
+
+}

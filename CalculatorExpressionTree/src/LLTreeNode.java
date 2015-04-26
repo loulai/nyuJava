@@ -1,6 +1,4 @@
 
-
-
 public class LLTreeNode<T> {
   protected T info;
   protected LLTreeNode<T> rightChild;

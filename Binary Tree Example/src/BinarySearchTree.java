@@ -6,8 +6,8 @@
 
 
 
-public class BinarySearchTree<T> extends Comparable<T> 
-             implements BSTInterface<T>
+public class BinarySearchTree<T> 
+             implements Comparable<T>, BSTInterface<T>
 {
   protected BSTNode<T> root;      // reference to the root of this BST
 
