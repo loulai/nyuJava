@@ -54,10 +54,20 @@ public class HuffmanConverter {
    * I.e., we use 'contents' to fill up the count[] list...
    */
   public void recordFrequencies() {
+	 //make char array from string
 	 char[] c = this.contents.toCharArray();
+	 
+	 for(int i = 0; i < c.length; i++){
+		 count[(int) c[i]]++; //incremeting the count of each char, as positioned by the ASCII numbering
+	 }
+	 
+	 //print for debugging, can delete
 	 for(int i = 0; i < c.length; i++){
 		 System.out.print( " [ " + c[i] + " ] ");
 		 System.out.println((int) c[i]);
+	 }
+	 for(int i = 0; i < 256; i++){
+		 System.out.printf("%2d => %d\n", i, count[i]);
 	 }
   }
  
