@@ -26,7 +26,7 @@ public class HuffmanConverter {
   private int uniqueChars = 0; //(optional)
   
   public static void main(String args[]) {
-	  HuffmanConverter hc = new HuffmanConverter(fileToString("data2"));
+	  HuffmanConverter hc = new HuffmanConverter(fileToString("text"));
 	  hc.recordFrequencies();
   }
 
@@ -42,6 +42,7 @@ public class HuffmanConverter {
 		String text = "";
 		try {
 			text = new Scanner( new File(System.getProperty("user.dir") + "/src/" + filename)).useDelimiter("\\A").next();
+			text = text.replaceAll("\\s", System.getProperty("line.separator"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -55,10 +56,10 @@ public class HuffmanConverter {
    */
   public void recordFrequencies() {
 	 char[] c = this.contents.toCharArray();
-	 for(int i = 0; i < c.length; i++){
-		 System.out.print( " [ " + c[i] + " ] ");
-		 System.out.println((int) c[i]);
-	 }
+//	 for(int i = 0; i < c.length; i++){
+//		 System.out.print(c[i] + "_ ");
+//		 System.out.println((int) c[i]);
+//	 }
   }
  
   /**
