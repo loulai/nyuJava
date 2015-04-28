@@ -26,9 +26,10 @@ public class HuffmanConverter {
   private int uniqueChars = 0; //(optional)
   
   public static void main(String args[]) {
-	  System.out.print(fileToString("text"));
+	  HuffmanConverter hc = new HuffmanConverter(fileToString("text"));
+	  hc.recordFrequencies();
   }
- 
+
   /** Constructor taking input String to be converted */
   public HuffmanConverter(String input) {
     this.contents = input;
@@ -37,21 +38,14 @@ public class HuffmanConverter {
   }
   
   public static String fileToString(String filename){
-		/* get first line from file */
-//		BufferedReader buffRead = new BufferedReader(new FileReader(new File(System.getProperty("user.dir") + "/src/" + filename)));
+		/* convert file to String */
 		String text = "";
 		try {
 			text = new Scanner( new File(System.getProperty("user.dir") + "/src/" + filename)).useDelimiter("\\A").next();
+			text = text.replaceAll("\\s", System.getProperty("line.separator"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-//		String fileToString = "";
-//		while(buffReader.)
-//		try {
-//			fileToString = buffReader
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
 		return text;
   }
  
@@ -60,7 +54,13 @@ public class HuffmanConverter {
    * message occurs...
    * I.e., we use 'contents' to fill up the count[] list...
    */
-  public void recordFrequencies() {}
+  public void recordFrequencies() {
+	 char[] c = this.contents.toCharArray();
+//	 for(int i = 0; i < c.length; i++){
+//		 System.out.print(c[i] + "_ ");
+//		 System.out.println((int) c[i]);
+//	 }
+  }
  
   /**
    * Converts our frequency list into a Huffman Tree. We do this by
