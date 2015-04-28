@@ -1,0 +1,17 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		recPrint(4234);
+
+	}
+	
+	public static void recPrint(int i){
+		if(i%10 == 0){
+			System.out.println(0 + " at base");
+		} else{
+			System.out.println(i/10);
+		}
+	}
+
+}
