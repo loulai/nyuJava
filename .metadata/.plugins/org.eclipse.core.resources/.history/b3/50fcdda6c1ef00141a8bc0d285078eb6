@@ -108,8 +108,10 @@ public class HuffmanConverter {
 	  }
 	  System.out.println();
 	  HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
-	  int k = 0; 
-	  for(int i = 0; i < stringToArray.length ; i++){
+	  int k = 1; //counter for new array of Huffman nodes. The first one is a space, so technically this is the second thing
+	  //hacky way of inserting space, because split was with (" ")
+	  arrayToHuffman[0] = new HuffmanNode(" ", Double.parseDouble(stringToArray[1]));
+	  for(int i = 2; i < stringToArray.length ; i++){
 		System.out.println("i:  " + i);
 		HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
 		System.out.println("k:  " + k);
