@@ -72,7 +72,7 @@ public class HuffmanConverter {
 	 }
   }
  
-  /*
+  /**
    * Converts our frequency list into a Huffman Tree. We do this by
    * taking our count[] list of frequencies, and creating a binary
    * heap in a manner similar to how a heap was made in HuffmanTree's
@@ -88,8 +88,7 @@ public class HuffmanConverter {
 			  result += (char)i + " " + count[i] + " ";
 		  }
 	  }
-	  System.out.print("===Data broken down: " + result);
-	  
+	  System.out.print(result);
   }
  
   /**
@@ -101,7 +100,7 @@ public class HuffmanConverter {
    */
   public void treeToCode(){}
  
-  /**
+  /*
    * A private method to iterate over a HuffmanNode t using s, which
    * contains what we know of the HuffmanCode up to node t. This is
    * called by treeToCode(), and resembles the recursive printLegend

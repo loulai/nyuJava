@@ -32,7 +32,7 @@ public class HuffmanTree {
 		/* splits string into array, in preparation for creating an array of huffman nodes */
 		String[] stringToArray = fileToString.split(" ");
 		HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
-		int k = 0; //counter for new array of Huffman nores
+		int k = 0; //counter for new array of Huffman nodes
 		for(int i = 0; i < stringToArray.length; i++){
 			HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
 			arrayToHuffman[k] = temp;
