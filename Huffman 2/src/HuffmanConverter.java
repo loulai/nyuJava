@@ -92,14 +92,15 @@ public class HuffmanConverter {
 	  String result = "";
 	  for(int i = 0; i < this.count.length; i++){
 		  if(count[i] != 0){
-			  result += ( (char)i + "" + count[i]);
+			  if(i == 32) result += ((char)i + "" + count[i] + " " ); //accounting for when the character is a space, so that splitting with (" ") later on works
+			  else result += ( (char)i + " " + count[i] + " " );
 		  }
 	  }
 	  System.out.print("===Data broken down: " + result);
 
 	  /* creating a Huffman tree from the contents */
 	  // splits string into array, in preparation for creating an array of huffman nodes */
-	  String[] stringToArray = result.split("");
+	  String[] stringToArray = result.split(" ");
 	  System.out.println();
 //	  for extra clarity of each array item, can delete
 	  for(int i = 0; i < stringToArray.length; i++){
@@ -108,7 +109,9 @@ public class HuffmanConverter {
 	  System.out.println();
 	  HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
 	  int k = 0; //counter for new array of Huffman nodes
-	  for(int i = 0; i < stringToArray.length ; i++){
+	  //hacky way of inserting space, because split was with (" ")
+	  HuffmanNod
+	  for(int i = 2; i < stringToArray.length ; i++){
 		System.out.println("i:  " + i);
 		HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
 		System.out.println("k:  " + k);
