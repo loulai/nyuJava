@@ -64,7 +64,11 @@ public class HuffmanConverter {
 	 for(int i = 0; i < c.length; i++){
 		 count[(int) c[i]]++; //incremeting the count of each char, as positioned by the ASCII numbering
 	 }
+	 
 	
+	 for(int i = 0; i < 256; i++){
+		 System.out.printf("%2d => %d\n", i, count[i]);
+	 }
   }
  
   /**
