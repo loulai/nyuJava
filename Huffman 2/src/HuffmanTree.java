@@ -57,7 +57,7 @@ public class HuffmanTree {
 		}
 	}
 	
-	public static HuffmanTree createFromHeap(BinaryHeap b) throws UnderflowException, BinaryHeap.UnderflowException{
+	public static HuffmanTree heapToTree(BinaryHeap b) throws UnderflowException, BinaryHeap.UnderflowException{
 		HuffmanNode tempLeft = null;
 		while(!b.isEmpty()){
 			tempLeft = (HuffmanNode) b.deleteMin();

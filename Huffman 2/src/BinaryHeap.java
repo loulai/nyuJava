@@ -3,7 +3,7 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     private static final int DEFAULT_CAPACITY = 10;
     private int currentSize;      // Number of elements in heap
     private T [] array;		  // The heap array
-    private T binaryRoot = this.array[1]; //the root
+  
 
     public static void main(String [] args) throws UnderflowException {
         int numItems = 10000;

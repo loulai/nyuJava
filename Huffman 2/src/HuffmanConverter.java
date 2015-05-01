@@ -85,34 +85,37 @@ public class HuffmanConverter {
 	  String result = "";
 	  for(int i = 0; i < this.count.length; i++){
 		  if(count[i] != 0){
-			  if(i == 32) result += ((char)i + "" + count[i] + " " ); //accounting for when the character is a space
+			  if(i == 32) result += ((char)i + "" + count[i] + " " ); //accounting for when the character is a space, so that splitting with (" ") later on works
 			  else result += ( (char)i + " " + count[i] + " " );
 		  }
 	  }
 	  System.out.print("===Data broken down: " + result);
 
-	  
 	  /* creating a Huffman tree from the contents */
 	  // splits string into array, in preparation for creating an array of huffman nodes */
 	  String[] stringToArray = result.split(" ");
-	  System.out.println("\n");
+	  System.out.println();
+//	  for extra clarity of each array item, can delete
 	  for(int i = 0; i < stringToArray.length; i++){
 		  System.out.print("[ " + stringToArray[i] + " ]");
 	  }
+	  System.out.println();
 	  HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
 	  int k = 0; //counter for new array of Huffman nodes
-	  for(int i = 0; i < stringToArray.length; i++){
+	  for(int i = 0; i < stringToArray.length ; i++){
+		System.out.println("i:  " + i);
 		HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
+		System.out.println("k:  " + k);
 		arrayToHuffman[k] = temp;
-		System.out.println();
 		System.out.println("HUFFNODE: " + arrayToHuffman[k].toString()); //used to test each huffman node is is correct and prints fine
 		k++;
+		System.out.println("---------------");
 	  }
 		
 		//creates binary heap from array and assigns it
 		BinaryHeap arrayToHeap = new BinaryHeap(arrayToHuffman);
 		try {
-			this.huffmanTree = HuffmanTree.createFromHeap(arrayToHeap);
+			this.huffmanTree = HuffmanTree.heapToTree(arrayToHeap); 
 		} catch (BinaryHeap.UnderflowException e) {
 			e.printStackTrace();
 		}
