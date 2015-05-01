@@ -49,8 +49,8 @@ public class HuffmanTree {
 	
 	private void printLegend(HuffmanNode t, String s){
 		if(t.letter.length() > 1){
-			printLegend(t.left, s + "0");
-			printLegend(t.right, s + "1");
+			printLegend(t.left, s + "1");
+			printLegend(t.right, s + "0");
 		} 
 		if (t.letter.length() == 1) {
 			System.out.println(t.letter + "=" + s);

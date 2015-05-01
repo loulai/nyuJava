@@ -1,0 +1,28 @@
+
+public class TreeNode<T> implements Comparable{
+	public T element;
+	public Double distance;
+	public TreeNode<T> left;
+	public TreeNode<T> right;
+	
+	public TreeNode(T letter, Double distance){
+		this.element = letter;
+		this.distance = distance; //distance of this new TreeNode from parent
+		this.left = null;
+		this.right = null;
+	}
+	
+	public String toString(){
+		String s = "<" + letter + ", " + distance + ">";
+		return s;
+	}
+	
+	@Override
+	public int compareTo(Object o){
+		TreeNode t = (TreeNode) o;
+		return this.distance.compareTo(t.distance);
+	}
+	
+
+	
+}

@@ -36,9 +36,6 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     	return this.currentSize;
     }
     
-    public T getRoot(){
-    	return binaryRoot;
-    }  	 
 
     public boolean isEmpty() { return currentSize == 0; }
 
