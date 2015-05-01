@@ -90,20 +90,6 @@ public class HuffmanConverter {
 	  }
 	  System.out.print("===Data broken down: " + result);
 	  
-	  /* creating a Huffman tree from the contents */
-	  // splits string into array, in preparation for creating an array of huffman nodes */
-		String[] stringToArray = result.split(" ");
-		HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
-		int k = 0; //counter for new array of Huffman nodes
-		for(int i = 0; i < stringToArray.length; i++){
-			HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
-			arrayToHuffman[k] = temp;
-			System.out.println("HUFFNODE: " + arrayToHuffman[k].toString()); //used to test each huffman node is is correct and prints fine
-			k++;
-		}
-		BinaryHeap arrayToHeap = new BinaryHeap(arrayToHuffman);
-		this.huffmanTree.root = arrayToHeap.;
-	  
   }
  
   /**
