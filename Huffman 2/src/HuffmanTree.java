@@ -11,7 +11,7 @@ public class HuffmanTree {
 
 	public static void main(String args[]) throws UnderflowException, BinaryHeap.UnderflowException, FileNotFoundException{
 		BinaryHeap bheap = fileToHeap(args[0]);
-		HuffmanTree htree = createFromHeap(bheap);
+		HuffmanTree htree = heapToTree(bheap);
 		htree.printLegend();
 	}
 
