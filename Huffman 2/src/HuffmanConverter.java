@@ -80,30 +80,43 @@ public class HuffmanConverter {
    * HuffmanTree.heapToTree() method to get our much desired
    * HuffmanTree object, which we store as huffmanTree.
    */
-  public void frequenciesToTree() {
+  public void frequenciesToTree() throws UnderflowException, UnderflowException {
 	  /* formats contents into a string that looks like A 20 B 10 .. */
 	  String result = "";
 	  for(int i = 0; i < this.count.length; i++){
 		  if(count[i] != 0){
-			  result += (char)i + " " + count[i] + " ";
+			  if(i == 32) result += ((char)i + "" + count[i] + " " ); //accounting for when the character is a space
+			  else result += ( (char)i + " " + count[i] + " " );
 		  }
 	  }
 	  System.out.print("===Data broken down: " + result);
+
 	  
 	  /* creating a Huffman tree from the contents */
 	  // splits string into array, in preparation for creating an array of huffman nodes */
-		String[] stringToArray = result.split(" ");
-		HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
-		int k = 0; //counter for new array of Huffman nodes
-		for(int i = 0; i < stringToArray.length; i++){
-			HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
-			arrayToHuffman[k] = temp;
-			System.out.println("HUFFNODE: " + arrayToHuffman[k].toString()); //used to test each huffman node is is correct and prints fine
-			k++;
-		}
+	  String[] stringToArray = result.split(" ");
+	  System.out.println("\n");
+	  for(int i = 0; i < stringToArray.length; i++){
+		  System.out.print("[ " + stringToArray[i] + " ]");
+	  }
+	  HuffmanNode[] arrayToHuffman = new HuffmanNode[stringToArray.length/2];
+	  int k = 0; //counter for new array of Huffman nodes
+	  for(int i = 0; i < stringToArray.length; i++){
+		HuffmanNode temp = new HuffmanNode(stringToArray[i++], Double.parseDouble(stringToArray[i]));
+		arrayToHuffman[k] = temp;
+		System.out.println();
+		System.out.println("HUFFNODE: " + arrayToHuffman[k].toString()); //used to test each huffman node is is correct and prints fine
+		k++;
+	  }
+		
+		//creates binary heap from array and assigns it
 		BinaryHeap arrayToHeap = new BinaryHeap(arrayToHuffman);
-		this.huffmanTree.root = arrayToHeap.;
-	  
+		try {
+			this.huffmanTree = HuffmanTree.createFromHeap(arrayToHeap);
+		} catch (BinaryHeap.UnderflowException e) {
+			e.printStackTrace();
+		}
+	
   }
  
   /**
