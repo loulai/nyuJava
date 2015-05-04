@@ -8,7 +8,7 @@ public class AssignmentMain {
 		// TODO Auto-generated method stub
 	}
 	
-	public Double findClosest(TreeNode root, Object target) {
+	 public Double findClosest(TreeNode root, Object target) throws UnderflowException{
 	    	BinaryHeap minheap = new BinaryHeap();
 	    	minheap.insert(root);
 	    	TreeNode<Double> t;
@@ -30,8 +30,8 @@ public class AssignmentMain {
 		    	} //this if loop ends if the element is not found. If the element was found, with min value, then it would've been returned
 	    	}
 	    	return -1.0;
-	  }
-	
-	
+	    	
+	    	
+	    }
 
 }
