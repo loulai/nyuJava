@@ -22,6 +22,37 @@ public class TreeNode<T> implements Comparable{
 		return this.distance.compareTo(t.distance);
 	}
 	
+	 public void setInfo(T element)
+	  // Sets info T of this LLStringNode.
+	  {
+	    this.element = element;
+	  }
+
+	  public T getInfo()
+	  // Returns info T of this LLStringNode.
+	  {
+	    return element;
+	  }
+	 
+	  public void setRightChild(TreeNode link)
+	  {
+		  right = link;
+	  }
+	  
+	  public void setLeftChild(TreeNode link)
+	  {
+		  left = link;
+	  }
+
+	  public TreeNode getRightChild()
+	  {
+	    return right;
+	  }
+	  
+	  public TreeNode getLeftChild()
+	  {
+	    return left;
+	  }
 
 	
 }

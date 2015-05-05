@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Scanner;
 
 
@@ -6,10 +7,17 @@ public class AssignmentMain {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		System.out.println("hello");
 		
-		while(input.hasNext("[^()]*")){
-			System.out.println(input.next());
-		}
+		
+		TreeNode root = stringInputToTree(input.nextLine());
+		System.out.println("ASDFASDFASDF");
+		
+		printBinaryTree(root, 0);
+		
+//		while(input.hasNext("[^()]*")){
+//			System.out.println(input.next());
+//		}
 		
 //		if (input.hasNext("[^(]")){
 //			System.out.println("whoooo");
@@ -22,14 +30,14 @@ public class AssignmentMain {
 //		}
 	}
 	
-	public Double findClosest(TreeNode root, Object target) throws BinaryHeap.UnderflowException {
-	    	BinaryHeap minheap = new BinaryHeap();
+	public Double findClosest(TreeNode<Double> root, Object target) throws BinaryHeap.UnderflowException {
+	    	BinaryHeap<TreeNode<T>> minheap = new BinaryHeap<TreeNode<T>>();
 	    	minheap.insert(root);
 	    	TreeNode<Double> t;
 	  
 	    	while(!minheap.isEmpty()){
 	    		
-	    		t = (TreeNode) minheap.deleteMin();
+	    		t = minheap.deleteMin();
 	    		
 	    		if(t != null && !t.element.equals(target)){
 	    			if(t.left!=null){
@@ -46,8 +54,48 @@ public class AssignmentMain {
 	    	return -1.0;
 	  }
 	
-	public void stringInputToTree(String string) {
-		 ArrayStack<TreeNode> stack = 
+	public static TreeNode stringInputToTree(String stringInput) {
+		 ArrayStack<TreeNode> stack = new ArrayStack<TreeNode>();
+		 Scanner tokenizer = new Scanner(stringInput);
+		 while(tokenizer.hasNext()){
+			 if(tokenizer.hasNext("[^()]")){ //if is is anything other than "(" or ")"
+				 TreeNode<String> treeNode = new TreeNode<String>(tokenizer.next(), tokenizer.nextDouble());
+				 System.out.println("Pushing in : " + treeNode);
+				 stack.push(treeNode);
+			 } else if (tokenizer.hasNext("[(]")){
+				 System.out.println("(");
+				 tokenizer.next();
+			 } else {
+				 tokenizer.next();
+				 System.out.println(")");
+				 TreeNode rightChild = stack.top();
+				 System.out.println("Popping: " + rightChild);
+				 stack.pop();
+				 
+				 TreeNode leftChild = stack.top();
+				 System.out.println("Popping: " + leftChild);
+				 stack.pop();
+				 
+				 stack.top().setRightChild(rightChild);
+				 stack.top().setLeftChild(leftChild);
+				 System.out.println("parent: " + stack.top());
+			 }
+		 }
+		 return stack.top();
 	}
+
+	public static void printBinaryTree(TreeNode root, int level){
+	    if(root==null)
+	         return;
+	    printBinaryTree(root.right, level+1);
+	    if(level!=0){
+	        for(int i=0;i<level-1;i++)
+	            System.out.print("|\t");
+	            System.out.println("|-------"+root.element);
+	    }
+	    else
+	        System.out.println(root.element);
+	    printBinaryTree(root.left, level+1);
+	}    
 
 }
