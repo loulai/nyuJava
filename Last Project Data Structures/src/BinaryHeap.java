@@ -1,4 +1,4 @@
-public class BinaryHeap<T extends Comparable<? super T>> {
+public class BinaryHeap<T extends Comparable> {
 
     private static final int DEFAULT_CAPACITY = 10;
     private int currentSize;      // Number of elements in heap

@@ -5,15 +5,20 @@ import java.util.Scanner;
 
 public class AssignmentMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BinaryHeap.UnderflowException {
 		Scanner input = new Scanner(System.in);
 		System.out.println("hello");
 		
 		
 		TreeNode root = stringInputToTree(input.nextLine());
-		System.out.println("ASDFASDFASDF");
-		
+	
 		printBinaryTree(root, 0);
+		
+		try {
+			System.out.println("the closest path is: " + findClosest(root, "*"));
+		} catch (UnderflowException e) {
+			e.printStackTrace();
+		}
 		
 //		while(input.hasNext("[^()]*")){
 //			System.out.println(input.next());
@@ -30,10 +35,10 @@ public class AssignmentMain {
 //		}
 	}
 	
-	public Double findClosest(TreeNode<Double> root, Object target) throws BinaryHeap.UnderflowException {
-	    	BinaryHeap<TreeNode<T>> minheap = new BinaryHeap<TreeNode<T>>();
+	public static Double findClosest(TreeNode root, Object target) throws BinaryHeap.UnderflowException {
+	    	BinaryHeap<TreeNode<String>> minheap = new BinaryHeap<TreeNode<String>>();
 	    	minheap.insert(root);
-	    	TreeNode<Double> t;
+	    	TreeNode<String> t;
 	  
 	    	while(!minheap.isEmpty()){
 	    		
@@ -53,6 +58,8 @@ public class AssignmentMain {
 	    	}
 	    	return -1.0;
 	  }
+	
+	
 	
 	public static TreeNode stringInputToTree(String stringInput) {
 		 ArrayStack<TreeNode> stack = new ArrayStack<TreeNode>();
@@ -84,6 +91,9 @@ public class AssignmentMain {
 		 return stack.top();
 	}
 
+	/**extra method, for some fun
+	 * prints out the tree in a visual format, used when debugging
+	**/
 	public static void printBinaryTree(TreeNode root, int level){
 	    if(root==null)
 	         return;
