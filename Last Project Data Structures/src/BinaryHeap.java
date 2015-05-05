@@ -17,24 +17,7 @@ public class BinaryHeap<T extends Comparable<? super T>> {
 	System.out.println("Done.");
     }
 
-    public int findClosest(TreeNode root, Object target) throws UnderflowException{
-    	BinaryHeap bheap = new BinaryHeap();
-    	bheap.insert(root);
-    	TreeNode<T> t = (TreeNode<T>) bheap.deleteMin();
-  
-    	while(!bheap.isEmpty()){
-    		t = (TreeNode) bheap.deleteMin();
-    	}
-    	if(t != null && !t.element.equals(target)){
-    		//for all children of p of t
-    		//update distance => p.distance += q.distance
-    		//bheap.insert(p)
-    	}
-    	
-    	return 1;
-    	
-    	
-    }
+ 
     
     public BinaryHeap() { this(DEFAULT_CAPACITY); }
     public BinaryHeap(int capacity) {
@@ -117,6 +100,3 @@ public class BinaryHeap<T extends Comparable<? super T>> {
     }
 
 }
-// Local Variables:
-// compile-command: "javac -Xlint:unchecked BinaryHeap.java; java BinaryHeap"
-// End:

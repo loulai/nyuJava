@@ -1,14 +1,24 @@
-import BinaryHeap.UnderflowException;
+import java.util.Scanner;
 
 
 
 public class AssignmentMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		
+		if (input.hasNext("[^(]")){
+			System.out.println("whoooo");
+			System.out.println(input.next());
+		}
+		
+//		while(input.hasNext()){
+//			System.out.println("==inif");
+//			System.out.printf("Element: %s, Distance: %.1f\n", input.next(), input.nextDouble());
+//		}
 	}
 	
-	public Double findClosest(TreeNode root, Object target) {
+	public Double findClosest(TreeNode root, Object target) throws BinaryHeap.UnderflowException {
 	    	BinaryHeap minheap = new BinaryHeap();
 	    	minheap.insert(root);
 	    	TreeNode<Double> t;
@@ -32,6 +42,8 @@ public class AssignmentMain {
 	    	return -1.0;
 	  }
 	
-	
+	public void stringInputToTree(String string) {
+		 
+	}
 
 }

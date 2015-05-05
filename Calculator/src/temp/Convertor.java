@@ -26,6 +26,7 @@ public class Convertor {
 		while(tokenizer.hasNext()) {
 			if(tokenizer.hasNextInt()){
 				output = output + tokenizer.nextInt() + " ";
+			tokenizer.h
 			} else {
 				Operator operator = new Operator(tokenizer.next()); //initialize a new instance of Operator, which has various methods for comparison
 				if(operator.stringValue.equals(")")) { //if its the closing bracket, pop everything until the closing bracket (then remove it from the stack)
