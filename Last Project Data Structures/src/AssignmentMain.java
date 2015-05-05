@@ -7,10 +7,14 @@ public class AssignmentMain {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		if (input.hasNext("[^(]")){
-			System.out.println("whoooo");
+		while(input.hasNext("[^()]*")){
 			System.out.println(input.next());
 		}
+		
+//		if (input.hasNext("[^(]")){
+//			System.out.println("whoooo");
+//			System.out.println(input.next());
+//		}
 		
 //		while(input.hasNext()){
 //			System.out.println("==inif");
@@ -43,7 +47,7 @@ public class AssignmentMain {
 	  }
 	
 	public void stringInputToTree(String string) {
-		 
+		 ArrayStack<TreeNode> stack = 
 	}
 
 }
