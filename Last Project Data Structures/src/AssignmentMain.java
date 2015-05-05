@@ -1,36 +1,17 @@
 import java.util.LinkedList;
 import java.util.Scanner;
 
-
-
 public class AssignmentMain {
 
 	public static void main(String[] args) throws BinaryHeap.UnderflowException {
-		Scanner input = new Scanner(System.in);
-		System.out.println("hello");
-		
-		
-		TreeNode root = stringInputToTree(input.nextLine());
+		TreeNode root = stringInputToTree("a 0 ( b 4 ( * 100 b 6 ) w 9 ( x 3 y 5 ( * 2 z 3 ) ) ) ");
+		printBinaryTree(root, 0); //optional, remove if needed, will no affect code. Just illustrating tree visually.
 		
 		try {
-			System.out.println("\nthe closest path to \"*\" is: " + findClosest(root, "*"));
+			System.out.println("Found \"*\" at distance: " + findClosest(root, "*"));
 		} catch (UnderflowException e) {
 			e.printStackTrace();
 		}
-		
-//		while(input.hasNext("[^()]*")){
-//			System.out.println(input.next());
-//		}
-		
-//		if (input.hasNext("[^(]")){
-//			System.out.println("whoooo");
-//			System.out.println(input.next());
-//		}
-		
-//		while(input.hasNext()){
-//			System.out.println("==inif");
-//			System.out.printf("Element: %s, Distance: %.1f\n", input.next(), input.nextDouble());
-//		}
 	}
 	
 	public static Double findClosest(TreeNode root, Object target) throws BinaryHeap.UnderflowException {
@@ -40,16 +21,11 @@ public class AssignmentMain {
 	  
 	    	while(!minheap.isEmpty()){
 	    		t = minheap.deleteMin();
-	    		System.out.println(t);
-	    		System.out.println(t.left);
-	    		System.out.println(t.right);
 	    		
 	    		while(t != null && !t.element.equals(target)){
 	    			
 	    			if(t.left!=null){
-//	    				System.out.println("before " + t.left);
 	    				t.left.distance += t.distance;
-//	    				System.out.println("after " + t.left);
 	    				minheap.insert(t.left);
 	    			}
 	    			if(t.right!=null){
@@ -62,9 +38,7 @@ public class AssignmentMain {
 	    	}
 	    	return -1.0;
 	  }
-	
-	
-	
+
 	public static TreeNode stringInputToTree(String stringInput) {
 		 ArrayStack<TreeNode> stack = new ArrayStack<TreeNode>();
 		 Scanner tokenizer = new Scanner(stringInput);
@@ -101,7 +75,7 @@ public class AssignmentMain {
 	    if(level!=0){
 	        for(int i=0;i<level-1;i++)
 	            System.out.print("|\t");
-	            System.out.println("|-------"+root.element);
+	            System.out.println("|-------" + root.element + " (" + root.distance + ")");
 	    }
 	    else
 	        System.out.println(root.element);
