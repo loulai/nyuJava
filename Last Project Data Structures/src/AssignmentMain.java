@@ -11,11 +11,9 @@ public class AssignmentMain {
 		
 		
 		TreeNode root = stringInputToTree(input.nextLine());
-	
-		printBinaryTree(root, 0);
 		
 		try {
-			System.out.println("the closest path is: " + findClosest(root, "*"));
+			System.out.println("\nthe closest path to \"*\" is: " + findClosest(root, "*"));
 		} catch (UnderflowException e) {
 			e.printStackTrace();
 		}
@@ -41,20 +39,26 @@ public class AssignmentMain {
 	    	TreeNode<String> t;
 	  
 	    	while(!minheap.isEmpty()){
-	    		
 	    		t = minheap.deleteMin();
+	    		System.out.println(t);
+	    		System.out.println(t.left);
+	    		System.out.println(t.right);
 	    		
-	    		if(t != null && !t.element.equals(target)){
+	    		while(t != null && !t.element.equals(target)){
+	    			
 	    			if(t.left!=null){
+//	    				System.out.println("before " + t.left);
 	    				t.left.distance += t.distance;
+//	    				System.out.println("after " + t.left);
 	    				minheap.insert(t.left);
 	    			}
 	    			if(t.right!=null){
 	    				t.right.distance += t.distance;
 	    				minheap.insert(t.right);
 	    			}
-	    		return t.distance;
+	    			t = minheap.deleteMin();
 		    	} //this if loop ends if the element is not found. If the element was found, with min value, then it would've been returned
+	    		return t.distance;
 	    	}
 	    	return -1.0;
 	  }
@@ -67,25 +71,21 @@ public class AssignmentMain {
 		 while(tokenizer.hasNext()){
 			 if(tokenizer.hasNext("[^()]")){ //if is is anything other than "(" or ")"
 				 TreeNode<String> treeNode = new TreeNode<String>(tokenizer.next(), tokenizer.nextDouble());
-				 System.out.println("Pushing in : " + treeNode);
+				
 				 stack.push(treeNode);
 			 } else if (tokenizer.hasNext("[(]")){
-				 System.out.println("(");
+			
 				 tokenizer.next();
 			 } else {
 				 tokenizer.next();
-				 System.out.println(")");
 				 TreeNode rightChild = stack.top();
-				 System.out.println("Popping: " + rightChild);
 				 stack.pop();
 				 
 				 TreeNode leftChild = stack.top();
-				 System.out.println("Popping: " + leftChild);
 				 stack.pop();
 				 
 				 stack.top().setRightChild(rightChild);
 				 stack.top().setLeftChild(leftChild);
-				 System.out.println("parent: " + stack.top());
 			 }
 		 }
 		 return stack.top();
