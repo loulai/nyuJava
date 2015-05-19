@@ -51,7 +51,7 @@ public class Convertor {
 						output = output + stack.top();
 						stack.pop();
 					}
-					stack.pop();
+					stack.pop(); //removes the "( " after popping everyhthing
 				} else if (stack.isEmpty() || stack.top().equals("( ") || operator.isGreaterThan(stack.top()) || operator.stringValue.equals("(")){ //if the stack is empty OR operator at the top of stack is ( OR the current operator is greater than the top of the stack..
 					stack.push(operator.stringValue + " "); //..push the current operator into stack
 				} else if (operator.isSmallerThan(stack.top()) || operator.isEqualTo(stack.top())){ //if operator is LARGER or EQUAL to the top of the stack

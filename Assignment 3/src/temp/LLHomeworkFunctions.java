@@ -45,11 +45,15 @@ public class LLHomeworkFunctions {
 			head2 = head2.getLink();
 		}
 		
-		if(head1 == null && head2 == null){ //equality is true. because to get to this point the list must be equal in value. This validates it it equal in length.
-		} else {
-			isEqual = false; //always, because only ONE of them is null. This means they're different sizes.
-			//if both of them were null, the above condition catches it and deals with equality comparison
+		if(head1 == null ^ head2 == null){ //exclusive or - if only ONE head is null, this means they must be unequal.
+			isEqual = false;
 		}
+//		
+//		if(head1 == null && head2 == null){ //equality is true. because to get to this point the list must be equal in value. This validates it it equal in length.
+//		} else {
+//			isEqual = false; //always, because only ONE of them is null. This means they're different sizes.
+//			//if both of them were null, the above condition catches it and deals with equality comparison
+//		}
 		return isEqual;
 	}
 	
