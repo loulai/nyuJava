@@ -36,16 +36,18 @@ public class HuffmanConverter {
    *
    */
   public static void main(String args[]) {
-	  HuffmanConverter hc = new HuffmanConverter(readContents(args[0]));
+	  HuffmanConverter hc = new HuffmanConverter("a 0 ( b 4 ( * 100 b 6 ) w 9 ( z 3 y 5 ( * 2 z 3 ) ) )");
 	  hc.recordFrequencies();
 	  hc.frequenciesToTree();
 	  hc.treeToCode();
-	
+	  printBinaryTree(hc.huffmanTree.root, 0);
+	  
 	  String encoded = hc.encodeMessage();
 	  System.out.println("\nHuffman Encoding: \n" + encoded);
 	  System.out.printf("\nMessage size in ASCII encoding: %d\nMessage size in Huffman coding: %d\n\n", (hc.contents.length()*8), encoded.length());
 	  String decoded = hc.decodeMessage(encoded);
 	  System.out.println(decoded);
+	
   }
 
   /** Constructor taking input String to be converted */
@@ -199,6 +201,22 @@ public class HuffmanConverter {
 	  return s;
   }
  
+  /**extra method, for some fun
+	 * prints out the tree in a visual format, used when debugging
+	**/
+	public static void printBinaryTree(HuffmanNode root, int level){
+	    if(root==null)
+	         return;
+	    printBinaryTree(root.right, level+1);
+	    if(level!=0){
+	        for(int i=0;i<level-1;i++)
+	            System.out.print("|\t");
+	            System.out.println("|-------{" + root.letter + ", " + root.letter + "}");
+	    }
+	    else
+	        System.out.println(root.letter);
+	    printBinaryTree(root.left, level+1);
+	}    
   
 
 }

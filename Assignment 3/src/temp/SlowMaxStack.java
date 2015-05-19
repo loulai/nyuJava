@@ -5,6 +5,10 @@ public class SlowMaxStack implements MaxStack<Integer> {
 	private final SlowIntegerMaximizer maximizer;
 	private LLNode<Integer> top = null;
 	
+	public static void main(String[] args){
+		Maximizer x = new SlowIntegerMaximizer();
+		System.out.println(x.getMax(2,3));
+	}
 	public SlowMaxStack(SlowIntegerMaximizer maximizer) {
 		this.maximizer = maximizer;
 	}
