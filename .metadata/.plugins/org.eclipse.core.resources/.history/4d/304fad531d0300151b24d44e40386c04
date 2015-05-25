@@ -59,8 +59,7 @@ public class LinkedStack<T> implements UnboundedStackInterface<T>
 	  LLNode t = this.top;
 	  String output = "";
 	  while(t != null){
-		  output += t.info + " -> ";
-		  t = t.link;
+		  output += t.info + " ";
 	  }
 	  return output;
   }
