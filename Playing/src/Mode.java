@@ -1,24 +1,31 @@
-
 public class Mode {
-
 	public static void main(String[] args) {
-	int findMode(int[] data){
-		int[] counters = new int[10];
-		for(int i =0; i < counters.length; i++)
-			counters[i] = 0;
-		for(int i = 0; i < data.length; i++)
-			counters[data[i]] ++;
-		int modeIndex = 0;
-		for(int i = (counters.length - 1); i >= 0; i++){
-			if(counters[i] >= counters[modeIndex])
-				modeIndex = i;
+		int[] numArr = {1,2,3,4,5};
+		System.out.println(containsDuplicate(numArr));
+	}
 	
+	public static boolean containsDuplicate(int[] nums) {
+		boolean containsDuplicate = false;
+		
+		for(int i = 0; i < nums.length; i++){
+			int hold = nums[i];
+			System.out.println("("+ i +") === " + hold + " ===");
+			for(int k = 0; k < nums.length; k ++){
+				if((i) != k){
+					System.out.print("(" + k + ")");
+					if(hold == nums[k]){
+						System.out.println(nums[k]);
+						containsDuplicate = true;
+					}
+				}
+			}
 		}
-		return modeIndex
+	
+		return containsDuplicate;
 	}
-
-	}
-
 }
+
+
+
 
 //11:30 - 1:30
